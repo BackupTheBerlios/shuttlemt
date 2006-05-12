@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING //DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!--schema xmlns='http://www.springframework.org/schema/beans'
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xsi:schemaLocation='http://www.springframework.org/schema/beans file:lib/dist/spring-beans.xsd'>
+
+<schema-->
+
+<beans>
+  <bean id="player" class="com.form105.shuttle.base.Player">
+    
+    <property name="sirname" value="Kundlacz"></property>
+    <property name="name" value="Heiko"></property>
+  </bean>
+</beans>

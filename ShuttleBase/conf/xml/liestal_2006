@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tournament
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation='file://localhost/Users/heiko/Projects/Shuttle_Main/conf/xml/tournament.xsd'>
+  <mensingle>
+    <players/>
+
+  </mensingle>
+  <womensingle>
+    <players/>
+
+  </womensingle>
+  <mendouble>
+    <players/>
+
+  </mendouble>
+  <womendouble>
+    <players/>
+
+  </womendouble>
+  <mixed>
+    <players/>
+
+  </mixed>
+</tournament>

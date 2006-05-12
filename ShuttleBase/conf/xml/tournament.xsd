@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:html="http://www.w3.org/1999/xhtml"
+           xmlns:hfp="http://www.w3.org/2001/XMLSchema-hasFacetAndProperty">
+  <xs:element name="tournament">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="mensingle">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="players"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="womensingle">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="players"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="mendouble">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="doublePlayers"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="womendouble">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="doublePlayers"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+
+        <xs:element name="mixed">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="doublePlayers"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+
+      <xs:attributeGroup ref="node"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:attributeGroup name="node">
+    <xs:attribute name="name" type="xs:string"/>
+
+    <xs:attribute name="icon" type="xs:string" fixed="testicon"/>
+  </xs:attributeGroup>
+
+  <xs:element name="players">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="id"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doublePlayers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="doublePlayer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id1" minOccurs="1" maxOccurs="1"></xs:element>
+              <xs:element name="id2" minOccurs="1" maxOccurs="1"></xs:element>
+            </xs:sequence>
+          </xs:complexType>
+          </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

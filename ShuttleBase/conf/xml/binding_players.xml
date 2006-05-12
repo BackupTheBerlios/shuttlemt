@@ -1,0 +1,30 @@
+<?xml version="1.0"?> 
+<binding>
+
+   
+	
+  <elementBinding name="/order/parameter">
+      <java-class name="Parameter" package="ch.post.pf.om.filter.base.xml.model"/>
+   </elementBinding>
+   <elementBinding name="/resource/parameter">
+      <java-class name="Parameter" package="ch.post.pf.om.filter.base.xml.model"/>
+   </elementBinding>
+   <elementBinding name="/resource/policy/parameter">
+      <java-class name="Parameter" package="ch.post.pf.om.filter.base.xml.model"/>
+   </elementBinding>
+   
+   <elementBinding name="/workflow/objects/parameter">
+      <java-class name="Parameter" package="ch.post.pf.om.filter.base.xml.model"/>
+   </elementBinding>
+   
+   <elementBinding name="/workflow/subworkflow/task/parameter">
+      <java-class name="Parameter" package="ch.post.pf.om.filter.base.xml.model"/>
+   </elementBinding>
+	
+	<elementBinding name="/workflow/subworkflow/task/filter/parameter">
+      <java-class name="Parameter" package="ch.post.pf.om.filter.base.xml.model"/>
+   </elementBinding>
+   
+   
+   
+</binding>

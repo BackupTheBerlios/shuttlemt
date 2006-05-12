@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:hfp="http://www.w3.org/2001/XMLSchema-hasFacetAndProperty">
+	<xs:element name="players">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="player" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" type="xs:string" />
+
+							<xs:element name="sirname" type="xs:string" />
+
+							<xs:element name="name" type="xs:string" />
+
+							<xs:element name="sex">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="W" />
+										<xs:enumeration value="M" />
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+
+							<xs:element name="clubnr" type="xs:integer" />
+
+							<xs:element name="birthday"
+								type="xs:string" />
+
+							<xs:element name="classifier">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="single"
+											type="xs:integer" />
+
+										<xs:element name="double"
+											type="xs:integer" />
+
+										<xs:element name="mixed"
+											type="xs:integer" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
