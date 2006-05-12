@@ -1,0 +1,5 @@
+Actions:
+* Sort table to license and sirname
+* Select/mark a row (highlight line)
+* Mnemonic to add a player to a tournament
+

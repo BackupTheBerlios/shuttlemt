@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ShuttleUI Plug-in
+Bundle-SymbolicName: ShuttleUI; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: shuttle-ui.jar
+Bundle-Activator: ch.form105.shuttle.ui.ShuttleUIPlugin
+Bundle-Vendor: form105
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ ShuttleBase,
+ org.eclipse.ui.views
+Eclipse-AutoStart: true
