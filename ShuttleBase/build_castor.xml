@@ -3,9 +3,9 @@
 <!-- some examples of how to customize the build. -->
 <!-- (If you delete it and reopen the project it will be recreated.) -->
 <project name="Shuttle_Main" default="castor:generate" basedir=".">
-    <description>Builds, tests, and runs the project Shuttle_Main.</description>
-    <!-- import file="nbproject/build-impl.xml"/-->
-    <!--
+  <description>Builds, tests, and runs the project Shuttle_Main.</description>
+  <!-- import file="nbproject/build-impl.xml"/-->
+  <!--
 
     There exist several targets which are by default empty and which can be 
     used for execution of your tasks. These targets are usually executed 
@@ -66,41 +66,50 @@
     nbproject/build-impl.xml file. 
 
     -->
-    
-    <target name="castor:generate"  description="Generate Java source files from XSD.">
-        <taskdef name="castor-srcgen" classname="org.exolab.castor.tools.ant.taskdefs.CastorSourceGenTask">
-            <classpath>
-                <pathelement location="./lib/commons-logging-1.0.4.jar"/>
-                <pathelement location="./lib/castor-1.0-xml.jar"/>
-                <pathelement location="./lib/castor-1.0.jar"/>
-                <pathelement location="./lib/castor-1.0-srcgen-ant-task.jar"/>
-                <pathelement location="./lib/xercesImpl.jar"/>
-            </classpath>
 
-        </taskdef>
-        <echo>${basedir}</echo>
-        <delete dir="${basedir}/src/ch/form105/shuttle/base/generated"/>
-    
-        <mkdir dir="${basedir}/src/ch/form105/shuttle/base/generated" />
-		
-        <castor-srcgen file="${basedir}/conf/xml/players.xsd"
-        todir="${basedir}/src"
-        package="ch.form105.shuttle.base.generated.players"
-        types="j2"
-        verbose="true"
-        properties="${basedir}/conf/xml/castor.properties"
-        bindingfile="${basedir}/conf/xml/binding_players.xml"
-        warnings="true"/>
-      
-        <castor-srcgen file="${basedir}/conf/xml/tournament.xsd"
-        todir="${basedir}/src"
-        package="ch.form105.shuttle.base.generated.tournament"
-        types="j2"
-        verbose="true"
-        properties="${basedir}/conf/xml/castor.properties"
-        bindingfile="${basedir}/conf/xml/binding_tournament.xml"
-        warnings="true"/>  
-    
+  <target name="castor:generate"
+          description="Generate Java source files from XSD.">
+    <taskdef name="castor-srcgen"
+             classname="org.exolab.castor.tools.ant.taskdefs.CastorSourceGenTask">
+      <classpath>
+        <pathelement location="./lib/commons-logging-1.0.4.jar" />
+        <pathelement location="./lib/castor-1.0-xml.jar" />
+        <pathelement location="./lib/castor-1.0.jar" />
+        <pathelement location="./lib/castor-1.0-srcgen-ant-task.jar" />
+        <pathelement location="./lib/xercesImpl.jar" />
+      </classpath>
 
-    </target>
+    </taskdef>
+    <echo>${basedir}</echo>
+    <delete dir="${basedir}/src/ch/form105/shuttle/base/generated" />
+
+    <mkdir dir="${basedir}/src/ch/form105/shuttle/base/generated" />
+
+    <castor-srcgen file="${basedir}/conf/xml/players.xsd"
+                   todir="${basedir}/src"
+                   package="ch.form105.shuttle.base.generated.players"
+                   types="j2"
+                   verbose="true"
+                   properties="${basedir}/conf/xml/castor.properties"
+                   warnings="true" />
+
+    <castor-srcgen file="${basedir}/conf/xml/tournament.xsd"
+                   todir="${basedir}/src"
+                   package="ch.form105.shuttle.base.generated.tournament"
+                   types="j2"
+                   verbose="true"
+                   properties="${basedir}/conf/xml/castor.properties"
+                   bindingfile="${basedir}/conf/xml/binding_tournament.xml"
+                   warnings="true" />
+
+    <castor-srcgen file="${basedir}/conf/xml/MasterPlayer.xsd"
+                   todir="${basedir}/src"
+                   package="ch.form105.shuttle.base.generated.masterPlayer"
+                   types="j2"
+                   verbose="true"
+                   properties="${basedir}/conf/xml/castor.properties"
+                   warnings="true" />
+
+
+  </target>
 </project>
