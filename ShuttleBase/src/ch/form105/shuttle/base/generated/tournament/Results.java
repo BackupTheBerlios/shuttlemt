@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Players.java,v 1.2 2006/05/14 10:27:47 luschtiger Exp $
+ * $Id: Results.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players;
+package ch.form105.shuttle.base.generated.tournament;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -27,11 +27,11 @@ import org.exolab.castor.xml.ValidationException;
 import org.xml.sax.ContentHandler;
 
 /**
- * Class Players.
+ * Class Results.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:47 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
  */
-public class Players extends ch.form105.shuttle.base.Element 
+public class Results extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
 {
 
@@ -41,9 +41,9 @@ implements java.io.Serializable
     //--------------------------/
 
     /**
-     * Field _playerList
+     * Field _resultList
      */
-    private java.util.ArrayList _playerList;
+    private java.util.ArrayList _resultList;
 
     /**
      * Field propertyChangeSupport
@@ -55,45 +55,16 @@ implements java.io.Serializable
      //- Constructors -/
     //----------------/
 
-    public Players() 
+    public Results() 
      {
         super();
-        _playerList = new ArrayList();
-    } //-- ch.form105.shuttle.base.generated.players.Players()
+        _resultList = new ArrayList();
+    } //-- ch.form105.shuttle.base.generated.tournament.Results()
 
 
       //-----------/
      //- Methods -/
     //-----------/
-
-    /**
-     * Method addPlayer
-     * 
-     * 
-     * 
-     * @param vPlayer
-     */
-    public void addPlayer(ch.form105.shuttle.base.generated.players.Player vPlayer)
-        throws java.lang.IndexOutOfBoundsException
-    {
-        _playerList.add(vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void addPlayer(ch.form105.shuttle.base.generated.players.Player) 
-
-    /**
-     * Method addPlayer
-     * 
-     * 
-     * 
-     * @param index
-     * @param vPlayer
-     */
-    public void addPlayer(int index, ch.form105.shuttle.base.generated.players.Player vPlayer)
-        throws java.lang.IndexOutOfBoundsException
-    {
-        _playerList.add(index, vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void addPlayer(int, ch.form105.shuttle.base.generated.players.Player) 
 
     /**
      * Method addPropertyChangeListener
@@ -111,74 +82,103 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method clearPlayer
+     * Method addResult
      * 
+     * 
+     * 
+     * @param vResult
      */
-    public void clearPlayer()
+    public void addResult(ch.form105.shuttle.base.generated.tournament.Result vResult)
+        throws java.lang.IndexOutOfBoundsException
     {
-        _playerList.clear();
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void clearPlayer() 
+        _resultList.add(vResult);
+        notifyPropertyChangeListeners("_resultList", null, _resultList);
+    } //-- void addResult(ch.form105.shuttle.base.generated.tournament.Result) 
 
     /**
-     * Method enumeratePlayer
+     * Method addResult
+     * 
+     * 
+     * 
+     * @param index
+     * @param vResult
+     */
+    public void addResult(int index, ch.form105.shuttle.base.generated.tournament.Result vResult)
+        throws java.lang.IndexOutOfBoundsException
+    {
+        _resultList.add(index, vResult);
+        notifyPropertyChangeListeners("_resultList", null, _resultList);
+    } //-- void addResult(int, ch.form105.shuttle.base.generated.tournament.Result) 
+
+    /**
+     * Method clearResult
+     * 
+     */
+    public void clearResult()
+    {
+        _resultList.clear();
+        notifyPropertyChangeListeners("_resultList", null, _resultList);
+    } //-- void clearResult() 
+
+    /**
+     * Method enumerateResult
      * 
      * 
      * 
      * @return Enumeration
      */
-    public java.util.Enumeration enumeratePlayer()
+    public java.util.Enumeration enumerateResult()
     {
-        return new org.exolab.castor.util.IteratorEnumeration(_playerList.iterator());
-    } //-- java.util.Enumeration enumeratePlayer() 
+        return new org.exolab.castor.util.IteratorEnumeration(_resultList.iterator());
+    } //-- java.util.Enumeration enumerateResult() 
 
     /**
-     * Method getPlayer
+     * Method getResult
      * 
      * 
      * 
      * @param index
-     * @return Player
+     * @return Result
      */
-    public ch.form105.shuttle.base.generated.players.Player getPlayer(int index)
+    public ch.form105.shuttle.base.generated.tournament.Result getResult(int index)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
-        if ((index < 0) || (index >= _playerList.size())) {
+        if ((index < 0) || (index >= _resultList.size())) {
             throw new IndexOutOfBoundsException();
         }
         
-        return (ch.form105.shuttle.base.generated.players.Player) _playerList.get(index);
-    } //-- ch.form105.shuttle.base.generated.players.Player getPlayer(int) 
+        return (ch.form105.shuttle.base.generated.tournament.Result) _resultList.get(index);
+    } //-- ch.form105.shuttle.base.generated.tournament.Result getResult(int) 
 
     /**
-     * Method getPlayer
+     * Method getResult
      * 
      * 
      * 
-     * @return Player
+     * @return Result
      */
-    public ch.form105.shuttle.base.generated.players.Player[] getPlayer()
+    public ch.form105.shuttle.base.generated.tournament.Result[] getResult()
     {
-        int size = _playerList.size();
-        ch.form105.shuttle.base.generated.players.Player[] mArray = new ch.form105.shuttle.base.generated.players.Player[size];
+        int size = _resultList.size();
+        ch.form105.shuttle.base.generated.tournament.Result[] mArray = new ch.form105.shuttle.base.generated.tournament.Result[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = (ch.form105.shuttle.base.generated.players.Player) _playerList.get(index);
+            mArray[index] = (ch.form105.shuttle.base.generated.tournament.Result) _resultList.get(index);
         }
         return mArray;
-    } //-- ch.form105.shuttle.base.generated.players.Player[] getPlayer() 
+    } //-- ch.form105.shuttle.base.generated.tournament.Result[] getResult() 
 
     /**
-     * Method getPlayerCount
+     * Method getResultCount
      * 
      * 
      * 
      * @return int
      */
-    public int getPlayerCount()
+    public int getResultCount()
     {
-        return _playerList.size();
-    } //-- int getPlayerCount() 
+        return _resultList.size();
+    } //-- int getResultCount() 
 
     /**
      * Method isValid
@@ -243,21 +243,6 @@ implements java.io.Serializable
     } //-- void notifyPropertyChangeListeners(java.lang.String, java.lang.Object, java.lang.Object) 
 
     /**
-     * Method removePlayer
-     * 
-     * 
-     * 
-     * @param vPlayer
-     * @return boolean
-     */
-    public boolean removePlayer(ch.form105.shuttle.base.generated.players.Player vPlayer)
-    {
-        boolean removed = _playerList.remove(vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-        return removed;
-    } //-- boolean removePlayer(ch.form105.shuttle.base.generated.players.Player) 
-
-    /**
      * Method removePropertyChangeListener
      * 
      * Removes the given PropertyChangeListener from this classes
@@ -274,40 +259,55 @@ implements java.io.Serializable
     } //-- boolean removePropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method setPlayer
+     * Method removeResult
+     * 
+     * 
+     * 
+     * @param vResult
+     * @return boolean
+     */
+    public boolean removeResult(ch.form105.shuttle.base.generated.tournament.Result vResult)
+    {
+        boolean removed = _resultList.remove(vResult);
+        notifyPropertyChangeListeners("_resultList", null, _resultList);
+        return removed;
+    } //-- boolean removeResult(ch.form105.shuttle.base.generated.tournament.Result) 
+
+    /**
+     * Method setResult
      * 
      * 
      * 
      * @param index
-     * @param vPlayer
+     * @param vResult
      */
-    public void setPlayer(int index, ch.form105.shuttle.base.generated.players.Player vPlayer)
+    public void setResult(int index, ch.form105.shuttle.base.generated.tournament.Result vResult)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
-        if ((index < 0) || (index >= _playerList.size())) {
+        if ((index < 0) || (index >= _resultList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        _playerList.set(index, vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void setPlayer(int, ch.form105.shuttle.base.generated.players.Player) 
+        _resultList.set(index, vResult);
+        notifyPropertyChangeListeners("_resultList", null, _resultList);
+    } //-- void setResult(int, ch.form105.shuttle.base.generated.tournament.Result) 
 
     /**
-     * Method setPlayer
+     * Method setResult
      * 
      * 
      * 
-     * @param playerArray
+     * @param resultArray
      */
-    public void setPlayer(ch.form105.shuttle.base.generated.players.Player[] playerArray)
+    public void setResult(ch.form105.shuttle.base.generated.tournament.Result[] resultArray)
     {
         //-- copy array
-        _playerList.clear();
-        for (int i = 0; i < playerArray.length; i++) {
-            _playerList.add(playerArray[i]);
+        _resultList.clear();
+        for (int i = 0; i < resultArray.length; i++) {
+            _resultList.add(resultArray[i]);
         }
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void setPlayer(ch.form105.shuttle.base.generated.players.Player) 
+        notifyPropertyChangeListeners("_resultList", null, _resultList);
+    } //-- void setResult(ch.form105.shuttle.base.generated.tournament.Result) 
 
     /**
      * Method unmarshal
@@ -315,13 +315,13 @@ implements java.io.Serializable
      * 
      * 
      * @param reader
-     * @return Players
+     * @return Results
      */
-    public static ch.form105.shuttle.base.generated.players.Players unmarshal(java.io.Reader reader)
+    public static ch.form105.shuttle.base.generated.tournament.Results unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        return (ch.form105.shuttle.base.generated.players.Players) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.players.Players.class, reader);
-    } //-- ch.form105.shuttle.base.generated.players.Players unmarshal(java.io.Reader) 
+        return (ch.form105.shuttle.base.generated.tournament.Results) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.tournament.Results.class, reader);
+    } //-- ch.form105.shuttle.base.generated.tournament.Results unmarshal(java.io.Reader) 
 
     /**
      * Method validate

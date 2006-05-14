@@ -1,6 +1,5 @@
 package ch.form105.shuttle.base;
 
-import ch.form105.shuttle.base.model.Projects;
 
 
 public class Main {

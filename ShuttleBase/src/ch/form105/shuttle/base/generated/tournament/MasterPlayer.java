@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Classifier.java,v 1.2 2006/05/14 10:27:47 luschtiger Exp $
+ * $Id: MasterPlayer.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players;
+package ch.form105.shuttle.base.generated.tournament;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -25,11 +25,11 @@ import org.exolab.castor.xml.ValidationException;
 import org.xml.sax.ContentHandler;
 
 /**
- * Class Classifier.
+ * Class MasterPlayer.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:47 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
  */
-public class Classifier extends ch.form105.shuttle.base.Element 
+public class MasterPlayer extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
 {
 
@@ -39,34 +39,14 @@ implements java.io.Serializable
     //--------------------------/
 
     /**
-     * Field _single
+     * Field _playerid
      */
-    private int _single;
+    private java.lang.String _playerid;
 
     /**
-     * keeps track of state for field: _single
+     * Field _gameType
      */
-    private boolean _has_single;
-
-    /**
-     * Field _double
-     */
-    private int _double;
-
-    /**
-     * keeps track of state for field: _double
-     */
-    private boolean _has_double;
-
-    /**
-     * Field _mixed
-     */
-    private int _mixed;
-
-    /**
-     * keeps track of state for field: _mixed
-     */
-    private boolean _has_mixed;
+    private ch.form105.shuttle.base.generated.tournament.GameType _gameType;
 
     /**
      * Field propertyChangeSupport
@@ -78,10 +58,10 @@ implements java.io.Serializable
      //- Constructors -/
     //----------------/
 
-    public Classifier() 
+    public MasterPlayer() 
      {
         super();
-    } //-- ch.form105.shuttle.base.generated.players.Classifier()
+    } //-- ch.form105.shuttle.base.generated.tournament.MasterPlayer()
 
 
       //-----------/
@@ -104,103 +84,26 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method deleteDouble
+     * Returns the value of field 'gameType'.
      * 
+     * @return GameType
+     * @return the value of field 'gameType'.
      */
-    public void deleteDouble()
+    public ch.form105.shuttle.base.generated.tournament.GameType getGameType()
     {
-        this._has_double= false;
-        notifyPropertyChangeListeners("_double", new java.lang.Integer(this._double), null);
-    } //-- void deleteDouble() 
+        return this._gameType;
+    } //-- ch.form105.shuttle.base.generated.tournament.GameType getGameType() 
 
     /**
-     * Method deleteMixed
+     * Returns the value of field 'playerid'.
      * 
+     * @return String
+     * @return the value of field 'playerid'.
      */
-    public void deleteMixed()
+    public java.lang.String getPlayerid()
     {
-        this._has_mixed= false;
-        notifyPropertyChangeListeners("_mixed", new java.lang.Integer(this._mixed), null);
-    } //-- void deleteMixed() 
-
-    /**
-     * Method deleteSingle
-     * 
-     */
-    public void deleteSingle()
-    {
-        this._has_single= false;
-        notifyPropertyChangeListeners("_single", new java.lang.Integer(this._single), null);
-    } //-- void deleteSingle() 
-
-    /**
-     * Returns the value of field 'double'.
-     * 
-     * @return int
-     * @return the value of field 'double'.
-     */
-    public int getDouble()
-    {
-        return this._double;
-    } //-- int getDouble() 
-
-    /**
-     * Returns the value of field 'mixed'.
-     * 
-     * @return int
-     * @return the value of field 'mixed'.
-     */
-    public int getMixed()
-    {
-        return this._mixed;
-    } //-- int getMixed() 
-
-    /**
-     * Returns the value of field 'single'.
-     * 
-     * @return int
-     * @return the value of field 'single'.
-     */
-    public int getSingle()
-    {
-        return this._single;
-    } //-- int getSingle() 
-
-    /**
-     * Method hasDouble
-     * 
-     * 
-     * 
-     * @return boolean
-     */
-    public boolean hasDouble()
-    {
-        return this._has_double;
-    } //-- boolean hasDouble() 
-
-    /**
-     * Method hasMixed
-     * 
-     * 
-     * 
-     * @return boolean
-     */
-    public boolean hasMixed()
-    {
-        return this._has_mixed;
-    } //-- boolean hasMixed() 
-
-    /**
-     * Method hasSingle
-     * 
-     * 
-     * 
-     * @return boolean
-     */
-    public boolean hasSingle()
-    {
-        return this._has_single;
-    } //-- boolean hasSingle() 
+        return this._playerid;
+    } //-- java.lang.String getPlayerid() 
 
     /**
      * Method isValid
@@ -281,44 +184,28 @@ implements java.io.Serializable
     } //-- boolean removePropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Sets the value of field 'double'.
+     * Sets the value of field 'gameType'.
      * 
-     * @param _double
-     * @param double the value of field 'double'.
+     * @param gameType the value of field 'gameType'.
      */
-    public void setDouble(int _double)
+    public void setGameType(ch.form105.shuttle.base.generated.tournament.GameType gameType)
     {
-        java.lang.Object oldDouble = new java.lang.Integer(this._double);
-        this._double = _double;
-        this._has_double = true;
-        notifyPropertyChangeListeners("_double", oldDouble, new java.lang.Integer(this._double));
-    } //-- void setDouble(int) 
+        java.lang.Object oldGameType = this._gameType;
+        this._gameType = gameType;
+        notifyPropertyChangeListeners("_gameType", oldGameType, this._gameType);
+    } //-- void setGameType(ch.form105.shuttle.base.generated.tournament.GameType) 
 
     /**
-     * Sets the value of field 'mixed'.
+     * Sets the value of field 'playerid'.
      * 
-     * @param mixed the value of field 'mixed'.
+     * @param playerid the value of field 'playerid'.
      */
-    public void setMixed(int mixed)
+    public void setPlayerid(java.lang.String playerid)
     {
-        java.lang.Object oldMixed = new java.lang.Integer(this._mixed);
-        this._mixed = mixed;
-        this._has_mixed = true;
-        notifyPropertyChangeListeners("_mixed", oldMixed, new java.lang.Integer(this._mixed));
-    } //-- void setMixed(int) 
-
-    /**
-     * Sets the value of field 'single'.
-     * 
-     * @param single the value of field 'single'.
-     */
-    public void setSingle(int single)
-    {
-        java.lang.Object oldSingle = new java.lang.Integer(this._single);
-        this._single = single;
-        this._has_single = true;
-        notifyPropertyChangeListeners("_single", oldSingle, new java.lang.Integer(this._single));
-    } //-- void setSingle(int) 
+        java.lang.Object oldPlayerid = this._playerid;
+        this._playerid = playerid;
+        notifyPropertyChangeListeners("_playerid", oldPlayerid, this._playerid);
+    } //-- void setPlayerid(java.lang.String) 
 
     /**
      * Method unmarshal
@@ -326,13 +213,13 @@ implements java.io.Serializable
      * 
      * 
      * @param reader
-     * @return Classifier
+     * @return MasterPlayer
      */
-    public static ch.form105.shuttle.base.generated.players.Classifier unmarshal(java.io.Reader reader)
+    public static ch.form105.shuttle.base.generated.tournament.MasterPlayer unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        return (ch.form105.shuttle.base.generated.players.Classifier) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.players.Classifier.class, reader);
-    } //-- ch.form105.shuttle.base.generated.players.Classifier unmarshal(java.io.Reader) 
+        return (ch.form105.shuttle.base.generated.tournament.MasterPlayer) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.tournament.MasterPlayer.class, reader);
+    } //-- ch.form105.shuttle.base.generated.tournament.MasterPlayer unmarshal(java.io.Reader) 
 
     /**
      * Method validate

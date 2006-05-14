@@ -7,47 +7,57 @@
 
 		<xs:complexType>
 			<xs:sequence>
+
+				<xs:element ref="playerid" minOccurs="1" maxOccurs="1" />
 				<xs:element name="gameType">
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="womenSingle">
 								<xs:complexType>
 									<xs:sequence>
+										<xs:element ref="active" minOccurs="1" maxOccurs="1" />
 										<xs:element ref="results" />
 									</xs:sequence>
-									<xs:attributeGroup ref="category"/>
+									<xs:attributeGroup ref="category" />
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="menSingle">
 								<xs:complexType>
 									<xs:sequence>
+										<xs:element ref="active" minOccurs="1" maxOccurs="1" />
 										<xs:element ref="results" />
 									</xs:sequence>
-									<xs:attributeGroup ref="category"/>
+									<xs:attributeGroup ref="category" />
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="womenDouble">
 								<xs:complexType>
 									<xs:sequence>
+										<xs:element ref="active" minOccurs="1" maxOccurs="1" />
+										<xs:element name="partnerid" type="xs:string" maxOccurs="1" />
 										<xs:element ref="results" />
 									</xs:sequence>
-									<xs:attributeGroup ref="category"/>
+									<xs:attributeGroup ref="category" />
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="menDouble">
 								<xs:complexType>
 									<xs:sequence>
+										<xs:element ref="active" minOccurs="1" maxOccurs="1" />
+										<xs:element name="partnerid" type="xs:string" maxOccurs="1" />
 										<xs:element ref="results" />
 									</xs:sequence>
-									<xs:attributeGroup ref="category"/>
+									<xs:attributeGroup ref="category" />
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="mixed">
 								<xs:complexType>
 									<xs:sequence>
+										<xs:element ref="active" minOccurs="1" maxOccurs="1" />
+										<xs:element name="partnerid" type="xs:string" maxOccurs="1" />
 										<xs:element ref="results" />
 									</xs:sequence>
-									<xs:attributeGroup ref="category"/>
+									<xs:attributeGroup ref="category" />
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
@@ -56,6 +66,9 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:element name="playerid" type="xs:string"></xs:element>
+	<xs:element name="active" type="xs:boolean"></xs:element>
 
 	<xs:element name="results">
 		<xs:complexType>
@@ -77,10 +90,12 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	
+
 	<xs:attributeGroup name="category">
-    <xs:attribute name="category" type="xs:string"/>
-  </xs:attributeGroup>
+		<xs:attribute name="categorySingle" type="xs:string" />
+		<xs:attribute name="categoryDouble" type="xs:string" />
+		<xs:attribute name="categoryMixed" type="xs:string" />
+	</xs:attributeGroup>
 
 
 

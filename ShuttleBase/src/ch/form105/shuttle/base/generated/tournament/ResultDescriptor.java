@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: PlayersDescriptor.java,v 1.2 2006/05/14 10:27:47 luschtiger Exp $
+ * $Id: ResultDescriptor.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players;
+package ch.form105.shuttle.base.generated.tournament;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -17,11 +17,11 @@ import org.exolab.castor.xml.XMLFieldDescriptor;
 import org.exolab.castor.xml.validators.*;
 
 /**
- * Class PlayersDescriptor.
+ * Class ResultDescriptor.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:47 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
  */
-public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
+public class ResultDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
       //--------------------------/
@@ -58,10 +58,10 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
      //- Constructors -/
     //----------------/
 
-    public PlayersDescriptor() 
+    public ResultDescriptor() 
      {
         super();
-        xmlName = "players";
+        xmlName = "result";
         elementDefinition = true;
         
         //-- set grouping compositor
@@ -73,28 +73,68 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         
         //-- initialize element descriptors
         
-        //-- _playerList
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.players.Player.class, "_playerList", "player", org.exolab.castor.xml.NodeType.Element);
+        //-- _antagonist
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_antagonist", "antagonist", org.exolab.castor.xml.NodeType.Element);
+        desc.setImmutable(true);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                Players target = (Players) object;
-                return target.getPlayer();
+                Result target = (Result) object;
+                return target.getAntagonist();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    Players target = (Players) object;
-                    target.addPlayer( (ch.form105.shuttle.base.generated.players.Player) value);
+                    Result target = (Result) object;
+                    target.setAntagonist( (java.lang.String) value);
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
             public java.lang.Object newInstance( java.lang.Object parent ) {
-                return new ch.form105.shuttle.base.generated.players.Player();
+                return null;
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _antagonist
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+            StringValidator typeValidator = new StringValidator();
+            typeValidator.setWhiteSpace("preserve");
+            fieldValidator.setValidator(typeValidator);
+        }
+        desc.setValidator(fieldValidator);
+        //-- _amountList
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_amountList", "amount", org.exolab.castor.xml.NodeType.Element);
+        desc.setImmutable(true);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                Result target = (Result) object;
+                return target.getAmount();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    Result target = (Result) object;
+                    target.addAmount( (java.lang.String) value);
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
             }
         };
         desc.setHandler(handler);
@@ -102,13 +142,17 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         desc.setMultivalued(true);
         addFieldDescriptor(desc);
         
-        //-- validation code for: _playerList
+        //-- validation code for: _amountList
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
-        fieldValidator.setMinOccurs(1);
+        fieldValidator.setMinOccurs(2);
+        fieldValidator.setMaxOccurs(3);
         { //-- local scope
+            StringValidator typeValidator = new StringValidator();
+            typeValidator.setWhiteSpace("preserve");
+            fieldValidator.setValidator(typeValidator);
         }
         desc.setValidator(fieldValidator);
-    } //-- ch.form105.shuttle.base.generated.players.PlayersDescriptor()
+    } //-- ch.form105.shuttle.base.generated.tournament.ResultDescriptor()
 
 
       //-----------/
@@ -160,7 +204,7 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
      */
     public java.lang.Class getJavaClass()
     {
-        return ch.form105.shuttle.base.generated.players.Players.class;
+        return ch.form105.shuttle.base.generated.tournament.Result.class;
     } //-- java.lang.Class getJavaClass() 
 
     /**

@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Players.java,v 1.2 2006/05/14 10:27:47 luschtiger Exp $
+ * $Id: Result.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players;
+package ch.form105.shuttle.base.generated.tournament;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -27,11 +27,11 @@ import org.exolab.castor.xml.ValidationException;
 import org.xml.sax.ContentHandler;
 
 /**
- * Class Players.
+ * Class Result.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:47 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
  */
-public class Players extends ch.form105.shuttle.base.Element 
+public class Result extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
 {
 
@@ -41,9 +41,14 @@ implements java.io.Serializable
     //--------------------------/
 
     /**
-     * Field _playerList
+     * Field _antagonist
      */
-    private java.util.ArrayList _playerList;
+    private java.lang.String _antagonist;
+
+    /**
+     * Field _amountList
+     */
+    private java.util.ArrayList _amountList;
 
     /**
      * Field propertyChangeSupport
@@ -55,11 +60,11 @@ implements java.io.Serializable
      //- Constructors -/
     //----------------/
 
-    public Players() 
+    public Result() 
      {
         super();
-        _playerList = new ArrayList();
-    } //-- ch.form105.shuttle.base.generated.players.Players()
+        _amountList = new ArrayList();
+    } //-- ch.form105.shuttle.base.generated.tournament.Result()
 
 
       //-----------/
@@ -67,33 +72,39 @@ implements java.io.Serializable
     //-----------/
 
     /**
-     * Method addPlayer
+     * Method addAmount
      * 
      * 
      * 
-     * @param vPlayer
+     * @param vAmount
      */
-    public void addPlayer(ch.form105.shuttle.base.generated.players.Player vPlayer)
+    public void addAmount(java.lang.String vAmount)
         throws java.lang.IndexOutOfBoundsException
     {
-        _playerList.add(vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void addPlayer(ch.form105.shuttle.base.generated.players.Player) 
+        if (!(_amountList.size() < 3)) {
+            throw new IndexOutOfBoundsException();
+        }
+        _amountList.add(vAmount);
+        notifyPropertyChangeListeners("_amountList", null, _amountList);
+    } //-- void addAmount(java.lang.String) 
 
     /**
-     * Method addPlayer
+     * Method addAmount
      * 
      * 
      * 
      * @param index
-     * @param vPlayer
+     * @param vAmount
      */
-    public void addPlayer(int index, ch.form105.shuttle.base.generated.players.Player vPlayer)
+    public void addAmount(int index, java.lang.String vAmount)
         throws java.lang.IndexOutOfBoundsException
     {
-        _playerList.add(index, vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void addPlayer(int, ch.form105.shuttle.base.generated.players.Player) 
+        if (!(_amountList.size() < 3)) {
+            throw new IndexOutOfBoundsException();
+        }
+        _amountList.add(index, vAmount);
+        notifyPropertyChangeListeners("_amountList", null, _amountList);
+    } //-- void addAmount(int, java.lang.String) 
 
     /**
      * Method addPropertyChangeListener
@@ -111,74 +122,85 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method clearPlayer
+     * Method clearAmount
      * 
      */
-    public void clearPlayer()
+    public void clearAmount()
     {
-        _playerList.clear();
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void clearPlayer() 
+        _amountList.clear();
+        notifyPropertyChangeListeners("_amountList", null, _amountList);
+    } //-- void clearAmount() 
 
     /**
-     * Method enumeratePlayer
+     * Method enumerateAmount
      * 
      * 
      * 
      * @return Enumeration
      */
-    public java.util.Enumeration enumeratePlayer()
+    public java.util.Enumeration enumerateAmount()
     {
-        return new org.exolab.castor.util.IteratorEnumeration(_playerList.iterator());
-    } //-- java.util.Enumeration enumeratePlayer() 
+        return new org.exolab.castor.util.IteratorEnumeration(_amountList.iterator());
+    } //-- java.util.Enumeration enumerateAmount() 
 
     /**
-     * Method getPlayer
+     * Method getAmount
      * 
      * 
      * 
      * @param index
-     * @return Player
+     * @return String
      */
-    public ch.form105.shuttle.base.generated.players.Player getPlayer(int index)
+    public java.lang.String getAmount(int index)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
-        if ((index < 0) || (index >= _playerList.size())) {
+        if ((index < 0) || (index >= _amountList.size())) {
             throw new IndexOutOfBoundsException();
         }
         
-        return (ch.form105.shuttle.base.generated.players.Player) _playerList.get(index);
-    } //-- ch.form105.shuttle.base.generated.players.Player getPlayer(int) 
+        return (String)_amountList.get(index);
+    } //-- java.lang.String getAmount(int) 
 
     /**
-     * Method getPlayer
+     * Method getAmount
      * 
      * 
      * 
-     * @return Player
+     * @return String
      */
-    public ch.form105.shuttle.base.generated.players.Player[] getPlayer()
+    public java.lang.String[] getAmount()
     {
-        int size = _playerList.size();
-        ch.form105.shuttle.base.generated.players.Player[] mArray = new ch.form105.shuttle.base.generated.players.Player[size];
+        int size = _amountList.size();
+        java.lang.String[] mArray = new java.lang.String[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = (ch.form105.shuttle.base.generated.players.Player) _playerList.get(index);
+            mArray[index] = (String)_amountList.get(index);
         }
         return mArray;
-    } //-- ch.form105.shuttle.base.generated.players.Player[] getPlayer() 
+    } //-- java.lang.String[] getAmount() 
 
     /**
-     * Method getPlayerCount
+     * Method getAmountCount
      * 
      * 
      * 
      * @return int
      */
-    public int getPlayerCount()
+    public int getAmountCount()
     {
-        return _playerList.size();
-    } //-- int getPlayerCount() 
+        return _amountList.size();
+    } //-- int getAmountCount() 
+
+    /**
+     * Returns the value of field 'antagonist'.
+     * 
+     * @return String
+     * @return the value of field 'antagonist'.
+     */
+    public java.lang.String getAntagonist()
+    {
+        return this._antagonist;
+    } //-- java.lang.String getAntagonist() 
 
     /**
      * Method isValid
@@ -243,19 +265,19 @@ implements java.io.Serializable
     } //-- void notifyPropertyChangeListeners(java.lang.String, java.lang.Object, java.lang.Object) 
 
     /**
-     * Method removePlayer
+     * Method removeAmount
      * 
      * 
      * 
-     * @param vPlayer
+     * @param vAmount
      * @return boolean
      */
-    public boolean removePlayer(ch.form105.shuttle.base.generated.players.Player vPlayer)
+    public boolean removeAmount(java.lang.String vAmount)
     {
-        boolean removed = _playerList.remove(vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
+        boolean removed = _amountList.remove(vAmount);
+        notifyPropertyChangeListeners("_amountList", null, _amountList);
         return removed;
-    } //-- boolean removePlayer(ch.form105.shuttle.base.generated.players.Player) 
+    } //-- boolean removeAmount(java.lang.String) 
 
     /**
      * Method removePropertyChangeListener
@@ -274,40 +296,55 @@ implements java.io.Serializable
     } //-- boolean removePropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method setPlayer
+     * Method setAmount
      * 
      * 
      * 
      * @param index
-     * @param vPlayer
+     * @param vAmount
      */
-    public void setPlayer(int index, ch.form105.shuttle.base.generated.players.Player vPlayer)
+    public void setAmount(int index, java.lang.String vAmount)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
-        if ((index < 0) || (index >= _playerList.size())) {
+        if ((index < 0) || (index >= _amountList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        _playerList.set(index, vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void setPlayer(int, ch.form105.shuttle.base.generated.players.Player) 
+        if (!(index < 3)) {
+            throw new IndexOutOfBoundsException();
+        }
+        _amountList.set(index, vAmount);
+        notifyPropertyChangeListeners("_amountList", null, _amountList);
+    } //-- void setAmount(int, java.lang.String) 
 
     /**
-     * Method setPlayer
+     * Method setAmount
      * 
      * 
      * 
-     * @param playerArray
+     * @param amountArray
      */
-    public void setPlayer(ch.form105.shuttle.base.generated.players.Player[] playerArray)
+    public void setAmount(java.lang.String[] amountArray)
     {
         //-- copy array
-        _playerList.clear();
-        for (int i = 0; i < playerArray.length; i++) {
-            _playerList.add(playerArray[i]);
+        _amountList.clear();
+        for (int i = 0; i < amountArray.length; i++) {
+            _amountList.add(amountArray[i]);
         }
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void setPlayer(ch.form105.shuttle.base.generated.players.Player) 
+        notifyPropertyChangeListeners("_amountList", null, _amountList);
+    } //-- void setAmount(java.lang.String) 
+
+    /**
+     * Sets the value of field 'antagonist'.
+     * 
+     * @param antagonist the value of field 'antagonist'.
+     */
+    public void setAntagonist(java.lang.String antagonist)
+    {
+        java.lang.Object oldAntagonist = this._antagonist;
+        this._antagonist = antagonist;
+        notifyPropertyChangeListeners("_antagonist", oldAntagonist, this._antagonist);
+    } //-- void setAntagonist(java.lang.String) 
 
     /**
      * Method unmarshal
@@ -315,13 +352,13 @@ implements java.io.Serializable
      * 
      * 
      * @param reader
-     * @return Players
+     * @return Result
      */
-    public static ch.form105.shuttle.base.generated.players.Players unmarshal(java.io.Reader reader)
+    public static ch.form105.shuttle.base.generated.tournament.Result unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        return (ch.form105.shuttle.base.generated.players.Players) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.players.Players.class, reader);
-    } //-- ch.form105.shuttle.base.generated.players.Players unmarshal(java.io.Reader) 
+        return (ch.form105.shuttle.base.generated.tournament.Result) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.tournament.Result.class, reader);
+    } //-- ch.form105.shuttle.base.generated.tournament.Result unmarshal(java.io.Reader) 
 
     /**
      * Method validate

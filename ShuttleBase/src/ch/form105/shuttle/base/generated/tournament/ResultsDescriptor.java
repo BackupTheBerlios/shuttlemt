@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: PlayersDescriptor.java,v 1.2 2006/05/14 10:27:47 luschtiger Exp $
+ * $Id: ResultsDescriptor.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players;
+package ch.form105.shuttle.base.generated.tournament;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -17,11 +17,11 @@ import org.exolab.castor.xml.XMLFieldDescriptor;
 import org.exolab.castor.xml.validators.*;
 
 /**
- * Class PlayersDescriptor.
+ * Class ResultsDescriptor.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:47 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
  */
-public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
+public class ResultsDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
       //--------------------------/
@@ -58,10 +58,10 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
      //- Constructors -/
     //----------------/
 
-    public PlayersDescriptor() 
+    public ResultsDescriptor() 
      {
         super();
-        xmlName = "players";
+        xmlName = "results";
         elementDefinition = true;
         
         //-- set grouping compositor
@@ -73,28 +73,28 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         
         //-- initialize element descriptors
         
-        //-- _playerList
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.players.Player.class, "_playerList", "player", org.exolab.castor.xml.NodeType.Element);
+        //-- _resultList
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.tournament.Result.class, "_resultList", "result", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                Players target = (Players) object;
-                return target.getPlayer();
+                Results target = (Results) object;
+                return target.getResult();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    Players target = (Players) object;
-                    target.addPlayer( (ch.form105.shuttle.base.generated.players.Player) value);
+                    Results target = (Results) object;
+                    target.addResult( (ch.form105.shuttle.base.generated.tournament.Result) value);
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
             public java.lang.Object newInstance( java.lang.Object parent ) {
-                return new ch.form105.shuttle.base.generated.players.Player();
+                return new ch.form105.shuttle.base.generated.tournament.Result();
             }
         };
         desc.setHandler(handler);
@@ -102,13 +102,13 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
         desc.setMultivalued(true);
         addFieldDescriptor(desc);
         
-        //-- validation code for: _playerList
+        //-- validation code for: _resultList
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
         { //-- local scope
         }
         desc.setValidator(fieldValidator);
-    } //-- ch.form105.shuttle.base.generated.players.PlayersDescriptor()
+    } //-- ch.form105.shuttle.base.generated.tournament.ResultsDescriptor()
 
 
       //-----------/
@@ -160,7 +160,7 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
      */
     public java.lang.Class getJavaClass()
     {
-        return ch.form105.shuttle.base.generated.players.Players.class;
+        return ch.form105.shuttle.base.generated.tournament.Results.class;
     } //-- java.lang.Class getJavaClass() 
 
     /**

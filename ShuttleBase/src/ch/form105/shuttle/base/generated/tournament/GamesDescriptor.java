@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: PlayerDescriptor.java,v 1.2 2006/05/14 10:27:47 luschtiger Exp $
+ * $Id: GamesDescriptor.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players;
+package ch.form105.shuttle.base.generated.tournament;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -17,11 +17,11 @@ import org.exolab.castor.xml.XMLFieldDescriptor;
 import org.exolab.castor.xml.validators.*;
 
 /**
- * Class PlayerDescriptor.
+ * Class GamesDescriptor.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:47 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
  */
-public class PlayerDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
+public class GamesDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
       //--------------------------/
@@ -58,10 +58,10 @@ public class PlayerDescriptor extends org.exolab.castor.xml.util.XMLClassDescrip
      //- Constructors -/
     //----------------/
 
-    public PlayerDescriptor() 
+    public GamesDescriptor() 
      {
         super();
-        xmlName = "player";
+        xmlName = "games";
         elementDefinition = true;
         
         //-- set grouping compositor
@@ -73,29 +73,28 @@ public class PlayerDescriptor extends org.exolab.castor.xml.util.XMLClassDescrip
         
         //-- initialize element descriptors
         
-        //-- _id
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_id", "id", org.exolab.castor.xml.NodeType.Element);
-        desc.setImmutable(true);
+        //-- _gameMenSingle
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.tournament.GameMenSingle.class, "_gameMenSingle", "gameMenSingle", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                Player target = (Player) object;
-                return target.getId();
+                Games target = (Games) object;
+                return target.getGameMenSingle();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    Player target = (Player) object;
-                    target.setId( (java.lang.String) value);
+                    Games target = (Games) object;
+                    target.setGameMenSingle( (ch.form105.shuttle.base.generated.tournament.GameMenSingle) value);
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
             public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
+                return new ch.form105.shuttle.base.generated.tournament.GameMenSingle();
             }
         };
         desc.setHandler(handler);
@@ -103,38 +102,34 @@ public class PlayerDescriptor extends org.exolab.castor.xml.util.XMLClassDescrip
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         
-        //-- validation code for: _id
+        //-- validation code for: _gameMenSingle
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
         { //-- local scope
-            StringValidator typeValidator = new StringValidator();
-            typeValidator.setWhiteSpace("preserve");
-            fieldValidator.setValidator(typeValidator);
         }
         desc.setValidator(fieldValidator);
-        //-- _sirname
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_sirname", "sirname", org.exolab.castor.xml.NodeType.Element);
-        desc.setImmutable(true);
+        //-- _gameWomenSingle
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.tournament.GameWomenSingle.class, "_gameWomenSingle", "gameWomenSingle", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                Player target = (Player) object;
-                return target.getSirname();
+                Games target = (Games) object;
+                return target.getGameWomenSingle();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    Player target = (Player) object;
-                    target.setSirname( (java.lang.String) value);
+                    Games target = (Games) object;
+                    target.setGameWomenSingle( (ch.form105.shuttle.base.generated.tournament.GameWomenSingle) value);
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
             public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
+                return new ch.form105.shuttle.base.generated.tournament.GameWomenSingle();
             }
         };
         desc.setHandler(handler);
@@ -142,38 +137,34 @@ public class PlayerDescriptor extends org.exolab.castor.xml.util.XMLClassDescrip
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         
-        //-- validation code for: _sirname
+        //-- validation code for: _gameWomenSingle
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
         { //-- local scope
-            StringValidator typeValidator = new StringValidator();
-            typeValidator.setWhiteSpace("preserve");
-            fieldValidator.setValidator(typeValidator);
         }
         desc.setValidator(fieldValidator);
-        //-- _name
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_name", "name", org.exolab.castor.xml.NodeType.Element);
-        desc.setImmutable(true);
+        //-- _gameMenDouble
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.tournament.GameMenDouble.class, "_gameMenDouble", "gameMenDouble", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                Player target = (Player) object;
-                return target.getName();
+                Games target = (Games) object;
+                return target.getGameMenDouble();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    Player target = (Player) object;
-                    target.setName( (java.lang.String) value);
+                    Games target = (Games) object;
+                    target.setGameMenDouble( (ch.form105.shuttle.base.generated.tournament.GameMenDouble) value);
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
             public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
+                return new ch.form105.shuttle.base.generated.tournament.GameMenDouble();
             }
         };
         desc.setHandler(handler);
@@ -181,79 +172,34 @@ public class PlayerDescriptor extends org.exolab.castor.xml.util.XMLClassDescrip
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         
-        //-- validation code for: _name
+        //-- validation code for: _gameMenDouble
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
         { //-- local scope
-            StringValidator typeValidator = new StringValidator();
-            typeValidator.setWhiteSpace("preserve");
-            fieldValidator.setValidator(typeValidator);
         }
         desc.setValidator(fieldValidator);
-        //-- _sex
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.players.types.SexType.class, "_sex", "sex", org.exolab.castor.xml.NodeType.Element);
+        //-- _gameWomenDouble
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.tournament.GameWomenDouble.class, "_gameWomenDouble", "gameWomenDouble", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                Player target = (Player) object;
-                return target.getSex();
+                Games target = (Games) object;
+                return target.getGameWomenDouble();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    Player target = (Player) object;
-                    target.setSex( (ch.form105.shuttle.base.generated.players.types.SexType) value);
+                    Games target = (Games) object;
+                    target.setGameWomenDouble( (ch.form105.shuttle.base.generated.tournament.GameWomenDouble) value);
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
             public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
-            }
-        };
-        handler = new org.exolab.castor.xml.handlers.EnumFieldHandler(ch.form105.shuttle.base.generated.players.types.SexType.class, handler);
-        desc.setImmutable(true);
-        desc.setHandler(handler);
-        desc.setRequired(true);
-        desc.setMultivalued(false);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _sex
-        fieldValidator = new org.exolab.castor.xml.FieldValidator();
-        fieldValidator.setMinOccurs(1);
-        { //-- local scope
-        }
-        desc.setValidator(fieldValidator);
-        //-- _clubnr
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.Integer.TYPE, "_clubnr", "clubnr", org.exolab.castor.xml.NodeType.Element);
-        handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                Player target = (Player) object;
-                if(!target.hasClubnr())
-                    return null;
-                return new java.lang.Integer(target.getClubnr());
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    Player target = (Player) object;
-                    // ignore null values for non optional primitives
-                    if (value == null) return;
-                    
-                    target.setClubnr( ((java.lang.Integer)value).intValue());
-                }
-                catch (java.lang.Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
+                return new ch.form105.shuttle.base.generated.tournament.GameWomenDouble();
             }
         };
         desc.setHandler(handler);
@@ -261,37 +207,34 @@ public class PlayerDescriptor extends org.exolab.castor.xml.util.XMLClassDescrip
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         
-        //-- validation code for: _clubnr
+        //-- validation code for: _gameWomenDouble
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
         { //-- local scope
-            IntegerValidator typeValidator = new IntegerValidator();
-            fieldValidator.setValidator(typeValidator);
         }
         desc.setValidator(fieldValidator);
-        //-- _birthday
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_birthday", "birthday", org.exolab.castor.xml.NodeType.Element);
-        desc.setImmutable(true);
+        //-- _gameMixed
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.tournament.GameMixed.class, "_gameMixed", "gameMixed", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
             {
-                Player target = (Player) object;
-                return target.getBirthday();
+                Games target = (Games) object;
+                return target.getGameMixed();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
             {
                 try {
-                    Player target = (Player) object;
-                    target.setBirthday( (java.lang.String) value);
+                    Games target = (Games) object;
+                    target.setGameMixed( (ch.form105.shuttle.base.generated.tournament.GameMixed) value);
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
             public java.lang.Object newInstance( java.lang.Object parent ) {
-                return null;
+                return new ch.form105.shuttle.base.generated.tournament.GameMixed();
             }
         };
         desc.setHandler(handler);
@@ -299,51 +242,13 @@ public class PlayerDescriptor extends org.exolab.castor.xml.util.XMLClassDescrip
         desc.setMultivalued(false);
         addFieldDescriptor(desc);
         
-        //-- validation code for: _birthday
-        fieldValidator = new org.exolab.castor.xml.FieldValidator();
-        fieldValidator.setMinOccurs(1);
-        { //-- local scope
-            StringValidator typeValidator = new StringValidator();
-            typeValidator.setWhiteSpace("preserve");
-            fieldValidator.setValidator(typeValidator);
-        }
-        desc.setValidator(fieldValidator);
-        //-- _classifier
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.players.Classifier.class, "_classifier", "classifier", org.exolab.castor.xml.NodeType.Element);
-        handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                Player target = (Player) object;
-                return target.getClassifier();
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    Player target = (Player) object;
-                    target.setClassifier( (ch.form105.shuttle.base.generated.players.Classifier) value);
-                }
-                catch (java.lang.Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return new ch.form105.shuttle.base.generated.players.Classifier();
-            }
-        };
-        desc.setHandler(handler);
-        desc.setRequired(true);
-        desc.setMultivalued(false);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _classifier
+        //-- validation code for: _gameMixed
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(1);
         { //-- local scope
         }
         desc.setValidator(fieldValidator);
-    } //-- ch.form105.shuttle.base.generated.players.PlayerDescriptor()
+    } //-- ch.form105.shuttle.base.generated.tournament.GamesDescriptor()
 
 
       //-----------/
@@ -395,7 +300,7 @@ public class PlayerDescriptor extends org.exolab.castor.xml.util.XMLClassDescrip
      */
     public java.lang.Class getJavaClass()
     {
-        return ch.form105.shuttle.base.generated.players.Player.class;
+        return ch.form105.shuttle.base.generated.tournament.Games.class;
     } //-- java.lang.Class getJavaClass() 
 
     /**

@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Classifier.java,v 1.2 2006/05/14 10:27:47 luschtiger Exp $
+ * $Id: GameWomenSingle.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players;
+package ch.form105.shuttle.base.generated.tournament;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -25,11 +25,11 @@ import org.exolab.castor.xml.ValidationException;
 import org.xml.sax.ContentHandler;
 
 /**
- * Class Classifier.
+ * Class GameWomenSingle.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:47 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
  */
-public class Classifier extends ch.form105.shuttle.base.Element 
+public class GameWomenSingle extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
 {
 
@@ -39,34 +39,24 @@ implements java.io.Serializable
     //--------------------------/
 
     /**
-     * Field _single
+     * Field _maxPoints
      */
-    private int _single;
+    private int _maxPoints = 21;
 
     /**
-     * keeps track of state for field: _single
+     * keeps track of state for field: _maxPoints
      */
-    private boolean _has_single;
+    private boolean _has_maxPoints;
 
     /**
-     * Field _double
+     * Field _isActive
      */
-    private int _double;
+    private boolean _isActive;
 
     /**
-     * keeps track of state for field: _double
+     * keeps track of state for field: _isActive
      */
-    private boolean _has_double;
-
-    /**
-     * Field _mixed
-     */
-    private int _mixed;
-
-    /**
-     * keeps track of state for field: _mixed
-     */
-    private boolean _has_mixed;
+    private boolean _has_isActive;
 
     /**
      * Field propertyChangeSupport
@@ -78,10 +68,10 @@ implements java.io.Serializable
      //- Constructors -/
     //----------------/
 
-    public Classifier() 
+    public GameWomenSingle() 
      {
         super();
-    } //-- ch.form105.shuttle.base.generated.players.Classifier()
+    } //-- ch.form105.shuttle.base.generated.tournament.GameWomenSingle()
 
 
       //-----------/
@@ -104,103 +94,70 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method deleteDouble
+     * Method deleteIsActive
      * 
      */
-    public void deleteDouble()
+    public void deleteIsActive()
     {
-        this._has_double= false;
-        notifyPropertyChangeListeners("_double", new java.lang.Integer(this._double), null);
-    } //-- void deleteDouble() 
+        this._has_isActive= false;
+        notifyPropertyChangeListeners("_isActive", (this._isActive ? java.lang.Boolean.TRUE : java.lang.Boolean.FALSE), null);
+    } //-- void deleteIsActive() 
 
     /**
-     * Method deleteMixed
+     * Method deleteMaxPoints
      * 
      */
-    public void deleteMixed()
+    public void deleteMaxPoints()
     {
-        this._has_mixed= false;
-        notifyPropertyChangeListeners("_mixed", new java.lang.Integer(this._mixed), null);
-    } //-- void deleteMixed() 
+        this._has_maxPoints= false;
+        notifyPropertyChangeListeners("_maxPoints", new java.lang.Integer(this._maxPoints), null);
+    } //-- void deleteMaxPoints() 
 
     /**
-     * Method deleteSingle
+     * Returns the value of field 'isActive'.
      * 
+     * @return boolean
+     * @return the value of field 'isActive'.
      */
-    public void deleteSingle()
+    public boolean getIsActive()
     {
-        this._has_single= false;
-        notifyPropertyChangeListeners("_single", new java.lang.Integer(this._single), null);
-    } //-- void deleteSingle() 
+        return this._isActive;
+    } //-- boolean getIsActive() 
 
     /**
-     * Returns the value of field 'double'.
-     * 
-     * @return int
-     * @return the value of field 'double'.
-     */
-    public int getDouble()
-    {
-        return this._double;
-    } //-- int getDouble() 
-
-    /**
-     * Returns the value of field 'mixed'.
+     * Returns the value of field 'maxPoints'.
      * 
      * @return int
-     * @return the value of field 'mixed'.
+     * @return the value of field 'maxPoints'.
      */
-    public int getMixed()
+    public int getMaxPoints()
     {
-        return this._mixed;
-    } //-- int getMixed() 
+        return this._maxPoints;
+    } //-- int getMaxPoints() 
 
     /**
-     * Returns the value of field 'single'.
-     * 
-     * @return int
-     * @return the value of field 'single'.
-     */
-    public int getSingle()
-    {
-        return this._single;
-    } //-- int getSingle() 
-
-    /**
-     * Method hasDouble
+     * Method hasIsActive
      * 
      * 
      * 
      * @return boolean
      */
-    public boolean hasDouble()
+    public boolean hasIsActive()
     {
-        return this._has_double;
-    } //-- boolean hasDouble() 
+        return this._has_isActive;
+    } //-- boolean hasIsActive() 
 
     /**
-     * Method hasMixed
+     * Method hasMaxPoints
      * 
      * 
      * 
      * @return boolean
      */
-    public boolean hasMixed()
+    public boolean hasMaxPoints()
     {
-        return this._has_mixed;
-    } //-- boolean hasMixed() 
-
-    /**
-     * Method hasSingle
-     * 
-     * 
-     * 
-     * @return boolean
-     */
-    public boolean hasSingle()
-    {
-        return this._has_single;
-    } //-- boolean hasSingle() 
+        return this._has_maxPoints;
+    } //-- boolean hasMaxPoints() 
 
     /**
      * Method isValid
@@ -281,44 +238,30 @@ implements java.io.Serializable
     } //-- boolean removePropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Sets the value of field 'double'.
+     * Sets the value of field 'isActive'.
      * 
-     * @param _double
-     * @param double the value of field 'double'.
+     * @param isActive the value of field 'isActive'.
      */
-    public void setDouble(int _double)
+    public void setIsActive(boolean isActive)
     {
-        java.lang.Object oldDouble = new java.lang.Integer(this._double);
-        this._double = _double;
-        this._has_double = true;
-        notifyPropertyChangeListeners("_double", oldDouble, new java.lang.Integer(this._double));
-    } //-- void setDouble(int) 
+        java.lang.Object oldIsActive = (this._isActive ? java.lang.Boolean.TRUE : java.lang.Boolean.FALSE);
+        this._isActive = isActive;
+        this._has_isActive = true;
+        notifyPropertyChangeListeners("_isActive", oldIsActive, (this._isActive ? java.lang.Boolean.TRUE : java.lang.Boolean.FALSE));
+    } //-- void setIsActive(boolean) 
 
     /**
-     * Sets the value of field 'mixed'.
+     * Sets the value of field 'maxPoints'.
      * 
-     * @param mixed the value of field 'mixed'.
+     * @param maxPoints the value of field 'maxPoints'.
      */
-    public void setMixed(int mixed)
+    public void setMaxPoints(int maxPoints)
     {
-        java.lang.Object oldMixed = new java.lang.Integer(this._mixed);
-        this._mixed = mixed;
-        this._has_mixed = true;
-        notifyPropertyChangeListeners("_mixed", oldMixed, new java.lang.Integer(this._mixed));
-    } //-- void setMixed(int) 
-
-    /**
-     * Sets the value of field 'single'.
-     * 
-     * @param single the value of field 'single'.
-     */
-    public void setSingle(int single)
-    {
-        java.lang.Object oldSingle = new java.lang.Integer(this._single);
-        this._single = single;
-        this._has_single = true;
-        notifyPropertyChangeListeners("_single", oldSingle, new java.lang.Integer(this._single));
-    } //-- void setSingle(int) 
+        java.lang.Object oldMaxPoints = new java.lang.Integer(this._maxPoints);
+        this._maxPoints = maxPoints;
+        this._has_maxPoints = true;
+        notifyPropertyChangeListeners("_maxPoints", oldMaxPoints, new java.lang.Integer(this._maxPoints));
+    } //-- void setMaxPoints(int) 
 
     /**
      * Method unmarshal
@@ -326,13 +269,13 @@ implements java.io.Serializable
      * 
      * 
      * @param reader
-     * @return Classifier
+     * @return GameWomenSingle
      */
-    public static ch.form105.shuttle.base.generated.players.Classifier unmarshal(java.io.Reader reader)
+    public static ch.form105.shuttle.base.generated.tournament.GameWomenSingle unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        return (ch.form105.shuttle.base.generated.players.Classifier) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.players.Classifier.class, reader);
-    } //-- ch.form105.shuttle.base.generated.players.Classifier unmarshal(java.io.Reader) 
+        return (ch.form105.shuttle.base.generated.tournament.GameWomenSingle) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.tournament.GameWomenSingle.class, reader);
+    } //-- ch.form105.shuttle.base.generated.tournament.GameWomenSingle unmarshal(java.io.Reader) 
 
     /**
      * Method validate

@@ -102,14 +102,5 @@
                    bindingfile="${basedir}/conf/xml/binding_tournament.xml"
                    warnings="true" />
 
-    <castor-srcgen file="${basedir}/conf/xml/MasterPlayer.xsd"
-                   todir="${basedir}/src"
-                   package="ch.form105.shuttle.base.generated.masterPlayer"
-                   types="j2"
-                   verbose="true"
-                   properties="${basedir}/conf/xml/castor.properties"
-                   warnings="true" />
-
-
   </target>
 </project>

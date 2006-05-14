@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Classifier.java,v 1.2 2006/05/14 10:27:47 luschtiger Exp $
+ * $Id: GameType.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players;
+package ch.form105.shuttle.base.generated.tournament;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -25,11 +25,11 @@ import org.exolab.castor.xml.ValidationException;
 import org.xml.sax.ContentHandler;
 
 /**
- * Class Classifier.
+ * Class GameType.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:47 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
  */
-public class Classifier extends ch.form105.shuttle.base.Element 
+public class GameType extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
 {
 
@@ -39,34 +39,29 @@ implements java.io.Serializable
     //--------------------------/
 
     /**
-     * Field _single
+     * Field _womenSingle
      */
-    private int _single;
+    private ch.form105.shuttle.base.generated.tournament.WomenSingle _womenSingle;
 
     /**
-     * keeps track of state for field: _single
+     * Field _menSingle
      */
-    private boolean _has_single;
+    private ch.form105.shuttle.base.generated.tournament.MenSingle _menSingle;
 
     /**
-     * Field _double
+     * Field _womenDouble
      */
-    private int _double;
+    private ch.form105.shuttle.base.generated.tournament.WomenDouble _womenDouble;
 
     /**
-     * keeps track of state for field: _double
+     * Field _menDouble
      */
-    private boolean _has_double;
+    private ch.form105.shuttle.base.generated.tournament.MenDouble _menDouble;
 
     /**
      * Field _mixed
      */
-    private int _mixed;
-
-    /**
-     * keeps track of state for field: _mixed
-     */
-    private boolean _has_mixed;
+    private ch.form105.shuttle.base.generated.tournament.Mixed _mixed;
 
     /**
      * Field propertyChangeSupport
@@ -78,10 +73,10 @@ implements java.io.Serializable
      //- Constructors -/
     //----------------/
 
-    public Classifier() 
+    public GameType() 
      {
         super();
-    } //-- ch.form105.shuttle.base.generated.players.Classifier()
+    } //-- ch.form105.shuttle.base.generated.tournament.GameType()
 
 
       //-----------/
@@ -104,103 +99,59 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method deleteDouble
+     * Returns the value of field 'menDouble'.
      * 
+     * @return MenDouble
+     * @return the value of field 'menDouble'.
      */
-    public void deleteDouble()
+    public ch.form105.shuttle.base.generated.tournament.MenDouble getMenDouble()
     {
-        this._has_double= false;
-        notifyPropertyChangeListeners("_double", new java.lang.Integer(this._double), null);
-    } //-- void deleteDouble() 
+        return this._menDouble;
+    } //-- ch.form105.shuttle.base.generated.tournament.MenDouble getMenDouble() 
 
     /**
-     * Method deleteMixed
+     * Returns the value of field 'menSingle'.
      * 
+     * @return MenSingle
+     * @return the value of field 'menSingle'.
      */
-    public void deleteMixed()
+    public ch.form105.shuttle.base.generated.tournament.MenSingle getMenSingle()
     {
-        this._has_mixed= false;
-        notifyPropertyChangeListeners("_mixed", new java.lang.Integer(this._mixed), null);
-    } //-- void deleteMixed() 
-
-    /**
-     * Method deleteSingle
-     * 
-     */
-    public void deleteSingle()
-    {
-        this._has_single= false;
-        notifyPropertyChangeListeners("_single", new java.lang.Integer(this._single), null);
-    } //-- void deleteSingle() 
-
-    /**
-     * Returns the value of field 'double'.
-     * 
-     * @return int
-     * @return the value of field 'double'.
-     */
-    public int getDouble()
-    {
-        return this._double;
-    } //-- int getDouble() 
+        return this._menSingle;
+    } //-- ch.form105.shuttle.base.generated.tournament.MenSingle getMenSingle() 
 
     /**
      * Returns the value of field 'mixed'.
      * 
-     * @return int
+     * @return Mixed
      * @return the value of field 'mixed'.
      */
-    public int getMixed()
+    public ch.form105.shuttle.base.generated.tournament.Mixed getMixed()
     {
         return this._mixed;
-    } //-- int getMixed() 
+    } //-- ch.form105.shuttle.base.generated.tournament.Mixed getMixed() 
 
     /**
-     * Returns the value of field 'single'.
+     * Returns the value of field 'womenDouble'.
      * 
-     * @return int
-     * @return the value of field 'single'.
+     * @return WomenDouble
+     * @return the value of field 'womenDouble'.
      */
-    public int getSingle()
+    public ch.form105.shuttle.base.generated.tournament.WomenDouble getWomenDouble()
     {
-        return this._single;
-    } //-- int getSingle() 
+        return this._womenDouble;
+    } //-- ch.form105.shuttle.base.generated.tournament.WomenDouble getWomenDouble() 
 
     /**
-     * Method hasDouble
+     * Returns the value of field 'womenSingle'.
      * 
-     * 
-     * 
-     * @return boolean
+     * @return WomenSingle
+     * @return the value of field 'womenSingle'.
      */
-    public boolean hasDouble()
+    public ch.form105.shuttle.base.generated.tournament.WomenSingle getWomenSingle()
     {
-        return this._has_double;
-    } //-- boolean hasDouble() 
-
-    /**
-     * Method hasMixed
-     * 
-     * 
-     * 
-     * @return boolean
-     */
-    public boolean hasMixed()
-    {
-        return this._has_mixed;
-    } //-- boolean hasMixed() 
-
-    /**
-     * Method hasSingle
-     * 
-     * 
-     * 
-     * @return boolean
-     */
-    public boolean hasSingle()
-    {
-        return this._has_single;
-    } //-- boolean hasSingle() 
+        return this._womenSingle;
+    } //-- ch.form105.shuttle.base.generated.tournament.WomenSingle getWomenSingle() 
 
     /**
      * Method isValid
@@ -281,44 +232,64 @@ implements java.io.Serializable
     } //-- boolean removePropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Sets the value of field 'double'.
+     * Sets the value of field 'menDouble'.
      * 
-     * @param _double
-     * @param double the value of field 'double'.
+     * @param menDouble the value of field 'menDouble'.
      */
-    public void setDouble(int _double)
+    public void setMenDouble(ch.form105.shuttle.base.generated.tournament.MenDouble menDouble)
     {
-        java.lang.Object oldDouble = new java.lang.Integer(this._double);
-        this._double = _double;
-        this._has_double = true;
-        notifyPropertyChangeListeners("_double", oldDouble, new java.lang.Integer(this._double));
-    } //-- void setDouble(int) 
+        java.lang.Object oldMenDouble = this._menDouble;
+        this._menDouble = menDouble;
+        notifyPropertyChangeListeners("_menDouble", oldMenDouble, this._menDouble);
+    } //-- void setMenDouble(ch.form105.shuttle.base.generated.tournament.MenDouble) 
+
+    /**
+     * Sets the value of field 'menSingle'.
+     * 
+     * @param menSingle the value of field 'menSingle'.
+     */
+    public void setMenSingle(ch.form105.shuttle.base.generated.tournament.MenSingle menSingle)
+    {
+        java.lang.Object oldMenSingle = this._menSingle;
+        this._menSingle = menSingle;
+        notifyPropertyChangeListeners("_menSingle", oldMenSingle, this._menSingle);
+    } //-- void setMenSingle(ch.form105.shuttle.base.generated.tournament.MenSingle) 
 
     /**
      * Sets the value of field 'mixed'.
      * 
      * @param mixed the value of field 'mixed'.
      */
-    public void setMixed(int mixed)
+    public void setMixed(ch.form105.shuttle.base.generated.tournament.Mixed mixed)
     {
-        java.lang.Object oldMixed = new java.lang.Integer(this._mixed);
+        java.lang.Object oldMixed = this._mixed;
         this._mixed = mixed;
-        this._has_mixed = true;
-        notifyPropertyChangeListeners("_mixed", oldMixed, new java.lang.Integer(this._mixed));
-    } //-- void setMixed(int) 
+        notifyPropertyChangeListeners("_mixed", oldMixed, this._mixed);
+    } //-- void setMixed(ch.form105.shuttle.base.generated.tournament.Mixed) 
 
     /**
-     * Sets the value of field 'single'.
+     * Sets the value of field 'womenDouble'.
      * 
-     * @param single the value of field 'single'.
+     * @param womenDouble the value of field 'womenDouble'.
      */
-    public void setSingle(int single)
+    public void setWomenDouble(ch.form105.shuttle.base.generated.tournament.WomenDouble womenDouble)
     {
-        java.lang.Object oldSingle = new java.lang.Integer(this._single);
-        this._single = single;
-        this._has_single = true;
-        notifyPropertyChangeListeners("_single", oldSingle, new java.lang.Integer(this._single));
-    } //-- void setSingle(int) 
+        java.lang.Object oldWomenDouble = this._womenDouble;
+        this._womenDouble = womenDouble;
+        notifyPropertyChangeListeners("_womenDouble", oldWomenDouble, this._womenDouble);
+    } //-- void setWomenDouble(ch.form105.shuttle.base.generated.tournament.WomenDouble) 
+
+    /**
+     * Sets the value of field 'womenSingle'.
+     * 
+     * @param womenSingle the value of field 'womenSingle'.
+     */
+    public void setWomenSingle(ch.form105.shuttle.base.generated.tournament.WomenSingle womenSingle)
+    {
+        java.lang.Object oldWomenSingle = this._womenSingle;
+        this._womenSingle = womenSingle;
+        notifyPropertyChangeListeners("_womenSingle", oldWomenSingle, this._womenSingle);
+    } //-- void setWomenSingle(ch.form105.shuttle.base.generated.tournament.WomenSingle) 
 
     /**
      * Method unmarshal
@@ -326,13 +297,13 @@ implements java.io.Serializable
      * 
      * 
      * @param reader
-     * @return Classifier
+     * @return GameType
      */
-    public static ch.form105.shuttle.base.generated.players.Classifier unmarshal(java.io.Reader reader)
+    public static ch.form105.shuttle.base.generated.tournament.GameType unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        return (ch.form105.shuttle.base.generated.players.Classifier) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.players.Classifier.class, reader);
-    } //-- ch.form105.shuttle.base.generated.players.Classifier unmarshal(java.io.Reader) 
+        return (ch.form105.shuttle.base.generated.tournament.GameType) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.tournament.GameType.class, reader);
+    } //-- ch.form105.shuttle.base.generated.tournament.GameType unmarshal(java.io.Reader) 
 
     /**
      * Method validate
