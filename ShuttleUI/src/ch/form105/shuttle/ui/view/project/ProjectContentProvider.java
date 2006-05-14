@@ -1,11 +1,8 @@
 package ch.form105.shuttle.ui.view.project;
 
-import java.util.ArrayList;
-
+import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.viewers.ITreeContentProvider;
 import org.eclipse.jface.viewers.Viewer;
-
-import ch.form105.shuttle.base.model.Projects;
 
 public class ProjectContentProvider implements ITreeContentProvider {
 
@@ -35,14 +32,11 @@ public class ProjectContentProvider implements ITreeContentProvider {
 	}
 
 	public Object[] getElements(Object inputElement) {
-		
-		if (inputElement instanceof Projects) {
-			ArrayList projectNodes = ((ArrayList) ((Projects)inputElement).getProjects().clone());
-			projectNodes.add("Player Import");
-			return projectNodes.toArray();
+		if (inputElement instanceof IProject[]) {
+			return (Object[])inputElement;
 		}
-		Object[] object = new Object[0];
-		return object;
+		
+		return null;
 	}
 
 }

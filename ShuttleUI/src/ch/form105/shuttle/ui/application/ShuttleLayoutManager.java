@@ -41,7 +41,7 @@ public class ShuttleLayoutManager  {
         layout.setEditorAreaVisible(false);
         IFolderLayout right = layout.createFolder("bottomRight", IPageLayout.RIGHT,
                 0.3f, IPageLayout.ID_EDITOR_AREA);
-        right.addPlaceholder(ImportPlayerView.ID);
+        right.addView("ShuttleUI.PlayerView");
         
         IFolderLayout left = layout.createFolder("bottomLeft", IPageLayout.LEFT,
                 0.7f, IPageLayout.ID_EDITOR_AREA);

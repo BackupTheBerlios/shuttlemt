@@ -2,11 +2,11 @@ package ch.form105.shuttle.ui.view.project;
 
 import java.io.File;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
 
-import ch.form105.shuttle.base.model.Projects;
 import ch.form105.shuttle.ui.ImageFactory;
 
 public class ProjectLabelProvider implements ILabelProvider {
@@ -32,7 +32,7 @@ public class ProjectLabelProvider implements ILabelProvider {
 	}
 
 	public Image getImage(Object element) {
-		if (element instanceof File) {
+		if (element instanceof IProject) {
 			return ImageFactory.getImage("IMG_TOURNAMENT_PROJECT_SMALL");
 		};
 		if (element.equals("Player Import")) {
@@ -45,8 +45,8 @@ public class ProjectLabelProvider implements ILabelProvider {
 
 	public String getText(Object element) {
 		
-		if (element instanceof Projects) {
-			return ((Projects) element).getName();
+		if (element instanceof IProject) {
+			return ((IProject)element).getName();
 		};
 		
 		if (element instanceof File) {

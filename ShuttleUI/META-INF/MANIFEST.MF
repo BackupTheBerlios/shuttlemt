@@ -3,7 +3,8 @@ Bundle-ManifestVersion: 2
 Bundle-Name: ShuttleUI Plug-in
 Bundle-SymbolicName: ShuttleUI; singleton:=true
 Bundle-Version: 1.0.0
-Bundle-ClassPath: shuttle-ui.jar
+Bundle-ClassPath: shuttle-ui.jar,
+ lib/log4j-1.2.13.jar
 Bundle-Activator: ch.form105.shuttle.ui.ShuttleUIPlugin
 Bundle-Vendor: form105
 Bundle-Localization: plugin
