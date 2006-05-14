@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Tournament.java,v 1.1 2006/05/12 17:37:12 luschtiger Exp $
+ * $Id: Tournament.java,v 1.2 2006/05/14 10:27:30 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.Serializable;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Enumeration;
 import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
@@ -27,7 +29,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Class Tournament.
  * 
- * @version $Revision: 1.1 $ $Date: 2006/05/12 17:37:12 $
+ * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:30 $
  */
 public class Tournament extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
@@ -39,39 +41,19 @@ implements java.io.Serializable
     //--------------------------/
 
     /**
-     * Field _name
+     * Field _tournamentName
      */
-    private java.lang.String _name;
+    private java.lang.String _tournamentName;
 
     /**
-     * Field _icon
+     * Field _masterPlayerList
      */
-    private java.lang.String _icon = "testicon";
+    private java.util.ArrayList _masterPlayerList;
 
     /**
-     * Field _mensingle
+     * Field _games
      */
-    private ch.form105.shuttle.base.generated.tournament.Mensingle _mensingle;
-
-    /**
-     * Field _womensingle
-     */
-    private ch.form105.shuttle.base.generated.tournament.Womensingle _womensingle;
-
-    /**
-     * Field _mendouble
-     */
-    private ch.form105.shuttle.base.generated.tournament.Mendouble _mendouble;
-
-    /**
-     * Field _womendouble
-     */
-    private ch.form105.shuttle.base.generated.tournament.Womendouble _womendouble;
-
-    /**
-     * Field _mixed
-     */
-    private ch.form105.shuttle.base.generated.tournament.Mixed _mixed;
+    private ch.form105.shuttle.base.generated.tournament.Games _games;
 
     /**
      * Field propertyChangeSupport
@@ -86,13 +68,42 @@ implements java.io.Serializable
     public Tournament() 
      {
         super();
-        setIcon("testicon");
+        _masterPlayerList = new ArrayList();
     } //-- ch.form105.shuttle.base.generated.tournament.Tournament()
 
 
       //-----------/
      //- Methods -/
     //-----------/
+
+    /**
+     * Method addMasterPlayer
+     * 
+     * 
+     * 
+     * @param vMasterPlayer
+     */
+    public void addMasterPlayer(java.lang.Object vMasterPlayer)
+        throws java.lang.IndexOutOfBoundsException
+    {
+        _masterPlayerList.add(vMasterPlayer);
+        notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
+    } //-- void addMasterPlayer(java.lang.Object) 
+
+    /**
+     * Method addMasterPlayer
+     * 
+     * 
+     * 
+     * @param index
+     * @param vMasterPlayer
+     */
+    public void addMasterPlayer(int index, java.lang.Object vMasterPlayer)
+        throws java.lang.IndexOutOfBoundsException
+    {
+        _masterPlayerList.add(index, vMasterPlayer);
+        notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
+    } //-- void addMasterPlayer(int, java.lang.Object) 
 
     /**
      * Method addPropertyChangeListener
@@ -110,81 +121,96 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Returns the value of field 'icon'.
+     * Method clearMasterPlayer
+     * 
+     */
+    public void clearMasterPlayer()
+    {
+        _masterPlayerList.clear();
+        notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
+    } //-- void clearMasterPlayer() 
+
+    /**
+     * Method enumerateMasterPlayer
+     * 
+     * 
+     * 
+     * @return Enumeration
+     */
+    public java.util.Enumeration enumerateMasterPlayer()
+    {
+        return new org.exolab.castor.util.IteratorEnumeration(_masterPlayerList.iterator());
+    } //-- java.util.Enumeration enumerateMasterPlayer() 
+
+    /**
+     * Returns the value of field 'games'.
+     * 
+     * @return Games
+     * @return the value of field 'games'.
+     */
+    public ch.form105.shuttle.base.generated.tournament.Games getGames()
+    {
+        return this._games;
+    } //-- ch.form105.shuttle.base.generated.tournament.Games getGames() 
+
+    /**
+     * Method getMasterPlayer
+     * 
+     * 
+     * 
+     * @param index
+     * @return Object
+     */
+    public java.lang.Object getMasterPlayer(int index)
+        throws java.lang.IndexOutOfBoundsException
+    {
+        //-- check bounds for index
+        if ((index < 0) || (index >= _masterPlayerList.size())) {
+            throw new IndexOutOfBoundsException();
+        }
+        
+        return (java.lang.Object) _masterPlayerList.get(index);
+    } //-- java.lang.Object getMasterPlayer(int) 
+
+    /**
+     * Method getMasterPlayer
+     * 
+     * 
+     * 
+     * @return Object
+     */
+    public java.lang.Object[] getMasterPlayer()
+    {
+        int size = _masterPlayerList.size();
+        java.lang.Object[] mArray = new java.lang.Object[size];
+        for (int index = 0; index < size; index++) {
+            mArray[index] = (java.lang.Object) _masterPlayerList.get(index);
+        }
+        return mArray;
+    } //-- java.lang.Object[] getMasterPlayer() 
+
+    /**
+     * Method getMasterPlayerCount
+     * 
+     * 
+     * 
+     * @return int
+     */
+    public int getMasterPlayerCount()
+    {
+        return _masterPlayerList.size();
+    } //-- int getMasterPlayerCount() 
+
+    /**
+     * Returns the value of field 'tournamentName'.
      * 
      * @return String
-     * @return the value of field 'icon'.
+     * @return the value of field 'tournamentName'.
      */
-    public java.lang.String getIcon()
+    public java.lang.String getTournamentName()
     {
-        return this._icon;
-    } //-- java.lang.String getIcon() 
-
-    /**
-     * Returns the value of field 'mendouble'.
-     * 
-     * @return Mendouble
-     * @return the value of field 'mendouble'.
-     */
-    public ch.form105.shuttle.base.generated.tournament.Mendouble getMendouble()
-    {
-        return this._mendouble;
-    } //-- ch.form105.shuttle.base.generated.tournament.Mendouble getMendouble() 
-
-    /**
-     * Returns the value of field 'mensingle'.
-     * 
-     * @return Mensingle
-     * @return the value of field 'mensingle'.
-     */
-    public ch.form105.shuttle.base.generated.tournament.Mensingle getMensingle()
-    {
-        return this._mensingle;
-    } //-- ch.form105.shuttle.base.generated.tournament.Mensingle getMensingle() 
-
-    /**
-     * Returns the value of field 'mixed'.
-     * 
-     * @return Mixed
-     * @return the value of field 'mixed'.
-     */
-    public ch.form105.shuttle.base.generated.tournament.Mixed getMixed()
-    {
-        return this._mixed;
-    } //-- ch.form105.shuttle.base.generated.tournament.Mixed getMixed() 
-
-    /**
-     * Returns the value of field 'name'.
-     * 
-     * @return String
-     * @return the value of field 'name'.
-     */
-    public java.lang.String getName()
-    {
-        return this._name;
-    } //-- java.lang.String getName() 
-
-    /**
-     * Returns the value of field 'womendouble'.
-     * 
-     * @return Womendouble
-     * @return the value of field 'womendouble'.
-     */
-    public ch.form105.shuttle.base.generated.tournament.Womendouble getWomendouble()
-    {
-        return this._womendouble;
-    } //-- ch.form105.shuttle.base.generated.tournament.Womendouble getWomendouble() 
-
-    /**
-     * Returns the value of field 'womensingle'.
-     * 
-     * @return Womensingle
-     * @return the value of field 'womensingle'.
-     */
-    public ch.form105.shuttle.base.generated.tournament.Womensingle getWomensingle()
-    {
-        return this._womensingle;
-    } //-- ch.form105.shuttle.base.generated.tournament.Womensingle getWomensingle() 
+        return this._tournamentName;
+    } //-- java.lang.String getTournamentName() 
 
     /**
      * Method isValid
@@ -249,6 +275,21 @@ implements java.io.Serializable
     } //-- void notifyPropertyChangeListeners(java.lang.String, java.lang.Object, java.lang.Object) 
 
     /**
+     * Method removeMasterPlayer
+     * 
+     * 
+     * 
+     * @param vMasterPlayer
+     * @return boolean
+     */
+    public boolean removeMasterPlayer(java.lang.Object vMasterPlayer)
+    {
+        boolean removed = _masterPlayerList.remove(vMasterPlayer);
+        notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
+        return removed;
+    } //-- boolean removeMasterPlayer(java.lang.Object) 
+
+    /**
      * Method removePropertyChangeListener
      * 
      * Removes the given PropertyChangeListener from this classes
@@ -265,88 +306,64 @@ implements java.io.Serializable
     } //-- boolean removePropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Sets the value of field 'icon'.
+     * Sets the value of field 'games'.
      * 
-     * @param icon the value of field 'icon'.
+     * @param games the value of field 'games'.
      */
-    public void setIcon(java.lang.String icon)
+    public void setGames(ch.form105.shuttle.base.generated.tournament.Games games)
     {
-        java.lang.Object oldIcon = this._icon;
-        this._icon = icon;
-        notifyPropertyChangeListeners("_icon", oldIcon, this._icon);
-    } //-- void setIcon(java.lang.String) 
+        java.lang.Object oldGames = this._games;
+        this._games = games;
+        notifyPropertyChangeListeners("_games", oldGames, this._games);
+    } //-- void setGames(ch.form105.shuttle.base.generated.tournament.Games) 
 
     /**
-     * Sets the value of field 'mendouble'.
+     * Method setMasterPlayer
      * 
-     * @param mendouble the value of field 'mendouble'.
+     * 
+     * 
+     * @param index
+     * @param vMasterPlayer
      */
-    public void setMendouble(ch.form105.shuttle.base.generated.tournament.Mendouble mendouble)
+    public void setMasterPlayer(int index, java.lang.Object vMasterPlayer)
+        throws java.lang.IndexOutOfBoundsException
     {
-        java.lang.Object oldMendouble = this._mendouble;
-        this._mendouble = mendouble;
-        notifyPropertyChangeListeners("_mendouble", oldMendouble, this._mendouble);
-    } //-- void setMendouble(ch.form105.shuttle.base.generated.tournament.Mendouble) 
+        //-- check bounds for index
+        if ((index < 0) || (index >= _masterPlayerList.size())) {
+            throw new IndexOutOfBoundsException();
+        }
+        _masterPlayerList.set(index, vMasterPlayer);
+        notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
+    } //-- void setMasterPlayer(int, java.lang.Object) 
 
     /**
-     * Sets the value of field 'mensingle'.
+     * Method setMasterPlayer
      * 
-     * @param mensingle the value of field 'mensingle'.
+     * 
+     * 
+     * @param masterPlayerArray
      */
-    public void setMensingle(ch.form105.shuttle.base.generated.tournament.Mensingle mensingle)
+    public void setMasterPlayer(java.lang.Object[] masterPlayerArray)
     {
-        java.lang.Object oldMensingle = this._mensingle;
-        this._mensingle = mensingle;
-        notifyPropertyChangeListeners("_mensingle", oldMensingle, this._mensingle);
-    } //-- void setMensingle(ch.form105.shuttle.base.generated.tournament.Mensingle) 
+        //-- copy array
+        _masterPlayerList.clear();
+        for (int i = 0; i < masterPlayerArray.length; i++) {
+            _masterPlayerList.add(masterPlayerArray[i]);
+        }
+        notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
+    } //-- void setMasterPlayer(java.lang.Object) 
 
     /**
-     * Sets the value of field 'mixed'.
+     * Sets the value of field 'tournamentName'.
      * 
-     * @param mixed the value of field 'mixed'.
+     * @param tournamentName the value of field 'tournamentName'.
      */
-    public void setMixed(ch.form105.shuttle.base.generated.tournament.Mixed mixed)
+    public void setTournamentName(java.lang.String tournamentName)
     {
-        java.lang.Object oldMixed = this._mixed;
-        this._mixed = mixed;
-        notifyPropertyChangeListeners("_mixed", oldMixed, this._mixed);
-    } //-- void setMixed(ch.form105.shuttle.base.generated.tournament.Mixed) 
-
-    /**
-     * Sets the value of field 'name'.
-     * 
-     * @param name the value of field 'name'.
-     */
-    public void setName(java.lang.String name)
-    {
-        java.lang.Object oldName = this._name;
-        this._name = name;
-        notifyPropertyChangeListeners("_name", oldName, this._name);
-    } //-- void setName(java.lang.String) 
-
-    /**
-     * Sets the value of field 'womendouble'.
-     * 
-     * @param womendouble the value of field 'womendouble'.
-     */
-    public void setWomendouble(ch.form105.shuttle.base.generated.tournament.Womendouble womendouble)
-    {
-        java.lang.Object oldWomendouble = this._womendouble;
-        this._womendouble = womendouble;
-        notifyPropertyChangeListeners("_womendouble", oldWomendouble, this._womendouble);
-    } //-- void setWomendouble(ch.form105.shuttle.base.generated.tournament.Womendouble) 
-
-    /**
-     * Sets the value of field 'womensingle'.
-     * 
-     * @param womensingle the value of field 'womensingle'.
-     */
-    public void setWomensingle(ch.form105.shuttle.base.generated.tournament.Womensingle womensingle)
-    {
-        java.lang.Object oldWomensingle = this._womensingle;
-        this._womensingle = womensingle;
-        notifyPropertyChangeListeners("_womensingle", oldWomensingle, this._womensingle);
-    } //-- void setWomensingle(ch.form105.shuttle.base.generated.tournament.Womensingle) 
+        java.lang.Object oldTournamentName = this._tournamentName;
+        this._tournamentName = tournamentName;
+        notifyPropertyChangeListeners("_tournamentName", oldTournamentName, this._tournamentName);
+    } //-- void setTournamentName(java.lang.String) 
 
     /**
      * Method unmarshal
