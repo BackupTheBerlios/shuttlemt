@@ -3,6 +3,8 @@ package ch.form105.shuttle.ui.application;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
+import ch.form105.shuttle.ui.view.project.wizard.NewProjectWizard;
+
 
 public class Perspective implements IPerspectiveFactory {
 
@@ -14,9 +16,10 @@ public class Perspective implements IPerspectiveFactory {
 		layout.setFixed(false);
 		
 		layout.addStandaloneView(View.ID,  false, IPageLayout.LEFT, 1.0f, editorArea);*/
-	
-		ShuttleLayoutManager planningLayout = new ShuttleLayoutManager();
-        planningLayout.createLayout(layout, ID);
+		
+		ShuttleLayoutManager shuttleLayout = new ShuttleLayoutManager();
+        shuttleLayout.createLayout(layout, ID);
+        
 	
 	
 	

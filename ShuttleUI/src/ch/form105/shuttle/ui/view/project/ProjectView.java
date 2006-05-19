@@ -8,11 +8,17 @@ import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.jface.action.GroupMarker;
+import org.eclipse.jface.action.IMenuListener;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.viewers.DoubleClickEvent;
 import org.eclipse.jface.viewers.IDoubleClickListener;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Menu;
+import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ViewPart;
@@ -45,6 +51,8 @@ public class ProjectView extends ViewPart {
 		layoutData.horizontalAlignment = GridData.FILL;
 		layoutData.verticalAlignment = GridData.FILL;
 		treeViewer.getControl().setLayoutData(layoutData);
+		
+		createContextMenu();
 
 	}
 
@@ -105,5 +113,30 @@ public class ProjectView extends ViewPart {
 		// TODO Auto-generated method stub
 
 	}
+	
+	/**
+     * create a context menu for this view
+     * 
+     */
+    protected void createContextMenu() {
+        // Create menu manager.
+        MenuManager menuMgr = new MenuManager();
+        menuMgr.setRemoveAllWhenShown(true);
+
+        // Create menu.
+        menuMgr.addMenuListener(new IMenuListener() {
+
+            public void menuAboutToShow(IMenuManager manager) {
+                manager.add(new GroupMarker(
+                        IWorkbenchActionConstants.MB_ADDITIONS));
+            }
+        });
+
+        Menu menu = menuMgr.createContextMenu(treeViewer.getControl());
+        treeViewer.getControl().setMenu(menu);
+
+        // Register menu for extension.
+        getSite().registerContextMenu(menuMgr, treeViewer);
+    }
 
 }

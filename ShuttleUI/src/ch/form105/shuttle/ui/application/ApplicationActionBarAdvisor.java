@@ -12,6 +12,7 @@ import org.eclipse.ui.actions.ContributionItemFactory;
 import org.eclipse.ui.actions.ActionFactory.IWorkbenchAction;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * An action bar advisor is responsible for creating, adding, and disposing of
@@ -29,6 +30,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	private IWorkbenchAction openAction;
 	private IWorkbenchAction newAction;
 	private IWorkbenchAction aboutAction;
+	
+	private IWorkbenchWindow window;
 
 
 	public ApplicationActionBarAdvisor(IActionBarConfigurer configurer) {
@@ -42,6 +45,8 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 		// file.
 		// Registering also provides automatic disposal of the actions when
 		// the window is closed.
+		
+		this.window = window;
 
 		exitAction = ActionFactory.QUIT.create(window);
 		openAction = ActionFactory.OPEN_NEW_WINDOW.create(window);
@@ -52,9 +57,24 @@ public class ApplicationActionBarAdvisor extends ActionBarAdvisor {
 	}
 
 	protected void fillMenuBar(IMenuManager menuBar) {
+		 
+		
+		
+		
 		MenuManager fileMenu = new MenuManager("&File",
 				IWorkbenchActionConstants.M_FILE);
-		fileMenu.add(new GroupMarker(IWorkbenchActionConstants.FILE_START)); 
+		fileMenu.add(new GroupMarker(IWorkbenchActionConstants.FILE_START));
+		fileMenu.add(ContributionItemFactory.NEW_WIZARD_SHORTLIST.create(window)); 
+		
+		String newId = ActionFactory.NEW.getId(); 
+		
+		MenuManager newMenu = new MenuManager("New",newId);
+		newMenu.add(new Separator(newId)); 
+		IContributionItem newWizards = ContributionItemFactory.NEW_WIZARD_SHORTLIST.create(window);
+		newMenu.add(newWizards);
+		newMenu.add(new Separator(IWorkbenchActionConstants.MB_ADDITIONS));
+		fileMenu.add(newMenu);
+		
 		
 		MenuManager windowMenu = new MenuManager("&Window",
 				IWorkbenchActionConstants.M_WINDOW);

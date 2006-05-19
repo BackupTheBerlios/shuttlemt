@@ -26,8 +26,6 @@ package ch.form105.shuttle.ui.application;
 import org.eclipse.ui.IFolderLayout;
 import org.eclipse.ui.IPageLayout;
 
-import ch.form105.shuttle.ui.view.player.ImportPlayerView;
-
 public class ShuttleLayoutManager  {
 	
 	
@@ -39,6 +37,7 @@ public class ShuttleLayoutManager  {
     public void createLayout(IPageLayout layout, String ID) {
     	// placeholder reserves a slot
         layout.setEditorAreaVisible(false);
+        
         IFolderLayout right = layout.createFolder("bottomRight", IPageLayout.RIGHT,
                 0.3f, IPageLayout.ID_EDITOR_AREA);
         right.addView("ShuttleUI.PlayerView");
@@ -46,6 +45,7 @@ public class ShuttleLayoutManager  {
         IFolderLayout left = layout.createFolder("bottomLeft", IPageLayout.LEFT,
                 0.7f, IPageLayout.ID_EDITOR_AREA);
         left.addView("ShuttleUI.ProjectView");
+
         
 
 

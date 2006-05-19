@@ -32,5 +32,34 @@
             id="ShuttleUI.ProjectView"
             name="%project.tournament.root"/>
    </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <viewerContribution
+            id="ShuttleUI.ProjectViewContribution"
+            targetID="ShuttleUI.ProjectView">
+         <action
+               class="ch.form105.shuttle.ui.view.project.action.NewProjectAction"
+               enablesFor="1"
+               icon="image/tango-icon-theme-0.7.1/16x16/actions/document-new.png"
+               id="ShuttleUI.NewProject"
+               label="%projectView.contextMenu.newProject"
+               menubarPath="group1"
+               state="true"
+               style="push"/>
+      </viewerContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension targetID="ShuttleUI.perspective">
+         <newWizardShortcut id="ShuttleUI.newProjectWizard"/>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            class="ch.form105.shuttle.ui.view.project.wizard.NewProjectWizard"
+            id="ShuttleUI.newProjectWizard"
+            name="MyWizard"/>
+   </extension>
 
 </plugin>
