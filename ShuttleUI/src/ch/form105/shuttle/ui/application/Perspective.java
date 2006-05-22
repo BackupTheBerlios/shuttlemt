@@ -3,7 +3,7 @@ package ch.form105.shuttle.ui.application;
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
 
-import ch.form105.shuttle.ui.view.project.wizard.NewProjectWizard;
+import ch.form105.shuttle.ui.wizard.NewProjectWizard;
 
 
 public class Perspective implements IPerspectiveFactory {

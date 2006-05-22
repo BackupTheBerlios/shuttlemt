@@ -1,4 +1,4 @@
-package ch.form105.shuttle.ui.view.project.action;
+package ch.form105.shuttle.ui.action;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
@@ -8,7 +8,7 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IWorkbenchWizard;
 
 import ch.form105.shuttle.ui.ShuttleUIPlugin;
-import ch.form105.shuttle.ui.view.project.wizard.NewProjectWizard;
+import ch.form105.shuttle.ui.wizard.NewProjectWizard;
 
 public class NewProjectAction implements IViewActionDelegate {
 
@@ -24,17 +24,18 @@ public class NewProjectAction implements IViewActionDelegate {
 
 	public void run(IAction action) {
 		IWorkbenchWizard wizard = new NewProjectWizard();
-		 wizard.init(ShuttleUIPlugin.getDefault().getWorkbench(), null);
-		 WizardDialog dialog = new WizardDialog(ShuttleUIPlugin.getDefault().getWorkbench().getActiveWorkbenchWindow().getShell(), wizard);
-		 dialog.open();
+		wizard.init(ShuttleUIPlugin.getDefault().getWorkbench(), null);
+		WizardDialog dialog = new WizardDialog(ShuttleUIPlugin.getDefault()
+				.getWorkbench().getActiveWorkbenchWindow().getShell(), wizard);
+		dialog.open();
+		
+		
 
 	}
 
 	public void selectionChanged(IAction action, ISelection selection) {
 		// TODO Auto-generated method stub
-		
+
 	}
-
-
 
 }

@@ -1,13 +1,7 @@
 package ch.form105.shuttle.ui.view.project;
 
-import org.eclipse.core.internal.resources.File;
-import org.eclipse.core.internal.resources.Folder;
-import org.eclipse.core.internal.resources.Project;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;

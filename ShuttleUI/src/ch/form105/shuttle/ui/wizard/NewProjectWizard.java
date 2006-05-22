@@ -1,4 +1,4 @@
-package ch.form105.shuttle.ui.view.project.wizard;
+package ch.form105.shuttle.ui.wizard;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -27,34 +27,43 @@ import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 
 import ch.form105.shuttle.ui.ImageFactory;
 import ch.form105.shuttle.ui.i18n.wizard.Messages;
-import ch.form105.shuttle.ui.view.project.page.SetNamePage;
+import ch.form105.shuttle.ui.wizard.page.SetNamePage;
+import ch.form105.shuttle.ui.wizard.page.SetProjectTypePage;
 
-public class NewProjectWizard extends BasicNewProjectResourceWizard implements INewWizard{
+public class NewProjectWizard extends Wizard implements INewWizard{
 
 	public static final String id = "ShuttleUI.newProjectWizard";
 	
 	private WizardNewProjectCreationPage mainPage;
+	private SetNamePage page1;
+	private SetProjectTypePage page2;
 	
 	public NewProjectWizard() {
 		super();
 		setWindowTitle(Messages.getString("NewProjectWizard.windowTitle")); //$NON-NLS-1$
 		setNeedsProgressMonitor(true);
 		setDefaultPageImageDescriptor(ImageFactory.getImageDescriptor("IMG_CREATE_PROJECT_WIZARD_PAGE"));
-
+		
 	}
 	
 	public void addPages() {
-		addPage(new SetNamePage());
+		page1 = new SetNamePage();
+		page2 = new SetProjectTypePage();
+		addPage(page1);
+		addPage(page2);
 	    
 	    
 	  }
 	
 	@Override
 	public boolean performFinish() {
-
-        
-        return super.performFinish();
-		
+		IProject project = page1.getProject();
+		try {
+			project.create(null);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+		return true;
 	}
 
 	public void init(IWorkbench workbench, IStructuredSelection selection) {
