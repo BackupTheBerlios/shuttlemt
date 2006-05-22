@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Player.java,v 1.2 2006/05/14 10:27:47 luschtiger Exp $
+ * $Id: Player.java,v 1.3 2006/05/22 20:27:14 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.players;
@@ -28,7 +28,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Class Player.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:47 $
+ * @version $Revision: 1.3 $ $Date: 2006/05/22 20:27:14 $
  */
 public class Player extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
