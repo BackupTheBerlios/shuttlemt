@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Mixed.java,v 1.2 2006/05/14 10:27:30 luschtiger Exp $
+ * $Id: Mixed.java,v 1.3 2006/05/25 22:48:16 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -27,7 +27,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Class Mixed.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:30 $
+ * @version $Revision: 1.3 $ $Date: 2006/05/25 22:48:16 $
  */
 public class Mixed extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable

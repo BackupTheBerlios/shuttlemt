@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: PlayersDescriptor.java,v 1.1 2006/05/12 17:37:12 luschtiger Exp $
+ * $Id: CategoryTypeDescriptor.java,v 1.1 2006/05/25 22:48:17 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.tournament;
+package ch.form105.shuttle.base.generated.tournament.types;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -17,11 +17,11 @@ import org.exolab.castor.xml.XMLFieldDescriptor;
 import org.exolab.castor.xml.validators.*;
 
 /**
- * Class PlayersDescriptor.
+ * Class CategoryTypeDescriptor.
  * 
- * @version $Revision: 1.1 $ $Date: 2006/05/12 17:37:12 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/25 22:48:17 $
  */
-public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
+public class CategoryTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
       //--------------------------/
@@ -58,56 +58,12 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
      //- Constructors -/
     //----------------/
 
-    public PlayersDescriptor() 
+    public CategoryTypeDescriptor() 
      {
         super();
-        xmlName = "players";
-        elementDefinition = true;
-        
-        //-- set grouping compositor
-        setCompositorAsSequence();
-        org.exolab.castor.xml.util.XMLFieldDescriptorImpl  desc           = null;
-        org.exolab.castor.mapping.FieldHandler             handler        = null;
-        org.exolab.castor.xml.FieldValidator               fieldValidator = null;
-        //-- initialize attribute descriptors
-        
-        //-- initialize element descriptors
-        
-        //-- _playerList
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.tournament.Player.class, "_playerList", "player", org.exolab.castor.xml.NodeType.Element);
-        handler = new org.exolab.castor.xml.XMLFieldHandler() {
-            public java.lang.Object getValue( java.lang.Object object ) 
-                throws IllegalStateException
-            {
-                Players target = (Players) object;
-                return target.getPlayer();
-            }
-            public void setValue( java.lang.Object object, java.lang.Object value) 
-                throws IllegalStateException, IllegalArgumentException
-            {
-                try {
-                    Players target = (Players) object;
-                    target.addPlayer( (ch.form105.shuttle.base.generated.tournament.Player) value);
-                }
-                catch (java.lang.Exception ex) {
-                    throw new IllegalStateException(ex.toString());
-                }
-            }
-            public java.lang.Object newInstance( java.lang.Object parent ) {
-                return new ch.form105.shuttle.base.generated.tournament.Player();
-            }
-        };
-        desc.setHandler(handler);
-        desc.setMultivalued(true);
-        addFieldDescriptor(desc);
-        
-        //-- validation code for: _playerList
-        fieldValidator = new org.exolab.castor.xml.FieldValidator();
-        fieldValidator.setMinOccurs(0);
-        { //-- local scope
-        }
-        desc.setValidator(fieldValidator);
-    } //-- ch.form105.shuttle.base.generated.tournament.PlayersDescriptor()
+        xmlName = "categoryType";
+        elementDefinition = false;
+    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryTypeDescriptor()
 
 
       //-----------/
@@ -159,7 +115,7 @@ public class PlayersDescriptor extends org.exolab.castor.xml.util.XMLClassDescri
      */
     public java.lang.Class getJavaClass()
     {
-        return ch.form105.shuttle.base.generated.tournament.Players.class;
+        return ch.form105.shuttle.base.generated.tournament.types.CategoryType.class;
     } //-- java.lang.Class getJavaClass() 
 
     /**

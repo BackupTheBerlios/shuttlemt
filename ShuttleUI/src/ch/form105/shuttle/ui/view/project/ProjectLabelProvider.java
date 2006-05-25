@@ -33,10 +33,11 @@ public class ProjectLabelProvider implements ILabelProvider {
 
 	public Image getImage(Object element) {
 		if (element instanceof IProject) {
-			return ImageFactory.getImage("IMG_TOURNAMENT_PROJECT_SMALL");
+			return ImageFactory.IMG_TOURNAMENT_PROJECT_SMALL.getImageDesc().createImage();
+			
 		};
 		if (element.equals("Player Import")) {
-			return ImageFactory.getImage("IMG_IMPORT_USER");
+			return ImageFactory.IMG_IMPORT_USER.getImageDesc().createImage();
 		}
 		
 		

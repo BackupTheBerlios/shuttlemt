@@ -5,6 +5,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -99,20 +100,26 @@ public class SetNamePage extends WizardPage {
 			return;
 		}
 		setErrorMessage(null);
-		setMessage("Press Finish to create a project");
+		if (getNextPage() == null) {
+			setMessage("Press Finish to create a project");
+		} else {
+			setMessage("Press Next");
+		}
 		setPageComplete(true);
 		
 		projectDesc = new ProjectDescription();
 		projectDesc.setName(nameField.getText());
 		projectDesc.setComment(descField.getText());
 		
-		IWorkspaceRoot wsRoot = ResourcesPlugin.getWorkspace().getRoot();
-		project = wsRoot.getProject(nameField.getText());
+		
+		
+		
+		
 	}
     
     
-    public IProject getProject() {
-    	return project;
+    public IProjectDescription getProjectDesc() {
+    	return projectDesc;
     }
     
     

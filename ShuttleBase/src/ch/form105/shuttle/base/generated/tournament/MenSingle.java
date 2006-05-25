@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: MenSingle.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
+ * $Id: MenSingle.java,v 1.2 2006/05/25 22:48:17 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -27,7 +27,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Class MenSingle.
  * 
- * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
+ * @version $Revision: 1.2 $ $Date: 2006/05/25 22:48:17 $
  */
 public class MenSingle extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable

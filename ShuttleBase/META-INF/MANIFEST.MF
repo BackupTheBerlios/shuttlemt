@@ -7,7 +7,8 @@ Bundle-ClassPath: shuttleBase.jar,
  lib/castor-1.0M4-srcgen-ant-task.jar,
  lib/castor-1.0M4-xml.jar,
  lib/commons-logging-1.0.4.jar,
- lib/log4j-1.2.13.jar
+ lib/log4j-1.2.13.jar,
+ conf/
 Bundle-Activator: ch.form105.shuttle.base.ShuttleBasePlugin
 Bundle-Vendor: form105
 Bundle-Localization: plugin
@@ -16,5 +17,8 @@ Require-Bundle: org.eclipse.ui,
 Eclipse-AutoStart: true
 Export-Package: ch.form105.shuttle.base.generated.players,
  ch.form105.shuttle.base.generated.players.types,
+ ch.form105.shuttle.base.generated.tournament,
+ ch.form105.shuttle.base.generated.tournament.types,
+ ch.form105.shuttle.base.helper,
  ch.form105.shuttle.base.importer,
  ch.form105.shuttle.base.model

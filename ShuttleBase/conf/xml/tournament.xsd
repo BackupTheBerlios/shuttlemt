@@ -5,45 +5,34 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element name="tournamentName" minOccurs="1" maxOccurs="1" type="xs:string"></xs:element>
-        <xs:element ref="MasterPlayer" minOccurs="0" maxOccurs="unbounded"/>
-        <xs:element name="version" type="xs:string" fixed="1.0b"/>
+        <xs:element ref="MasterPlayer" minOccurs="0" maxOccurs="unbounded" />
+        <xs:element name="version" type="xs:string" fixed="1.0b" />
+
         <xs:element name="games">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="gameMenSingle">
+              <xs:element name="game" minOccurs="1" maxOccurs="unbounded">
                 <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="playerId" minOccurs="0" maxOccurs="unbounded" type="xs:string" />
+                    <xs:element name="category">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="A"/>
+                          <xs:enumeration value="B"/>
+                          <xs:enumeration value="C"/>
+                          <xs:enumeration value="D"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
                   <xs:attribute name="maxPoints" type="xs:int" fixed="21" />
-                  <xs:attributeGroup ref="activation" />
-                </xs:complexType>
-              </xs:element>
-              
-              <xs:element name="gameWomenSingle">
-                <xs:complexType>
-                  <xs:attribute name="maxPoints" type="xs:int" fixed="21" />
-                  <xs:attributeGroup ref="activation" />
+                  <xs:attribute name="typeId" type="xs:string" />
+                  <xs:attribute name="active" type="xs:boolean" />
+                  <xs:attribute name="name" type="xs:string"/>
                 </xs:complexType>
               </xs:element>
 
-              <xs:element name="gameMenDouble">
-                <xs:complexType>
-                  <xs:attribute name="maxPoints" type="xs:int" fixed="21" />
-                  <xs:attributeGroup ref="activation" />
-                </xs:complexType>
-              </xs:element>
-
-              <xs:element name="gameWomenDouble">
-                <xs:complexType>
-                  <xs:attribute name="maxPoints" type="xs:int" fixed="21" />
-                  <xs:attributeGroup ref="activation" />
-                </xs:complexType>
-              </xs:element>
-              
-              <xs:element name="gameMixed">
-                <xs:complexType>
-                  <xs:attribute name="maxPoints" type="xs:int" fixed="21" />
-                  <xs:attributeGroup ref="activation" />
-                </xs:complexType>
-              </xs:element>
             </xs:sequence>
           </xs:complexType>
 
@@ -143,8 +132,6 @@
     <xs:attribute name="categoryMixed" type="xs:string" />
   </xs:attributeGroup>
 
-  <xs:attributeGroup name="activation">
-    <xs:attribute name="isActive" type="xs:boolean" />
-  </xs:attributeGroup>
+
 
 </xs:schema>

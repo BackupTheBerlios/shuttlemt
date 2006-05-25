@@ -7,35 +7,36 @@
  * and open the template in the editor.
  */
 
-package ch.form105.shuttle.base;
-
-import ch.form105.shuttle.base.generated.tournament.Tournament;
+package ch.form105.shuttle.base.helper;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+
 import org.apache.log4j.Logger;
 import org.exolab.castor.xml.MarshalException;
-import org.exolab.castor.xml.Unmarshaller;
+import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.ValidationException;
+
+import ch.form105.shuttle.base.generated.tournament.Tournament;
 
 /**
  *
  * @author heiko
  */
-public class XMLLoader {
+public class XMLSaver {
   
-  Logger log = Logger.getLogger(XMLLoader.class);
+  static Logger log = Logger.getLogger(XMLSaver.class);
   
   ArrayList tourList = new ArrayList();
   
-  public void load(String sFile) {
-    Tournament tournament = null;
+  public static synchronized void run(Tournament tour, String sFile) {
+
     try {
-      FileReader fReader = new FileReader(sFile);
-      tournament = (Tournament) Unmarshaller.unmarshal(Tournament.class, fReader);
-      fReader.close();
+      FileWriter fWriter = new FileWriter(sFile);
+      Marshaller.marshal(tour, fWriter);
+      fWriter.close();
     } catch (FileNotFoundException ex) {
       log.error("File not found: "+sFile);
       log.info(ex.getStackTrace());
@@ -45,7 +46,9 @@ public class XMLLoader {
       ex.printStackTrace(); 
     } catch (ValidationException ex) {
       log.error("ValidationException occured while loading Tournament");
-      log.info(ex.getStackTrace());
+      log.info(ex.getStackTrace().toString());
+      ex.printStackTrace();
+      System.out.println(ex.getCause());
     } catch (IOException ioe) {
       log.error("IOException occured while loading Tournament");
       log.info(ioe.getStackTrace());
@@ -54,7 +57,7 @@ public class XMLLoader {
   }
   
   /** Creates a new instance of XMLLoader */
-  public XMLLoader() {
+  public XMLSaver() {
   }
   
 }

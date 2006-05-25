@@ -71,7 +71,6 @@ public class SetProjectTypePage extends WizardPage {
 	private Listener nameModifyListener = new Listener() {
 		public void handleEvent(Event e) {
 			validatePage();
-
 		}
 
 	};
@@ -85,7 +84,12 @@ public class SetProjectTypePage extends WizardPage {
 		}
 		setErrorMessage(null);
 		setPageComplete(true);
-		setMessage("Press Finish to create a project");
+		
+		if (getNextPage() == null) {
+			setMessage("Press Finish to create a project");
+		} else {
+			setMessage("Press Next");
+		}
 		
 		games.clear();
 		
@@ -94,11 +98,11 @@ public class SetProjectTypePage extends WizardPage {
 		}
 
 		if (button2.getSelection()) {
-			createGame(Constants.WOMENSINGLE, button2);
+			createGame(Constants.MENDOUBLE, button2);
 		}
 
 		if (button3.getSelection()) {
-			createGame(Constants.MENDOUBLE, button3);
+			createGame(Constants.WOMENSINGLE, button3);
 		}
 
 		if (button4.getSelection()) {

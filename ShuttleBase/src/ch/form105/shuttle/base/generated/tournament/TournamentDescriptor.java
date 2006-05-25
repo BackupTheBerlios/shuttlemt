@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: TournamentDescriptor.java,v 1.2 2006/05/14 10:27:30 luschtiger Exp $
+ * $Id: TournamentDescriptor.java,v 1.3 2006/05/25 22:48:16 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -19,7 +19,7 @@ import org.exolab.castor.xml.validators.*;
 /**
  * Class TournamentDescriptor.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:30 $
+ * @version $Revision: 1.3 $ $Date: 2006/05/25 22:48:16 $
  */
 public class TournamentDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
@@ -113,7 +113,7 @@ public class TournamentDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         }
         desc.setValidator(fieldValidator);
         //-- _masterPlayerList
-        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.Object.class, "_masterPlayerList", "MasterPlayer", org.exolab.castor.xml.NodeType.Element);
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(ch.form105.shuttle.base.generated.tournament.MasterPlayer.class, "_masterPlayerList", "MasterPlayer", org.exolab.castor.xml.NodeType.Element);
         handler = new org.exolab.castor.xml.XMLFieldHandler() {
             public java.lang.Object getValue( java.lang.Object object ) 
                 throws IllegalStateException
@@ -126,14 +126,14 @@ public class TournamentDescriptor extends org.exolab.castor.xml.util.XMLClassDes
             {
                 try {
                     Tournament target = (Tournament) object;
-                    target.addMasterPlayer( (java.lang.Object) value);
+                    target.addMasterPlayer( (ch.form105.shuttle.base.generated.tournament.MasterPlayer) value);
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());
                 }
             }
             public java.lang.Object newInstance( java.lang.Object parent ) {
-                return new java.lang.Object();
+                return new ch.form105.shuttle.base.generated.tournament.MasterPlayer();
             }
         };
         desc.setHandler(handler);
@@ -144,6 +144,46 @@ public class TournamentDescriptor extends org.exolab.castor.xml.util.XMLClassDes
         fieldValidator = new org.exolab.castor.xml.FieldValidator();
         fieldValidator.setMinOccurs(0);
         { //-- local scope
+        }
+        desc.setValidator(fieldValidator);
+        //-- _version
+        desc = new org.exolab.castor.xml.util.XMLFieldDescriptorImpl(java.lang.String.class, "_version", "version", org.exolab.castor.xml.NodeType.Element);
+        desc.setImmutable(true);
+        handler = new org.exolab.castor.xml.XMLFieldHandler() {
+            public java.lang.Object getValue( java.lang.Object object ) 
+                throws IllegalStateException
+            {
+                Tournament target = (Tournament) object;
+                return target.getVersion();
+            }
+            public void setValue( java.lang.Object object, java.lang.Object value) 
+                throws IllegalStateException, IllegalArgumentException
+            {
+                try {
+                    Tournament target = (Tournament) object;
+                    target.setVersion( (java.lang.String) value);
+                }
+                catch (java.lang.Exception ex) {
+                    throw new IllegalStateException(ex.toString());
+                }
+            }
+            public java.lang.Object newInstance( java.lang.Object parent ) {
+                return null;
+            }
+        };
+        desc.setHandler(handler);
+        desc.setRequired(true);
+        desc.setMultivalued(false);
+        addFieldDescriptor(desc);
+        
+        //-- validation code for: _version
+        fieldValidator = new org.exolab.castor.xml.FieldValidator();
+        fieldValidator.setMinOccurs(1);
+        { //-- local scope
+            StringValidator typeValidator = new StringValidator();
+            typeValidator.setWhiteSpace("preserve");
+            typeValidator.setFixed("1.0b");
+            fieldValidator.setValidator(typeValidator);
         }
         desc.setValidator(fieldValidator);
         //-- _games

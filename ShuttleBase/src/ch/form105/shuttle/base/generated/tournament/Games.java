@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Games.java,v 1.1 2006/05/14 10:28:16 luschtiger Exp $
+ * $Id: Games.java,v 1.2 2006/05/25 22:48:16 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.io.Serializable;
 import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Enumeration;
 import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
@@ -27,7 +29,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Class Games.
  * 
- * @version $Revision: 1.1 $ $Date: 2006/05/14 10:28:16 $
+ * @version $Revision: 1.2 $ $Date: 2006/05/25 22:48:16 $
  */
 public class Games extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
@@ -39,29 +41,9 @@ implements java.io.Serializable
     //--------------------------/
 
     /**
-     * Field _gameMenSingle
+     * Field _gameList
      */
-    private ch.form105.shuttle.base.generated.tournament.GameMenSingle _gameMenSingle;
-
-    /**
-     * Field _gameWomenSingle
-     */
-    private ch.form105.shuttle.base.generated.tournament.GameWomenSingle _gameWomenSingle;
-
-    /**
-     * Field _gameMenDouble
-     */
-    private ch.form105.shuttle.base.generated.tournament.GameMenDouble _gameMenDouble;
-
-    /**
-     * Field _gameWomenDouble
-     */
-    private ch.form105.shuttle.base.generated.tournament.GameWomenDouble _gameWomenDouble;
-
-    /**
-     * Field _gameMixed
-     */
-    private ch.form105.shuttle.base.generated.tournament.GameMixed _gameMixed;
+    private java.util.ArrayList _gameList;
 
     /**
      * Field propertyChangeSupport
@@ -76,12 +58,42 @@ implements java.io.Serializable
     public Games() 
      {
         super();
+        _gameList = new ArrayList();
     } //-- ch.form105.shuttle.base.generated.tournament.Games()
 
 
       //-----------/
      //- Methods -/
     //-----------/
+
+    /**
+     * Method addGame
+     * 
+     * 
+     * 
+     * @param vGame
+     */
+    public void addGame(ch.form105.shuttle.base.generated.tournament.Game vGame)
+        throws java.lang.IndexOutOfBoundsException
+    {
+        _gameList.add(vGame);
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void addGame(ch.form105.shuttle.base.generated.tournament.Game) 
+
+    /**
+     * Method addGame
+     * 
+     * 
+     * 
+     * @param index
+     * @param vGame
+     */
+    public void addGame(int index, ch.form105.shuttle.base.generated.tournament.Game vGame)
+        throws java.lang.IndexOutOfBoundsException
+    {
+        _gameList.add(index, vGame);
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void addGame(int, ch.form105.shuttle.base.generated.tournament.Game) 
 
     /**
      * Method addPropertyChangeListener
@@ -99,59 +111,74 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Returns the value of field 'gameMenDouble'.
+     * Method clearGame
      * 
-     * @return GameMenDouble
-     * @return the value of field 'gameMenDouble'.
      */
-    public ch.form105.shuttle.base.generated.tournament.GameMenDouble getGameMenDouble()
+    public void clearGame()
     {
-        return this._gameMenDouble;
-    } //-- ch.form105.shuttle.base.generated.tournament.GameMenDouble getGameMenDouble() 
+        _gameList.clear();
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void clearGame() 
 
     /**
-     * Returns the value of field 'gameMenSingle'.
+     * Method enumerateGame
      * 
-     * @return GameMenSingle
-     * @return the value of field 'gameMenSingle'.
+     * 
+     * 
+     * @return Enumeration
      */
-    public ch.form105.shuttle.base.generated.tournament.GameMenSingle getGameMenSingle()
+    public java.util.Enumeration enumerateGame()
     {
-        return this._gameMenSingle;
-    } //-- ch.form105.shuttle.base.generated.tournament.GameMenSingle getGameMenSingle() 
+        return new org.exolab.castor.util.IteratorEnumeration(_gameList.iterator());
+    } //-- java.util.Enumeration enumerateGame() 
 
     /**
-     * Returns the value of field 'gameMixed'.
+     * Method getGame
      * 
-     * @return GameMixed
-     * @return the value of field 'gameMixed'.
+     * 
+     * 
+     * @param index
+     * @return Game
      */
-    public ch.form105.shuttle.base.generated.tournament.GameMixed getGameMixed()
+    public ch.form105.shuttle.base.generated.tournament.Game getGame(int index)
+        throws java.lang.IndexOutOfBoundsException
     {
-        return this._gameMixed;
-    } //-- ch.form105.shuttle.base.generated.tournament.GameMixed getGameMixed() 
+        //-- check bounds for index
+        if ((index < 0) || (index >= _gameList.size())) {
+            throw new IndexOutOfBoundsException();
+        }
+        
+        return (ch.form105.shuttle.base.generated.tournament.Game) _gameList.get(index);
+    } //-- ch.form105.shuttle.base.generated.tournament.Game getGame(int) 
 
     /**
-     * Returns the value of field 'gameWomenDouble'.
+     * Method getGame
      * 
-     * @return GameWomenDouble
-     * @return the value of field 'gameWomenDouble'.
+     * 
+     * 
+     * @return Game
      */
-    public ch.form105.shuttle.base.generated.tournament.GameWomenDouble getGameWomenDouble()
+    public ch.form105.shuttle.base.generated.tournament.Game[] getGame()
     {
-        return this._gameWomenDouble;
-    } //-- ch.form105.shuttle.base.generated.tournament.GameWomenDouble getGameWomenDouble() 
+        int size = _gameList.size();
+        ch.form105.shuttle.base.generated.tournament.Game[] mArray = new ch.form105.shuttle.base.generated.tournament.Game[size];
+        for (int index = 0; index < size; index++) {
+            mArray[index] = (ch.form105.shuttle.base.generated.tournament.Game) _gameList.get(index);
+        }
+        return mArray;
+    } //-- ch.form105.shuttle.base.generated.tournament.Game[] getGame() 
 
     /**
-     * Returns the value of field 'gameWomenSingle'.
+     * Method getGameCount
      * 
-     * @return GameWomenSingle
-     * @return the value of field 'gameWomenSingle'.
+     * 
+     * 
+     * @return int
      */
-    public ch.form105.shuttle.base.generated.tournament.GameWomenSingle getGameWomenSingle()
+    public int getGameCount()
     {
-        return this._gameWomenSingle;
-    } //-- ch.form105.shuttle.base.generated.tournament.GameWomenSingle getGameWomenSingle() 
+        return _gameList.size();
+    } //-- int getGameCount() 
 
     /**
      * Method isValid
@@ -216,6 +243,21 @@ implements java.io.Serializable
     } //-- void notifyPropertyChangeListeners(java.lang.String, java.lang.Object, java.lang.Object) 
 
     /**
+     * Method removeGame
+     * 
+     * 
+     * 
+     * @param vGame
+     * @return boolean
+     */
+    public boolean removeGame(ch.form105.shuttle.base.generated.tournament.Game vGame)
+    {
+        boolean removed = _gameList.remove(vGame);
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+        return removed;
+    } //-- boolean removeGame(ch.form105.shuttle.base.generated.tournament.Game) 
+
+    /**
      * Method removePropertyChangeListener
      * 
      * Removes the given PropertyChangeListener from this classes
@@ -232,64 +274,40 @@ implements java.io.Serializable
     } //-- boolean removePropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Sets the value of field 'gameMenDouble'.
+     * Method setGame
      * 
-     * @param gameMenDouble the value of field 'gameMenDouble'.
+     * 
+     * 
+     * @param index
+     * @param vGame
      */
-    public void setGameMenDouble(ch.form105.shuttle.base.generated.tournament.GameMenDouble gameMenDouble)
+    public void setGame(int index, ch.form105.shuttle.base.generated.tournament.Game vGame)
+        throws java.lang.IndexOutOfBoundsException
     {
-        java.lang.Object oldGameMenDouble = this._gameMenDouble;
-        this._gameMenDouble = gameMenDouble;
-        notifyPropertyChangeListeners("_gameMenDouble", oldGameMenDouble, this._gameMenDouble);
-    } //-- void setGameMenDouble(ch.form105.shuttle.base.generated.tournament.GameMenDouble) 
+        //-- check bounds for index
+        if ((index < 0) || (index >= _gameList.size())) {
+            throw new IndexOutOfBoundsException();
+        }
+        _gameList.set(index, vGame);
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void setGame(int, ch.form105.shuttle.base.generated.tournament.Game) 
 
     /**
-     * Sets the value of field 'gameMenSingle'.
+     * Method setGame
      * 
-     * @param gameMenSingle the value of field 'gameMenSingle'.
-     */
-    public void setGameMenSingle(ch.form105.shuttle.base.generated.tournament.GameMenSingle gameMenSingle)
-    {
-        java.lang.Object oldGameMenSingle = this._gameMenSingle;
-        this._gameMenSingle = gameMenSingle;
-        notifyPropertyChangeListeners("_gameMenSingle", oldGameMenSingle, this._gameMenSingle);
-    } //-- void setGameMenSingle(ch.form105.shuttle.base.generated.tournament.GameMenSingle) 
-
-    /**
-     * Sets the value of field 'gameMixed'.
      * 
-     * @param gameMixed the value of field 'gameMixed'.
-     */
-    public void setGameMixed(ch.form105.shuttle.base.generated.tournament.GameMixed gameMixed)
-    {
-        java.lang.Object oldGameMixed = this._gameMixed;
-        this._gameMixed = gameMixed;
-        notifyPropertyChangeListeners("_gameMixed", oldGameMixed, this._gameMixed);
-    } //-- void setGameMixed(ch.form105.shuttle.base.generated.tournament.GameMixed) 
-
-    /**
-     * Sets the value of field 'gameWomenDouble'.
      * 
-     * @param gameWomenDouble the value of field 'gameWomenDouble'.
+     * @param gameArray
      */
-    public void setGameWomenDouble(ch.form105.shuttle.base.generated.tournament.GameWomenDouble gameWomenDouble)
+    public void setGame(ch.form105.shuttle.base.generated.tournament.Game[] gameArray)
     {
-        java.lang.Object oldGameWomenDouble = this._gameWomenDouble;
-        this._gameWomenDouble = gameWomenDouble;
-        notifyPropertyChangeListeners("_gameWomenDouble", oldGameWomenDouble, this._gameWomenDouble);
-    } //-- void setGameWomenDouble(ch.form105.shuttle.base.generated.tournament.GameWomenDouble) 
-
-    /**
-     * Sets the value of field 'gameWomenSingle'.
-     * 
-     * @param gameWomenSingle the value of field 'gameWomenSingle'.
-     */
-    public void setGameWomenSingle(ch.form105.shuttle.base.generated.tournament.GameWomenSingle gameWomenSingle)
-    {
-        java.lang.Object oldGameWomenSingle = this._gameWomenSingle;
-        this._gameWomenSingle = gameWomenSingle;
-        notifyPropertyChangeListeners("_gameWomenSingle", oldGameWomenSingle, this._gameWomenSingle);
-    } //-- void setGameWomenSingle(ch.form105.shuttle.base.generated.tournament.GameWomenSingle) 
+        //-- copy array
+        _gameList.clear();
+        for (int i = 0; i < gameArray.length; i++) {
+            _gameList.add(gameArray[i]);
+        }
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void setGame(ch.form105.shuttle.base.generated.tournament.Game) 
 
     /**
      * Method unmarshal

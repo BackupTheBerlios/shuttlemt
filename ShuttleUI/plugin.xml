@@ -39,12 +39,23 @@
             targetID="ShuttleUI.ProjectView">
          <action
                class="ch.form105.shuttle.ui.action.NewProjectAction"
-               icon="image/tango-icon-theme-0.7.1/16x16/actions/document-new.png"
+               icon="image/list-add.png"
                id="ShuttleUI.NewProject"
                label="%projectView.contextMenu.newProject"
                menubarPath="group1"
                />
       </viewerContribution>
+      <objectContribution
+            adaptable="false"
+            id="ShuttleUI.projectContribution"
+            objectClass="org.eclipse.core.resources.IProject">
+         <action
+               class="ch.form105.shuttle.ui.action.DeleteProjectAction"
+               icon="image/list-remove.png"
+               id="ShuttleUI.action1"
+               label="Delete Project"
+               menubarPath="group1"/>
+      </objectContribution>
    </extension>
    <extension
          point="org.eclipse.ui.perspectiveExtensions">

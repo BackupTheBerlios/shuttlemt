@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: MixedDescriptor.java,v 1.2 2006/05/14 10:27:30 luschtiger Exp $
+ * $Id: MixedDescriptor.java,v 1.3 2006/05/25 22:48:16 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -19,7 +19,7 @@ import org.exolab.castor.xml.validators.*;
 /**
  * Class MixedDescriptor.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:30 $
+ * @version $Revision: 1.3 $ $Date: 2006/05/25 22:48:16 $
  */
 public class MixedDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 

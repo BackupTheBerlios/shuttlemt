@@ -1,5 +1,8 @@
 package ch.form105.shuttle.ui.view.project;
 
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.action.GroupMarker;
@@ -45,7 +48,7 @@ public class ProjectView extends ViewPart {
 		layoutData.horizontalAlignment = GridData.FILL;
 		layoutData.verticalAlignment = GridData.FILL;
 		treeViewer.getControl().setLayoutData(layoutData);
-		
+
 		createContextMenu();
 
 	}
@@ -60,21 +63,15 @@ public class ProjectView extends ViewPart {
 		treeViewer.setLabelProvider(new ProjectLabelProvider());
 
 		IWorkspaceRoot wsRoot = ResourcesPlugin.getWorkspace().getRoot();
-		/*IProject project = wsRoot.getProject("Default Project");
-		try {
-			project.create(null);
-		} catch (CoreException e) {
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
+		IResourceChangeListener listener = new IResourceChangeListener() {
+			public void resourceChanged(IResourceChangeEvent event) {
+				treeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot()
+						.getProjects());
+			}
+		};
+		workspace.addResourceChangeListener(listener);
 
-			e.printStackTrace();
-		}
-		*/
-		
-		
-		
-		
-
-		
-		
 		treeViewer.setInput(wsRoot.getProjects());
 
 		// treeViewer.setInput(getInitalInput());
@@ -107,30 +104,30 @@ public class ProjectView extends ViewPart {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	/**
-     * create a context menu for this view
-     * 
-     */
-    protected void createContextMenu() {
-        // Create menu manager.
-        MenuManager menuMgr = new MenuManager();
-        menuMgr.setRemoveAllWhenShown(true);
+	 * create a context menu for this view
+	 * 
+	 */
+	protected void createContextMenu() {
+		// Create menu manager.
+		MenuManager menuMgr = new MenuManager();
+		menuMgr.setRemoveAllWhenShown(true);
 
-        // Create menu.
-        menuMgr.addMenuListener(new IMenuListener() {
+		// Create menu.
+		menuMgr.addMenuListener(new IMenuListener() {
 
-            public void menuAboutToShow(IMenuManager manager) {
-                manager.add(new GroupMarker(
-                        IWorkbenchActionConstants.MB_ADDITIONS));
-            }
-        });
+			public void menuAboutToShow(IMenuManager manager) {
+				manager.add(new GroupMarker(
+						IWorkbenchActionConstants.MB_ADDITIONS));
+			}
+		});
 
-        Menu menu = menuMgr.createContextMenu(treeViewer.getControl());
-        treeViewer.getControl().setMenu(menu);
+		Menu menu = menuMgr.createContextMenu(treeViewer.getControl());
+		treeViewer.getControl().setMenu(menu);
 
-        // Register menu for extension.
-        getSite().registerContextMenu(menuMgr, treeViewer);
-    }
+		// Register menu for extension.
+		getSite().registerContextMenu(menuMgr, treeViewer);
+	}
 
 }

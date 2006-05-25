@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="lib/log4j-1.2.13.jar"/>
 	<classpathentry kind="lib" path="lib/castor-1.0-srcgen-ant-task.jar"/>
 	<classpathentry kind="lib" path="lib/castor-1.0-xml.jar"/>
+	<classpathentry kind="lib" path="lib/xercesImpl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

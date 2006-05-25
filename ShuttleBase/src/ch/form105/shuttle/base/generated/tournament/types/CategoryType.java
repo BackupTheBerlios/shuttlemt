@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: SexType.java,v 1.4 2006/05/25 22:48:17 luschtiger Exp $
+ * $Id: CategoryType.java,v 1.1 2006/05/25 22:48:17 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players.types;
+package ch.form105.shuttle.base.generated.tournament.types;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -21,11 +21,11 @@ import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
 
 /**
- * Class SexType.
+ * Class CategoryType.
  * 
- * @version $Revision: 1.4 $ $Date: 2006/05/25 22:48:17 $
+ * @version $Revision: 1.1 $ $Date: 2006/05/25 22:48:17 $
  */
-public class SexType implements java.io.Serializable {
+public class CategoryType implements java.io.Serializable {
 
 
       //--------------------------/
@@ -33,24 +33,44 @@ public class SexType implements java.io.Serializable {
     //--------------------------/
 
     /**
-     * The W type
+     * The A type
      */
-    public static final int W_TYPE = 0;
+    public static final int A_TYPE = 0;
 
     /**
-     * The instance of the W type
+     * The instance of the A type
      */
-    public static final SexType W = new SexType(W_TYPE, "W");
+    public static final CategoryType A = new CategoryType(A_TYPE, "A");
 
     /**
-     * The M type
+     * The B type
      */
-    public static final int M_TYPE = 1;
+    public static final int B_TYPE = 1;
 
     /**
-     * The instance of the M type
+     * The instance of the B type
      */
-    public static final SexType M = new SexType(M_TYPE, "M");
+    public static final CategoryType B = new CategoryType(B_TYPE, "B");
+
+    /**
+     * The C type
+     */
+    public static final int C_TYPE = 2;
+
+    /**
+     * The instance of the C type
+     */
+    public static final CategoryType C = new CategoryType(C_TYPE, "C");
+
+    /**
+     * The D type
+     */
+    public static final int D_TYPE = 3;
+
+    /**
+     * The instance of the D type
+     */
+    public static final CategoryType D = new CategoryType(D_TYPE, "D");
 
     /**
      * Field _memberTable
@@ -77,12 +97,12 @@ public class SexType implements java.io.Serializable {
      //- Constructors -/
     //----------------/
 
-    private SexType(int type, java.lang.String value) 
+    private CategoryType(int type, java.lang.String value) 
      {
         super();
         this.type = type;
         this.stringValue = value;
-    } //-- ch.form105.shuttle.base.generated.players.types.SexType(int, java.lang.String)
+    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryType(int, java.lang.String)
 
 
       //-----------/
@@ -107,7 +127,8 @@ public class SexType implements java.io.Serializable {
     /**
      * Method enumerate
      * 
-     * Returns an enumeration of all possible instances of SexType
+     * Returns an enumeration of all possible instances of
+     * CategoryType
      * 
      * @return Enumeration
      */
@@ -119,7 +140,7 @@ public class SexType implements java.io.Serializable {
     /**
      * Method getType
      * 
-     * Returns the type of this SexType
+     * Returns the type of this CategoryType
      * 
      * @return int
      */
@@ -170,8 +191,10 @@ public class SexType implements java.io.Serializable {
     private static java.util.Hashtable init()
     {
         Hashtable members = new Hashtable();
-        members.put("W", W);
-        members.put("M", M);
+        members.put("A", A);
+        members.put("B", B);
+        members.put("C", C);
+        members.put("D", D);
         return members;
     } //-- java.util.Hashtable init() 
 
@@ -192,7 +215,7 @@ public class SexType implements java.io.Serializable {
     /**
      * Method toString
      * 
-     * Returns the String representation of this SexType
+     * Returns the String representation of this CategoryType
      * 
      * @return String
      */
@@ -204,20 +227,20 @@ public class SexType implements java.io.Serializable {
     /**
      * Method valueOf
      * 
-     * Returns a new SexType based on the given String value.
+     * Returns a new CategoryType based on the given String value.
      * 
      * @param string
-     * @return SexType
+     * @return CategoryType
      */
-    public static ch.form105.shuttle.base.generated.players.types.SexType valueOf(java.lang.String string)
+    public static ch.form105.shuttle.base.generated.tournament.types.CategoryType valueOf(java.lang.String string)
     {
         java.lang.Object obj = null;
         if (string != null) obj = _memberTable.get(string);
         if (obj == null) {
-            String err = "'" + string + "' is not a valid SexType";
+            String err = "'" + string + "' is not a valid CategoryType";
             throw new IllegalArgumentException(err);
         }
-        return (SexType) obj;
-    } //-- ch.form105.shuttle.base.generated.players.types.SexType valueOf(java.lang.String) 
+        return (CategoryType) obj;
+    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryType valueOf(java.lang.String) 
 
 }

@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Tournament.java,v 1.2 2006/05/14 10:27:30 luschtiger Exp $
+ * $Id: Tournament.java,v 1.3 2006/05/25 22:48:16 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -29,7 +29,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Class Tournament.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/05/14 10:27:30 $
+ * @version $Revision: 1.3 $ $Date: 2006/05/25 22:48:16 $
  */
 public class Tournament extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
@@ -51,6 +51,11 @@ implements java.io.Serializable
     private java.util.ArrayList _masterPlayerList;
 
     /**
+     * Field _version
+     */
+    private java.lang.String _version = "1.0b";
+
+    /**
      * Field _games
      */
     private ch.form105.shuttle.base.generated.tournament.Games _games;
@@ -69,6 +74,7 @@ implements java.io.Serializable
      {
         super();
         _masterPlayerList = new ArrayList();
+        setVersion("1.0b");
     } //-- ch.form105.shuttle.base.generated.tournament.Tournament()
 
 
@@ -83,12 +89,12 @@ implements java.io.Serializable
      * 
      * @param vMasterPlayer
      */
-    public void addMasterPlayer(java.lang.Object vMasterPlayer)
+    public void addMasterPlayer(ch.form105.shuttle.base.generated.tournament.MasterPlayer vMasterPlayer)
         throws java.lang.IndexOutOfBoundsException
     {
         _masterPlayerList.add(vMasterPlayer);
         notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
-    } //-- void addMasterPlayer(java.lang.Object) 
+    } //-- void addMasterPlayer(ch.form105.shuttle.base.generated.tournament.MasterPlayer) 
 
     /**
      * Method addMasterPlayer
@@ -98,12 +104,12 @@ implements java.io.Serializable
      * @param index
      * @param vMasterPlayer
      */
-    public void addMasterPlayer(int index, java.lang.Object vMasterPlayer)
+    public void addMasterPlayer(int index, ch.form105.shuttle.base.generated.tournament.MasterPlayer vMasterPlayer)
         throws java.lang.IndexOutOfBoundsException
     {
         _masterPlayerList.add(index, vMasterPlayer);
         notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
-    } //-- void addMasterPlayer(int, java.lang.Object) 
+    } //-- void addMasterPlayer(int, ch.form105.shuttle.base.generated.tournament.MasterPlayer) 
 
     /**
      * Method addPropertyChangeListener
@@ -159,9 +165,9 @@ implements java.io.Serializable
      * 
      * 
      * @param index
-     * @return Object
+     * @return MasterPlayer
      */
-    public java.lang.Object getMasterPlayer(int index)
+    public ch.form105.shuttle.base.generated.tournament.MasterPlayer getMasterPlayer(int index)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
@@ -169,25 +175,25 @@ implements java.io.Serializable
             throw new IndexOutOfBoundsException();
         }
         
-        return (java.lang.Object) _masterPlayerList.get(index);
-    } //-- java.lang.Object getMasterPlayer(int) 
+        return (ch.form105.shuttle.base.generated.tournament.MasterPlayer) _masterPlayerList.get(index);
+    } //-- ch.form105.shuttle.base.generated.tournament.MasterPlayer getMasterPlayer(int) 
 
     /**
      * Method getMasterPlayer
      * 
      * 
      * 
-     * @return Object
+     * @return MasterPlayer
      */
-    public java.lang.Object[] getMasterPlayer()
+    public ch.form105.shuttle.base.generated.tournament.MasterPlayer[] getMasterPlayer()
     {
         int size = _masterPlayerList.size();
-        java.lang.Object[] mArray = new java.lang.Object[size];
+        ch.form105.shuttle.base.generated.tournament.MasterPlayer[] mArray = new ch.form105.shuttle.base.generated.tournament.MasterPlayer[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = (java.lang.Object) _masterPlayerList.get(index);
+            mArray[index] = (ch.form105.shuttle.base.generated.tournament.MasterPlayer) _masterPlayerList.get(index);
         }
         return mArray;
-    } //-- java.lang.Object[] getMasterPlayer() 
+    } //-- ch.form105.shuttle.base.generated.tournament.MasterPlayer[] getMasterPlayer() 
 
     /**
      * Method getMasterPlayerCount
@@ -211,6 +217,17 @@ implements java.io.Serializable
     {
         return this._tournamentName;
     } //-- java.lang.String getTournamentName() 
+
+    /**
+     * Returns the value of field 'version'.
+     * 
+     * @return String
+     * @return the value of field 'version'.
+     */
+    public java.lang.String getVersion()
+    {
+        return this._version;
+    } //-- java.lang.String getVersion() 
 
     /**
      * Method isValid
@@ -282,12 +299,12 @@ implements java.io.Serializable
      * @param vMasterPlayer
      * @return boolean
      */
-    public boolean removeMasterPlayer(java.lang.Object vMasterPlayer)
+    public boolean removeMasterPlayer(ch.form105.shuttle.base.generated.tournament.MasterPlayer vMasterPlayer)
     {
         boolean removed = _masterPlayerList.remove(vMasterPlayer);
         notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
         return removed;
-    } //-- boolean removeMasterPlayer(java.lang.Object) 
+    } //-- boolean removeMasterPlayer(ch.form105.shuttle.base.generated.tournament.MasterPlayer) 
 
     /**
      * Method removePropertyChangeListener
@@ -325,7 +342,7 @@ implements java.io.Serializable
      * @param index
      * @param vMasterPlayer
      */
-    public void setMasterPlayer(int index, java.lang.Object vMasterPlayer)
+    public void setMasterPlayer(int index, ch.form105.shuttle.base.generated.tournament.MasterPlayer vMasterPlayer)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
@@ -334,7 +351,7 @@ implements java.io.Serializable
         }
         _masterPlayerList.set(index, vMasterPlayer);
         notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
-    } //-- void setMasterPlayer(int, java.lang.Object) 
+    } //-- void setMasterPlayer(int, ch.form105.shuttle.base.generated.tournament.MasterPlayer) 
 
     /**
      * Method setMasterPlayer
@@ -343,7 +360,7 @@ implements java.io.Serializable
      * 
      * @param masterPlayerArray
      */
-    public void setMasterPlayer(java.lang.Object[] masterPlayerArray)
+    public void setMasterPlayer(ch.form105.shuttle.base.generated.tournament.MasterPlayer[] masterPlayerArray)
     {
         //-- copy array
         _masterPlayerList.clear();
@@ -351,7 +368,7 @@ implements java.io.Serializable
             _masterPlayerList.add(masterPlayerArray[i]);
         }
         notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
-    } //-- void setMasterPlayer(java.lang.Object) 
+    } //-- void setMasterPlayer(ch.form105.shuttle.base.generated.tournament.MasterPlayer) 
 
     /**
      * Sets the value of field 'tournamentName'.
@@ -364,6 +381,18 @@ implements java.io.Serializable
         this._tournamentName = tournamentName;
         notifyPropertyChangeListeners("_tournamentName", oldTournamentName, this._tournamentName);
     } //-- void setTournamentName(java.lang.String) 
+
+    /**
+     * Sets the value of field 'version'.
+     * 
+     * @param version the value of field 'version'.
+     */
+    public void setVersion(java.lang.String version)
+    {
+        java.lang.Object oldVersion = this._version;
+        this._version = version;
+        notifyPropertyChangeListeners("_version", oldVersion, this._version);
+    } //-- void setVersion(java.lang.String) 
 
     /**
      * Method unmarshal
