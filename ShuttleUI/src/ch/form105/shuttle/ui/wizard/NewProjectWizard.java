@@ -2,8 +2,13 @@ package ch.form105.shuttle.ui.wizard;
 
 import java.util.Collection;
 
+import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IResourceChangeEvent;
+import org.eclipse.core.resources.IResourceChangeListener;
+import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
@@ -19,18 +24,24 @@ import ch.form105.shuttle.base.generated.tournament.Games;
 import ch.form105.shuttle.base.generated.tournament.Tournament;
 import ch.form105.shuttle.base.generated.tournament.types.CategoryType;
 import ch.form105.shuttle.base.helper.XMLSaver;
+import ch.form105.shuttle.ui.Constants;
 import ch.form105.shuttle.ui.ImageFactory;
 import ch.form105.shuttle.ui.i18n.wizard.Messages;
+import ch.form105.shuttle.ui.wizard.page.ImportPage;
 import ch.form105.shuttle.ui.wizard.page.SetCategoryPage;
 import ch.form105.shuttle.ui.wizard.page.SetNamePage;
 import ch.form105.shuttle.ui.wizard.page.SetProjectTypePage;
 
 public class NewProjectWizard extends Wizard implements INewWizard {
+	
+	private static final Logger log = Logger.getLogger(NewProjectWizard.class);
 
 	public static final String id = "ShuttleUI.newProjectWizard";
 
 	private WizardNewProjectCreationPage mainPage;
 
+	private ImportPage page0;
+	
 	private SetNamePage page1;
 
 	private SetProjectTypePage page2;
@@ -49,9 +60,11 @@ public class NewProjectWizard extends Wizard implements INewWizard {
 	}
 
 	public void addPages() {
+		page0 = new ImportPage();
 		page1 = new SetNamePage();
 		page2 = new SetProjectTypePage();
 		page3 = new SetCategoryPage();
+		addPage(page0);
 		addPage(page1);
 		addPage(page2);
 		addPage(page3);
@@ -84,19 +97,35 @@ public class NewProjectWizard extends Wizard implements INewWizard {
 		}
 
 		// create the xml file
+		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IWorkspaceRoot wsRoot = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = wsRoot.getProject(projectDesc.getName());
-		
+		IFile file = project.getFile(Constants.TOURNAMENT_FILE_NAME);
+		workspace.addResourceChangeListener(new IResourceChangeListener() {
+
+			public void resourceChanged(IResourceChangeEvent event) {
+				System.out.println("Resources changed");
+				
+			}
+			
+		});
 		try {
 			project.create(projectDesc, null);
+			project.open(null);
+			//file.create(null,IResource.NONE, null);
+			System.out.println(file.exists());
 		} catch (CoreException e) {
 			e.printStackTrace();
 		}
 
-		
 		String projectPath = project.getLocation().toOSString();
-		String savePath = projectPath + "\\test.xml";
-		System.out.println(savePath);
+		String savePath = projectPath + "/"+Constants.TOURNAMENT_FILE_NAME;
+		
+		
+		
+		
+		log.info(savePath);
+		
 		
 		XMLSaver.run(tournament, savePath);
 

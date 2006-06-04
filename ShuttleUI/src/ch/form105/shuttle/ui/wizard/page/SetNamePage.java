@@ -1,5 +1,6 @@
 package ch.form105.shuttle.ui.wizard.page;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.internal.resources.ProjectDescription;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -18,8 +19,11 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
 import ch.form105.shuttle.ui.i18n.wizard.Messages;
+import ch.form105.shuttle.ui.view.project.Tournaments;
 
 public class SetNamePage extends WizardPage {
+	
+	private static final Logger log = Logger.getLogger(SetNamePage.class);
 	
 	private Text nameField;
 	private Text descField;
