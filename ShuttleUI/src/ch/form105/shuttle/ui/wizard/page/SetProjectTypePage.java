@@ -112,6 +112,7 @@ public class SetProjectTypePage extends WizardPage {
 		if (button5.getSelection()) {
 			createGame(Constants.MIXED, button5);
 		}
+		System.out.println("Games: "+games.size());
 		
 		
 

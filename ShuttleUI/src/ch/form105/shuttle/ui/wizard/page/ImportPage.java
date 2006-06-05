@@ -14,6 +14,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
+import ch.form105.shuttle.ui.application.DefaultPreferences;
 import ch.form105.shuttle.ui.i18n.MainMessages;
 import ch.form105.shuttle.ui.i18n.wizard.Messages;
 
@@ -27,6 +28,8 @@ public class ImportPage extends WizardPage {
 	private Composite parent;
 	private String playerFilePath;
 	private String clubFilePath;
+	private String playerFileName;
+	private String clubFileName;
 
 	public ImportPage() {
 		super("ChoosePlayerFilePage");
@@ -43,7 +46,7 @@ public class ImportPage extends WizardPage {
 		// Composite projectGroup = new Composite(parent, SWT.NONE);
 		Composite group = new Composite(parent, SWT.NONE);
 		GridLayout layout = new GridLayout();
-		layout.numColumns = 2;
+		layout.numColumns = 3;
 		group.setLayout(layout);
 		group.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
 
@@ -64,8 +67,6 @@ public class ImportPage extends WizardPage {
 
 		playerSelectButton = new Button(group, SWT.RIGHT);
 		playerSelectButton.setText(MainMessages.getString("SelectButton"));
-		playerSelectButton.setLayoutData(new GridData(SWT.RIGHT, SWT.FILL, false,
-				false, 2, 1));
 
 		playerSelectButton.addListener(SWT.Selection, playerSelectionListener);
 		
@@ -86,8 +87,6 @@ public class ImportPage extends WizardPage {
 
 		clubSelectButton = new Button(group, SWT.RIGHT);
 		clubSelectButton.setText(MainMessages.getString("SelectButton"));
-		clubSelectButton.setLayoutData(new GridData(SWT.RIGHT, SWT.FILL, false,
-				false, 2, 1));
 
 		clubSelectButton.addListener(SWT.Selection, clubSelectionListener);
 		
@@ -105,13 +104,14 @@ public class ImportPage extends WizardPage {
 			FileDialog fileDialog = new FileDialog(parent.getShell(),
 					SWT.SINGLE);
 			// TODO use name from default preference
-			fileDialog.setFileName("players_no_adr.sb");
+			fileDialog.setFileName(DefaultPreferences.IMPORT_PLAYER_FILENAME.name());
 			fileDialog.setFilterExtensions(new String[] { "*.sb", "*.*" });
 
 			playerFilePath = fileDialog.open();
 			log.debug("File that has been choosen: " + playerFilePath);
 			if (playerFilePath != null) {
 				playerNameField.setText(playerFilePath);
+				playerFileName = fileDialog.getFileName();
 			}
 
 			validatePage();
@@ -123,13 +123,14 @@ public class ImportPage extends WizardPage {
 			FileDialog fileDialog = new FileDialog(parent.getShell(),
 					SWT.SINGLE);
 			// TODO use name from default preference
-			fileDialog.setFileName("players_no_adr.sb");
+			fileDialog.setFileName(DefaultPreferences.IMPORT_CLUB_FILENAME.name());
 			fileDialog.setFilterExtensions(new String[] { "*.sb", "*.*" });
 
 			clubFilePath = fileDialog.open();
-			log.debug("File that has been choosen: " + playerFilePath);
+			log.debug("File that has been choosen: " + clubFilePath);
 			if (clubFilePath != null) {
-				clubNameField.setText(playerFilePath);
+				clubNameField.setText(clubFilePath);
+				clubFileName = fileDialog.getFileName();
 			}
 
 			validatePage();
@@ -164,6 +165,30 @@ public class ImportPage extends WizardPage {
 	 */
 	public String getPlayerFilePath() {
 		return playerNameField.getText();
+	}
+	
+	/**
+	 * Getting the choosen file path
+	 * @return The file path
+	 */
+	public String getClubFilePath() {
+		return clubNameField.getText();
+	}
+	
+	/**
+	 * Get the name of the file
+	 * @return The file name
+	 */
+	public String getPlayerFileName() {
+		return playerFileName;
+	}
+	
+	/**
+	 * Get the name of the file
+	 * @return The file name
+	 */
+	public String getClubFileName() {
+		return clubFileName;
 	}
 
 }

@@ -1,5 +1,6 @@
 package ch.form105.shuttle.ui.view.project;
 
+import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IResourceChangeEvent;
 import org.eclipse.core.resources.IResourceChangeListener;
 import org.eclipse.core.resources.IWorkspace;
@@ -22,10 +23,13 @@ import org.eclipse.ui.part.ViewPart;
 
 import ch.form105.shuttle.ui.ShuttleUIPlugin;
 import ch.form105.shuttle.ui.view.player.ImportPlayerView;
+import ch.form105.shuttle.ui.wizard.NewProjectWizard;
 
 public class ProjectView extends ViewPart {
 
 	public static final String ID = "ShuttleUI.ProjectView";
+	
+	private static final Logger log = Logger.getLogger(ProjectView.class);
 
 	private TreeViewer treeViewer;
 
@@ -66,8 +70,13 @@ public class ProjectView extends ViewPart {
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 		IResourceChangeListener listener = new IResourceChangeListener() {
 			public void resourceChanged(IResourceChangeEvent event) {
+				
 				treeViewer.setInput(ResourcesPlugin.getWorkspace().getRoot()
 						.getProjects());
+				
+				
+				
+				
 			}
 		};
 		workspace.addResourceChangeListener(listener);
