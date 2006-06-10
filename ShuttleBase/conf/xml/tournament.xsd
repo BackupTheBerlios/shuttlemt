@@ -8,9 +8,7 @@
         <xs:element ref="MasterPlayer" minOccurs="0" maxOccurs="unbounded" />
         <xs:element name="version" type="xs:string" fixed="1.0b" />
 
-        <xs:element name="games">
-          <xs:complexType>
-            <xs:sequence>
+        
               <xs:element name="game" minOccurs="1" maxOccurs="unbounded">
                 <xs:complexType>
                   <xs:sequence>
@@ -33,10 +31,7 @@
                 </xs:complexType>
               </xs:element>
 
-            </xs:sequence>
-          </xs:complexType>
-
-        </xs:element>
+        
       </xs:sequence>
     </xs:complexType>
   </xs:element>

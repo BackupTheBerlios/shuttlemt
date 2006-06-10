@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Game.java,v 1.1 2006/05/25 22:45:42 luschtiger Exp $
+ * $Id: Game.java,v 1.2 2006/06/10 18:17:55 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -30,7 +30,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Class Game.
  * 
- * @version $Revision: 1.1 $ $Date: 2006/05/25 22:45:42 $
+ * @version $Revision: 1.2 $ $Date: 2006/06/10 18:17:55 $
  */
 public class Game extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable

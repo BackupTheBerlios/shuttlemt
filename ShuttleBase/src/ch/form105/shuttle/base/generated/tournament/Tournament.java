@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Tournament.java,v 1.3 2006/05/25 22:48:16 luschtiger Exp $
+ * $Id: Tournament.java,v 1.4 2006/06/10 18:17:55 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -29,7 +29,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Class Tournament.
  * 
- * @version $Revision: 1.3 $ $Date: 2006/05/25 22:48:16 $
+ * @version $Revision: 1.4 $ $Date: 2006/06/10 18:17:55 $
  */
 public class Tournament extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
@@ -56,9 +56,9 @@ implements java.io.Serializable
     private java.lang.String _version = "1.0b";
 
     /**
-     * Field _games
+     * Field _gameList
      */
-    private ch.form105.shuttle.base.generated.tournament.Games _games;
+    private java.util.ArrayList _gameList;
 
     /**
      * Field propertyChangeSupport
@@ -75,12 +75,42 @@ implements java.io.Serializable
         super();
         _masterPlayerList = new ArrayList();
         setVersion("1.0b");
+        _gameList = new ArrayList();
     } //-- ch.form105.shuttle.base.generated.tournament.Tournament()
 
 
       //-----------/
      //- Methods -/
     //-----------/
+
+    /**
+     * Method addGame
+     * 
+     * 
+     * 
+     * @param vGame
+     */
+    public void addGame(ch.form105.shuttle.base.generated.tournament.Game vGame)
+        throws java.lang.IndexOutOfBoundsException
+    {
+        _gameList.add(vGame);
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void addGame(ch.form105.shuttle.base.generated.tournament.Game) 
+
+    /**
+     * Method addGame
+     * 
+     * 
+     * 
+     * @param index
+     * @param vGame
+     */
+    public void addGame(int index, ch.form105.shuttle.base.generated.tournament.Game vGame)
+        throws java.lang.IndexOutOfBoundsException
+    {
+        _gameList.add(index, vGame);
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void addGame(int, ch.form105.shuttle.base.generated.tournament.Game) 
 
     /**
      * Method addMasterPlayer
@@ -127,6 +157,16 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
+     * Method clearGame
+     * 
+     */
+    public void clearGame()
+    {
+        _gameList.clear();
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void clearGame() 
+
+    /**
      * Method clearMasterPlayer
      * 
      */
@@ -135,6 +175,18 @@ implements java.io.Serializable
         _masterPlayerList.clear();
         notifyPropertyChangeListeners("_masterPlayerList", null, _masterPlayerList);
     } //-- void clearMasterPlayer() 
+
+    /**
+     * Method enumerateGame
+     * 
+     * 
+     * 
+     * @return Enumeration
+     */
+    public java.util.Enumeration enumerateGame()
+    {
+        return new org.exolab.castor.util.IteratorEnumeration(_gameList.iterator());
+    } //-- java.util.Enumeration enumerateGame() 
 
     /**
      * Method enumerateMasterPlayer
@@ -149,15 +201,52 @@ implements java.io.Serializable
     } //-- java.util.Enumeration enumerateMasterPlayer() 
 
     /**
-     * Returns the value of field 'games'.
+     * Method getGame
      * 
-     * @return Games
-     * @return the value of field 'games'.
+     * 
+     * 
+     * @param index
+     * @return Game
      */
-    public ch.form105.shuttle.base.generated.tournament.Games getGames()
+    public ch.form105.shuttle.base.generated.tournament.Game getGame(int index)
+        throws java.lang.IndexOutOfBoundsException
     {
-        return this._games;
-    } //-- ch.form105.shuttle.base.generated.tournament.Games getGames() 
+        //-- check bounds for index
+        if ((index < 0) || (index >= _gameList.size())) {
+            throw new IndexOutOfBoundsException();
+        }
+        
+        return (ch.form105.shuttle.base.generated.tournament.Game) _gameList.get(index);
+    } //-- ch.form105.shuttle.base.generated.tournament.Game getGame(int) 
+
+    /**
+     * Method getGame
+     * 
+     * 
+     * 
+     * @return Game
+     */
+    public ch.form105.shuttle.base.generated.tournament.Game[] getGame()
+    {
+        int size = _gameList.size();
+        ch.form105.shuttle.base.generated.tournament.Game[] mArray = new ch.form105.shuttle.base.generated.tournament.Game[size];
+        for (int index = 0; index < size; index++) {
+            mArray[index] = (ch.form105.shuttle.base.generated.tournament.Game) _gameList.get(index);
+        }
+        return mArray;
+    } //-- ch.form105.shuttle.base.generated.tournament.Game[] getGame() 
+
+    /**
+     * Method getGameCount
+     * 
+     * 
+     * 
+     * @return int
+     */
+    public int getGameCount()
+    {
+        return _gameList.size();
+    } //-- int getGameCount() 
 
     /**
      * Method getMasterPlayer
@@ -292,6 +381,21 @@ implements java.io.Serializable
     } //-- void notifyPropertyChangeListeners(java.lang.String, java.lang.Object, java.lang.Object) 
 
     /**
+     * Method removeGame
+     * 
+     * 
+     * 
+     * @param vGame
+     * @return boolean
+     */
+    public boolean removeGame(ch.form105.shuttle.base.generated.tournament.Game vGame)
+    {
+        boolean removed = _gameList.remove(vGame);
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+        return removed;
+    } //-- boolean removeGame(ch.form105.shuttle.base.generated.tournament.Game) 
+
+    /**
      * Method removeMasterPlayer
      * 
      * 
@@ -323,16 +427,40 @@ implements java.io.Serializable
     } //-- boolean removePropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Sets the value of field 'games'.
+     * Method setGame
      * 
-     * @param games the value of field 'games'.
+     * 
+     * 
+     * @param index
+     * @param vGame
      */
-    public void setGames(ch.form105.shuttle.base.generated.tournament.Games games)
+    public void setGame(int index, ch.form105.shuttle.base.generated.tournament.Game vGame)
+        throws java.lang.IndexOutOfBoundsException
     {
-        java.lang.Object oldGames = this._games;
-        this._games = games;
-        notifyPropertyChangeListeners("_games", oldGames, this._games);
-    } //-- void setGames(ch.form105.shuttle.base.generated.tournament.Games) 
+        //-- check bounds for index
+        if ((index < 0) || (index >= _gameList.size())) {
+            throw new IndexOutOfBoundsException();
+        }
+        _gameList.set(index, vGame);
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void setGame(int, ch.form105.shuttle.base.generated.tournament.Game) 
+
+    /**
+     * Method setGame
+     * 
+     * 
+     * 
+     * @param gameArray
+     */
+    public void setGame(ch.form105.shuttle.base.generated.tournament.Game[] gameArray)
+    {
+        //-- copy array
+        _gameList.clear();
+        for (int i = 0; i < gameArray.length; i++) {
+            _gameList.add(gameArray[i]);
+        }
+        notifyPropertyChangeListeners("_gameList", null, _gameList);
+    } //-- void setGame(ch.form105.shuttle.base.generated.tournament.Game) 
 
     /**
      * Method setMasterPlayer

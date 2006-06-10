@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: SexTypeDescriptor.java,v 1.4 2006/05/25 22:48:17 luschtiger Exp $
+ * $Id: SexTypeDescriptor.java,v 1.5 2006/06/10 18:17:56 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.players.types;
@@ -19,7 +19,7 @@ import org.exolab.castor.xml.validators.*;
 /**
  * Class SexTypeDescriptor.
  * 
- * @version $Revision: 1.4 $ $Date: 2006/05/25 22:48:17 $
+ * @version $Revision: 1.5 $ $Date: 2006/06/10 18:17:56 $
  */
 public class SexTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
