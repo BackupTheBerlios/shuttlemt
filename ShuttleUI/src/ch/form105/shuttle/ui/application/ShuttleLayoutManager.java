@@ -40,7 +40,7 @@ public class ShuttleLayoutManager  {
         
         IFolderLayout right = layout.createFolder("bottomRight", IPageLayout.RIGHT,
                 0.3f, IPageLayout.ID_EDITOR_AREA);
-        right.addView("ShuttleUI.PlayerView");
+        right.addPlaceholder("ShuttleUI.PlayerView");
         
         IFolderLayout left = layout.createFolder("bottomLeft", IPageLayout.LEFT,
                 0.7f, IPageLayout.ID_EDITOR_AREA);
