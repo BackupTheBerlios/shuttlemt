@@ -5,6 +5,9 @@ public class Importer {
 	LoaderInput loaderInput = new CSVLoaderInput();
 
 	Mapper mapper;
+	
+	Object[] elements = null;
+	Object[] header = null;
 
 	public Importer(LoaderInput loader, Mapper mapper) {
 		this.loaderInput = loader;
@@ -27,11 +30,18 @@ public class Importer {
 	}
 
 	public Object[] getElements() {
-		return mapper.getResult();
+		if (elements == null) {
+			elements = mapper.getResult();
+		}
+		
+		return elements;
 	}
 	
 	public Object[] getHeader() {
-		return mapper.getHeader();
+		if (header == null) {
+			header = mapper.getHeader();
+		}
+		return header;
 	}
 
 }

@@ -1,8 +1,8 @@
 package ch.form105.shuttle.base.importer;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import ch.form105.shuttle.base.Messages;
 import ch.form105.shuttle.base.generated.players.Classifier;
 import ch.form105.shuttle.base.generated.players.Player;
 import ch.form105.shuttle.base.generated.players.Players;

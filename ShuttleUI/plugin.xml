@@ -22,10 +22,16 @@
    <extension
          point="org.eclipse.ui.views">
       <view
-            name="PlayerView"
             class="ch.form105.shuttle.ui.view.player.ImportPlayerView"
-            id="ShuttleUI.PlayerView">
+            icon="image/player.gif"
+            id="ShuttleUI.PlayerView"
+            name="PlayerView">
       </view>
+      <view
+            class="ch.form105.shuttle.ui.view.club.ImportClubView"
+            icon="image/club.gif"
+            id="ShuttleUI.ClubView"
+            name="ClubView"/>
       <view
             allowMultiple="false"
             class="ch.form105.shuttle.ui.view.project.ProjectView"

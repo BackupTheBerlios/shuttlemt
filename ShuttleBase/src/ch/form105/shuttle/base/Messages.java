@@ -1,10 +1,10 @@
-package ch.form105.shuttle.base.importer;
+package ch.form105.shuttle.base;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 public class Messages {
-	private static final String BUNDLE_NAME = "ch.form105.shuttle.base.importer.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "ch.form105.shuttle.base.messages"; //$NON-NLS-1$
 
 	private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle
 			.getBundle(BUNDLE_NAME);

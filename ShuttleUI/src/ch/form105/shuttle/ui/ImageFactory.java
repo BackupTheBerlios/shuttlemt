@@ -11,9 +11,9 @@ public enum ImageFactory {
 	IMG_TOURNAMENT_PROJECT_SMALL(
 			"image/tango-icon-theme-0.7.2/16x16/categories/applications-other.png"), //$NON-NLS-1$
 	IMG_CREATE_PROJECT_WIZARD_PAGE("image/new_wiz.gif"),
-	IMG_IMPORT_USER("image/tango-icon-theme-0.7.2/16x16/apps/system-users.png"),
-	IMG_IMPORT_CLUB("image/tango-icon-theme-0.7.2/16x16/mimetypes/application-certificate.png"),
-	IMG_TOURNAMENT("image/tango-icon-theme-0.7.2/16x16/actions/view-fullscreen.png"); //$NON-NLS-1$
+	IMG_IMPORT_USER("image/player.gif"),
+	IMG_IMPORT_CLUB("image/club.gif"),
+	IMG_TOURNAMENT("image/tournament.gif"); //$NON-NLS-1$
 
 	
 	

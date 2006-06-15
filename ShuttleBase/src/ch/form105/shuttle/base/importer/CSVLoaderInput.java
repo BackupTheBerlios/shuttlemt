@@ -17,7 +17,7 @@ public class CSVLoaderInput extends LoaderInput {
 
 	private static final Logger log = Logger.getLogger(CSVLoaderInput.class);
 
-	private String file = "import/players_no_adr.sb";
+	private String file;
 
 	private BufferedReader reader;
 	private Object[] header = null;
@@ -25,9 +25,7 @@ public class CSVLoaderInput extends LoaderInput {
 	
 	private InputStream input;
 
-	public CSVLoaderInput() {
-		this("import/players_no_adr.sb");
-	}
+	public CSVLoaderInput() {}
 
 	public CSVLoaderInput(String file) {
 		this.file = file;
@@ -48,9 +46,10 @@ public class CSVLoaderInput extends LoaderInput {
 			// ignore first line = headerline
 			// reader.readLine();
 			while ((line = reader.readLine()) != null) {
-				if (line.length() > 1  && !line.startsWith("LIZNR") && !line.startsWith("#")) {
+				if (line.startsWith("LIZNR")) continue;
+				if (line.startsWith("NR")) continue;
+				if (line.length() > 1 && !line.startsWith("#")) {
 					String[] sLine = line.split(";");
-					log.debug("readed line: " + line);
 					list.add(sLine);
 				}
 			}

@@ -1,8 +1,12 @@
-package ch.form105.shuttle.ui.view.player;
-
-import java.util.HashMap;
+package ch.form105.shuttle.ui.view.club;
 
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -12,23 +16,22 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.part.ViewPart;
 
+import ch.form105.shuttle.base.importer.CSVLoaderInput;
 import ch.form105.shuttle.base.importer.Importer;
+import ch.form105.shuttle.base.importer.PlayerMapDeclaration;
 
-public class ImportPlayerView extends ViewPart {
+public class ImportClubView extends ViewPart {
 
-	public static final String ID = "ShuttleUI.PlayerView"; //$NON-NLS-1$
+	public static final String ID = "ShuttleUI.ClubView"; //$NON-NLS-1$
 	
-	static Logger log = Logger.getLogger(ImportPlayerView.class);
+	static Logger log = Logger.getLogger(ImportClubView.class);
 	
 	private Table table;
 	public TableViewer tableViewer;
 	private Object[] input;
 	private Object[] header;
 	
-	private Importer importer;
-	private Importer clubs;
-	
-	private HashMap<Integer, String> clubMap = new HashMap<Integer, String>();
+	Importer importer;
 
 	@Override
 	public void createPartControl(Composite parent) {		
@@ -60,7 +63,7 @@ public class ImportPlayerView extends ViewPart {
 			if (j == 0 || j == 1) {
 				col.addSelectionListener(new SelectionAdapter() {
 					public void widgetSelected(SelectionEvent e) {
-						final ImportPlayerSorter sorter = new ImportPlayerSorter(
+						final ImportClubSorter sorter = new ImportClubSorter(
 								j);
 						tableViewer.setSorter(sorter);
 					}
@@ -72,31 +75,19 @@ public class ImportPlayerView extends ViewPart {
 
 	private TableViewer createViewer(Composite parent) {
 		tableViewer = new TableViewer(parent, SWT.FULL_SELECTION | SWT.BORDER);
-		tableViewer.setLabelProvider(new ImportPlayerLabelProvider(clubMap));
-		tableViewer.setContentProvider(new ImportPlayerContentProvider());
+		tableViewer.setLabelProvider(new ImportClubLabelProvider());
+		tableViewer.setContentProvider(new ImportClubContentProvider());
 		return tableViewer;
 
 	}
 
 	
-	public void setClub(Importer clubImport) {
-		this.clubs = clubImport;
-		//convert to Hashmap
-		Object[] elements = clubImport.getElements();
-		for (int i = 0; i < elements.length; i++) {
-			Object[] lines = (Object[]) elements[i];
-			
-			clubMap.put(new Integer((String) lines[0]), (String) lines[1]);
-		}
-	}
+
 	
-	public void init() {
-		
-		
-		
+	public void init() {		
 		createViewerComponent(tableViewer);
 		tableViewer.setInput(input);
-		
+
 	}
 	
 	public void setInput(Importer importer) {
