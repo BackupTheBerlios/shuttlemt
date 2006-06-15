@@ -13,9 +13,9 @@ package ch.form105.shuttle.base.command;
  *
  * @author heiko
  */
-public abstract class Command {
+public interface Command {
   
   /** Creates a new instance of Command */
-  public abstract void execute();
+  public void execute();
   
 }

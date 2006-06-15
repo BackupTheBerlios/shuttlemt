@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
@@ -20,6 +22,8 @@ public class CSVLoaderInput extends LoaderInput {
 	private BufferedReader reader;
 	private Object[] header = null;
 	private String[] headerLine = null;
+	
+	private InputStream input;
 
 	public CSVLoaderInput() {
 		this("import/players_no_adr.sb");
@@ -27,6 +31,12 @@ public class CSVLoaderInput extends LoaderInput {
 
 	public CSVLoaderInput(String file) {
 		this.file = file;
+		
+	}
+	
+	public CSVLoaderInput(InputStream input) {
+		this.input = input;
+		file = null;
 	}
 
 	public Object[] getInput() {
@@ -51,8 +61,14 @@ public class CSVLoaderInput extends LoaderInput {
 	}
 
 	public void load() {
+		if (file == null) {
+			reader = new BufferedReader(new InputStreamReader(input));
+			return;
+		}
+		
 		try {
 			reader = new BufferedReader(new FileReader(new File(file)));
+			//reader = new BufferedReader(new InputStreamReader(input));
 		} catch (FileNotFoundException ex) {
 			log.error("Can't find file:" + Constants.propertiesFile);
 			log.info(ex.getStackTrace());
