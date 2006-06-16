@@ -2,15 +2,16 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Players.java,v 1.6 2006/06/16 19:33:49 luschtiger Exp $
+ * $Id: Category.java,v 1.1 2006/06/16 19:35:49 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players;
+package ch.form105.shuttle.base.generated.tournament;
 
   //---------------------------------/
  //- Imported classes and packages -/
 //---------------------------------/
 
+import ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -27,11 +28,11 @@ import org.exolab.castor.xml.ValidationException;
 import org.xml.sax.ContentHandler;
 
 /**
- * Class Players.
+ * Class Category.
  * 
- * @version $Revision: 1.6 $ $Date: 2006/06/16 19:33:49 $
+ * @version $Revision: 1.1 $ $Date: 2006/06/16 19:35:49 $
  */
-public class Players extends ch.form105.shuttle.base.Element 
+public class Category extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
 {
 
@@ -41,9 +42,14 @@ implements java.io.Serializable
     //--------------------------/
 
     /**
-     * Field _playerList
+     * Field _catId
      */
-    private java.util.ArrayList _playerList;
+    private ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType _catId;
+
+    /**
+     * Field _playerIdList
+     */
+    private java.util.ArrayList _playerIdList;
 
     /**
      * Field propertyChangeSupport
@@ -55,11 +61,11 @@ implements java.io.Serializable
      //- Constructors -/
     //----------------/
 
-    public Players() 
+    public Category() 
      {
         super();
-        _playerList = new ArrayList();
-    } //-- ch.form105.shuttle.base.generated.players.Players()
+        _playerIdList = new ArrayList();
+    } //-- ch.form105.shuttle.base.generated.tournament.Category()
 
 
       //-----------/
@@ -67,33 +73,33 @@ implements java.io.Serializable
     //-----------/
 
     /**
-     * Method addPlayer
+     * Method addPlayerId
      * 
      * 
      * 
-     * @param vPlayer
+     * @param vPlayerId
      */
-    public void addPlayer(ch.form105.shuttle.base.generated.players.Player vPlayer)
+    public void addPlayerId(java.lang.String vPlayerId)
         throws java.lang.IndexOutOfBoundsException
     {
-        _playerList.add(vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void addPlayer(ch.form105.shuttle.base.generated.players.Player) 
+        _playerIdList.add(vPlayerId);
+        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
+    } //-- void addPlayerId(java.lang.String) 
 
     /**
-     * Method addPlayer
+     * Method addPlayerId
      * 
      * 
      * 
      * @param index
-     * @param vPlayer
+     * @param vPlayerId
      */
-    public void addPlayer(int index, ch.form105.shuttle.base.generated.players.Player vPlayer)
+    public void addPlayerId(int index, java.lang.String vPlayerId)
         throws java.lang.IndexOutOfBoundsException
     {
-        _playerList.add(index, vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void addPlayer(int, ch.form105.shuttle.base.generated.players.Player) 
+        _playerIdList.add(index, vPlayerId);
+        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
+    } //-- void addPlayerId(int, java.lang.String) 
 
     /**
      * Method addPropertyChangeListener
@@ -111,74 +117,85 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method clearPlayer
+     * Method clearPlayerId
      * 
      */
-    public void clearPlayer()
+    public void clearPlayerId()
     {
-        _playerList.clear();
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void clearPlayer() 
+        _playerIdList.clear();
+        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
+    } //-- void clearPlayerId() 
 
     /**
-     * Method enumeratePlayer
+     * Method enumeratePlayerId
      * 
      * 
      * 
      * @return Enumeration
      */
-    public java.util.Enumeration enumeratePlayer()
+    public java.util.Enumeration enumeratePlayerId()
     {
-        return new org.exolab.castor.util.IteratorEnumeration(_playerList.iterator());
-    } //-- java.util.Enumeration enumeratePlayer() 
+        return new org.exolab.castor.util.IteratorEnumeration(_playerIdList.iterator());
+    } //-- java.util.Enumeration enumeratePlayerId() 
 
     /**
-     * Method getPlayer
+     * Returns the value of field 'catId'.
+     * 
+     * @return CategoryCatIdType
+     * @return the value of field 'catId'.
+     */
+    public ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType getCatId()
+    {
+        return this._catId;
+    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType getCatId() 
+
+    /**
+     * Method getPlayerId
      * 
      * 
      * 
      * @param index
-     * @return Player
+     * @return String
      */
-    public ch.form105.shuttle.base.generated.players.Player getPlayer(int index)
+    public java.lang.String getPlayerId(int index)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
-        if ((index < 0) || (index >= _playerList.size())) {
+        if ((index < 0) || (index >= _playerIdList.size())) {
             throw new IndexOutOfBoundsException();
         }
         
-        return (ch.form105.shuttle.base.generated.players.Player) _playerList.get(index);
-    } //-- ch.form105.shuttle.base.generated.players.Player getPlayer(int) 
+        return (String)_playerIdList.get(index);
+    } //-- java.lang.String getPlayerId(int) 
 
     /**
-     * Method getPlayer
+     * Method getPlayerId
      * 
      * 
      * 
-     * @return Player
+     * @return String
      */
-    public ch.form105.shuttle.base.generated.players.Player[] getPlayer()
+    public java.lang.String[] getPlayerId()
     {
-        int size = _playerList.size();
-        ch.form105.shuttle.base.generated.players.Player[] mArray = new ch.form105.shuttle.base.generated.players.Player[size];
+        int size = _playerIdList.size();
+        java.lang.String[] mArray = new java.lang.String[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = (ch.form105.shuttle.base.generated.players.Player) _playerList.get(index);
+            mArray[index] = (String)_playerIdList.get(index);
         }
         return mArray;
-    } //-- ch.form105.shuttle.base.generated.players.Player[] getPlayer() 
+    } //-- java.lang.String[] getPlayerId() 
 
     /**
-     * Method getPlayerCount
+     * Method getPlayerIdCount
      * 
      * 
      * 
      * @return int
      */
-    public int getPlayerCount()
+    public int getPlayerIdCount()
     {
-        return _playerList.size();
-    } //-- int getPlayerCount() 
+        return _playerIdList.size();
+    } //-- int getPlayerIdCount() 
 
     /**
      * Method isValid
@@ -243,19 +260,19 @@ implements java.io.Serializable
     } //-- void notifyPropertyChangeListeners(java.lang.String, java.lang.Object, java.lang.Object) 
 
     /**
-     * Method removePlayer
+     * Method removePlayerId
      * 
      * 
      * 
-     * @param vPlayer
+     * @param vPlayerId
      * @return boolean
      */
-    public boolean removePlayer(ch.form105.shuttle.base.generated.players.Player vPlayer)
+    public boolean removePlayerId(java.lang.String vPlayerId)
     {
-        boolean removed = _playerList.remove(vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
+        boolean removed = _playerIdList.remove(vPlayerId);
+        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
         return removed;
-    } //-- boolean removePlayer(ch.form105.shuttle.base.generated.players.Player) 
+    } //-- boolean removePlayerId(java.lang.String) 
 
     /**
      * Method removePropertyChangeListener
@@ -274,40 +291,52 @@ implements java.io.Serializable
     } //-- boolean removePropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method setPlayer
+     * Sets the value of field 'catId'.
+     * 
+     * @param catId the value of field 'catId'.
+     */
+    public void setCatId(ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType catId)
+    {
+        java.lang.Object oldCatId = this._catId;
+        this._catId = catId;
+        notifyPropertyChangeListeners("_catId", oldCatId, this._catId);
+    } //-- void setCatId(ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType) 
+
+    /**
+     * Method setPlayerId
      * 
      * 
      * 
      * @param index
-     * @param vPlayer
+     * @param vPlayerId
      */
-    public void setPlayer(int index, ch.form105.shuttle.base.generated.players.Player vPlayer)
+    public void setPlayerId(int index, java.lang.String vPlayerId)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
-        if ((index < 0) || (index >= _playerList.size())) {
+        if ((index < 0) || (index >= _playerIdList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        _playerList.set(index, vPlayer);
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void setPlayer(int, ch.form105.shuttle.base.generated.players.Player) 
+        _playerIdList.set(index, vPlayerId);
+        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
+    } //-- void setPlayerId(int, java.lang.String) 
 
     /**
-     * Method setPlayer
+     * Method setPlayerId
      * 
      * 
      * 
-     * @param playerArray
+     * @param playerIdArray
      */
-    public void setPlayer(ch.form105.shuttle.base.generated.players.Player[] playerArray)
+    public void setPlayerId(java.lang.String[] playerIdArray)
     {
         //-- copy array
-        _playerList.clear();
-        for (int i = 0; i < playerArray.length; i++) {
-            _playerList.add(playerArray[i]);
+        _playerIdList.clear();
+        for (int i = 0; i < playerIdArray.length; i++) {
+            _playerIdList.add(playerIdArray[i]);
         }
-        notifyPropertyChangeListeners("_playerList", null, _playerList);
-    } //-- void setPlayer(ch.form105.shuttle.base.generated.players.Player) 
+        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
+    } //-- void setPlayerId(java.lang.String) 
 
     /**
      * Method unmarshal
@@ -315,13 +344,13 @@ implements java.io.Serializable
      * 
      * 
      * @param reader
-     * @return Players
+     * @return Category
      */
-    public static ch.form105.shuttle.base.generated.players.Players unmarshal(java.io.Reader reader)
+    public static ch.form105.shuttle.base.generated.tournament.Category unmarshal(java.io.Reader reader)
         throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
     {
-        return (ch.form105.shuttle.base.generated.players.Players) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.players.Players.class, reader);
-    } //-- ch.form105.shuttle.base.generated.players.Players unmarshal(java.io.Reader) 
+        return (ch.form105.shuttle.base.generated.tournament.Category) Unmarshaller.unmarshal(ch.form105.shuttle.base.generated.tournament.Category.class, reader);
+    } //-- ch.form105.shuttle.base.generated.tournament.Category unmarshal(java.io.Reader) 
 
     /**
      * Method validate

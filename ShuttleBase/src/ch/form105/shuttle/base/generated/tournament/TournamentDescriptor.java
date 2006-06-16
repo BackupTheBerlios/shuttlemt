@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: TournamentDescriptor.java,v 1.4 2006/06/10 18:17:55 luschtiger Exp $
+ * $Id: TournamentDescriptor.java,v 1.5 2006/06/16 19:35:26 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -19,7 +19,7 @@ import org.exolab.castor.xml.validators.*;
 /**
  * Class TournamentDescriptor.
  * 
- * @version $Revision: 1.4 $ $Date: 2006/06/10 18:17:55 $
+ * @version $Revision: 1.5 $ $Date: 2006/06/16 19:35:26 $
  */
 public class TournamentDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 

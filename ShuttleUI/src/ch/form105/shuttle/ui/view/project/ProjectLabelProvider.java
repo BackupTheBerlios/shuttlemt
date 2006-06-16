@@ -8,6 +8,7 @@ import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.swt.graphics.Image;
 
+import ch.form105.shuttle.base.generated.tournament.Category;
 import ch.form105.shuttle.base.generated.tournament.Game;
 import ch.form105.shuttle.ui.ImageFactory;
 import ch.form105.shuttle.ui.ShuttleUIPlugin;
@@ -90,7 +91,12 @@ public class ProjectLabelProvider implements ILabelProvider {
 		}
 		
 		if (element instanceof Game) {
-			return ((Game) element).getTypeId();
+			return ((Game) element).getGameId().toString();
+		}
+		
+		if (element instanceof Category) {
+			Category category = (Category) element;
+			return "Category "+"- "+category.getCatId().toString();
 		}
 
 		// TODO Auto-generated method stub

@@ -13,6 +13,7 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 
 import ch.form105.shuttle.base.generated.tournament.Game;
+import ch.form105.shuttle.base.generated.tournament.types.GameGameIdType;
 import ch.form105.shuttle.base.helper.Constants;
 
 public class SetProjectTypePage extends WizardPage {
@@ -94,23 +95,23 @@ public class SetProjectTypePage extends WizardPage {
 		games.clear();
 		
 		if (button1.getSelection()) {
-			createGame(Constants.MENSINGLE, button1);
+			createGame(GameGameIdType.MENSINGLE, button1);
 		}
 
 		if (button2.getSelection()) {
-			createGame(Constants.MENDOUBLE, button2);
+			createGame(GameGameIdType.MENDOUBLE, button2);
 		}
 
 		if (button3.getSelection()) {
-			createGame(Constants.WOMENSINGLE, button3);
+			createGame(GameGameIdType.WOMENSINGLE, button3);
 		}
 
 		if (button4.getSelection()) {
-			createGame(Constants.WOMENDOUBLE, button4);
+			createGame(GameGameIdType.WOMENDOUBLE, button4);
 		}
 
 		if (button5.getSelection()) {
-			createGame(Constants.MIXED, button5);
+			createGame(GameGameIdType.MIXED, button5);
 		}
 		System.out.println("Games: "+games.size());
 		
@@ -118,9 +119,9 @@ public class SetProjectTypePage extends WizardPage {
 
 	}
 
-	public void createGame(String id, Button button) {
+	public void createGame(GameGameIdType gameId, Button button) {
 		Game game = new Game();
-		game.setTypeId(id);
+		game.setGameId(gameId);
 		game.setActive(true);
 		game.setName(button.getText());
 		games.add(game);

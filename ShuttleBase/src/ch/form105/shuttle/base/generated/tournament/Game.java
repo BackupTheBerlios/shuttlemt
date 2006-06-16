@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: Game.java,v 1.2 2006/06/10 18:17:55 luschtiger Exp $
+ * $Id: Game.java,v 1.3 2006/06/16 19:35:26 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament;
@@ -11,7 +11,7 @@ package ch.form105.shuttle.base.generated.tournament;
  //- Imported classes and packages -/
 //---------------------------------/
 
-import ch.form105.shuttle.base.generated.tournament.types.CategoryType;
+import ch.form105.shuttle.base.generated.tournament.types.GameGameIdType;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -30,7 +30,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Class Game.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/06/10 18:17:55 $
+ * @version $Revision: 1.3 $ $Date: 2006/06/16 19:35:26 $
  */
 public class Game extends ch.form105.shuttle.base.Element 
 implements java.io.Serializable
@@ -52,9 +52,9 @@ implements java.io.Serializable
     private boolean _has_maxPoints;
 
     /**
-     * Field _typeId
+     * Field _gameId
      */
-    private java.lang.String _typeId;
+    private ch.form105.shuttle.base.generated.tournament.types.GameGameIdType _gameId;
 
     /**
      * Field _active
@@ -72,14 +72,9 @@ implements java.io.Serializable
     private java.lang.String _name;
 
     /**
-     * Field _playerIdList
+     * Field _categoryList
      */
-    private java.util.ArrayList _playerIdList;
-
-    /**
-     * Field _category
-     */
-    private ch.form105.shuttle.base.generated.tournament.types.CategoryType _category;
+    private java.util.ArrayList _categoryList;
 
     /**
      * Field propertyChangeSupport
@@ -94,7 +89,7 @@ implements java.io.Serializable
     public Game() 
      {
         super();
-        _playerIdList = new ArrayList();
+        _categoryList = new ArrayList();
     } //-- ch.form105.shuttle.base.generated.tournament.Game()
 
 
@@ -103,33 +98,33 @@ implements java.io.Serializable
     //-----------/
 
     /**
-     * Method addPlayerId
+     * Method addCategory
      * 
      * 
      * 
-     * @param vPlayerId
+     * @param vCategory
      */
-    public void addPlayerId(java.lang.String vPlayerId)
+    public void addCategory(ch.form105.shuttle.base.generated.tournament.Category vCategory)
         throws java.lang.IndexOutOfBoundsException
     {
-        _playerIdList.add(vPlayerId);
-        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
-    } //-- void addPlayerId(java.lang.String) 
+        _categoryList.add(vCategory);
+        notifyPropertyChangeListeners("_categoryList", null, _categoryList);
+    } //-- void addCategory(ch.form105.shuttle.base.generated.tournament.Category) 
 
     /**
-     * Method addPlayerId
+     * Method addCategory
      * 
      * 
      * 
      * @param index
-     * @param vPlayerId
+     * @param vCategory
      */
-    public void addPlayerId(int index, java.lang.String vPlayerId)
+    public void addCategory(int index, ch.form105.shuttle.base.generated.tournament.Category vCategory)
         throws java.lang.IndexOutOfBoundsException
     {
-        _playerIdList.add(index, vPlayerId);
-        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
-    } //-- void addPlayerId(int, java.lang.String) 
+        _categoryList.add(index, vCategory);
+        notifyPropertyChangeListeners("_categoryList", null, _categoryList);
+    } //-- void addCategory(int, ch.form105.shuttle.base.generated.tournament.Category) 
 
     /**
      * Method addPropertyChangeListener
@@ -147,14 +142,14 @@ implements java.io.Serializable
     } //-- void addPropertyChangeListener(java.beans.PropertyChangeListener) 
 
     /**
-     * Method clearPlayerId
+     * Method clearCategory
      * 
      */
-    public void clearPlayerId()
+    public void clearCategory()
     {
-        _playerIdList.clear();
-        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
-    } //-- void clearPlayerId() 
+        _categoryList.clear();
+        notifyPropertyChangeListeners("_categoryList", null, _categoryList);
+    } //-- void clearCategory() 
 
     /**
      * Method deleteActive
@@ -177,16 +172,16 @@ implements java.io.Serializable
     } //-- void deleteMaxPoints() 
 
     /**
-     * Method enumeratePlayerId
+     * Method enumerateCategory
      * 
      * 
      * 
      * @return Enumeration
      */
-    public java.util.Enumeration enumeratePlayerId()
+    public java.util.Enumeration enumerateCategory()
     {
-        return new org.exolab.castor.util.IteratorEnumeration(_playerIdList.iterator());
-    } //-- java.util.Enumeration enumeratePlayerId() 
+        return new org.exolab.castor.util.IteratorEnumeration(_categoryList.iterator());
+    } //-- java.util.Enumeration enumerateCategory() 
 
     /**
      * Returns the value of field 'active'.
@@ -200,15 +195,63 @@ implements java.io.Serializable
     } //-- boolean getActive() 
 
     /**
-     * Returns the value of field 'category'.
+     * Method getCategory
      * 
-     * @return CategoryType
-     * @return the value of field 'category'.
+     * 
+     * 
+     * @param index
+     * @return Category
      */
-    public ch.form105.shuttle.base.generated.tournament.types.CategoryType getCategory()
+    public ch.form105.shuttle.base.generated.tournament.Category getCategory(int index)
+        throws java.lang.IndexOutOfBoundsException
     {
-        return this._category;
-    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryType getCategory() 
+        //-- check bounds for index
+        if ((index < 0) || (index >= _categoryList.size())) {
+            throw new IndexOutOfBoundsException();
+        }
+        
+        return (ch.form105.shuttle.base.generated.tournament.Category) _categoryList.get(index);
+    } //-- ch.form105.shuttle.base.generated.tournament.Category getCategory(int) 
+
+    /**
+     * Method getCategory
+     * 
+     * 
+     * 
+     * @return Category
+     */
+    public ch.form105.shuttle.base.generated.tournament.Category[] getCategory()
+    {
+        int size = _categoryList.size();
+        ch.form105.shuttle.base.generated.tournament.Category[] mArray = new ch.form105.shuttle.base.generated.tournament.Category[size];
+        for (int index = 0; index < size; index++) {
+            mArray[index] = (ch.form105.shuttle.base.generated.tournament.Category) _categoryList.get(index);
+        }
+        return mArray;
+    } //-- ch.form105.shuttle.base.generated.tournament.Category[] getCategory() 
+
+    /**
+     * Method getCategoryCount
+     * 
+     * 
+     * 
+     * @return int
+     */
+    public int getCategoryCount()
+    {
+        return _categoryList.size();
+    } //-- int getCategoryCount() 
+
+    /**
+     * Returns the value of field 'gameId'.
+     * 
+     * @return GameGameIdType
+     * @return the value of field 'gameId'.
+     */
+    public ch.form105.shuttle.base.generated.tournament.types.GameGameIdType getGameId()
+    {
+        return this._gameId;
+    } //-- ch.form105.shuttle.base.generated.tournament.types.GameGameIdType getGameId() 
 
     /**
      * Returns the value of field 'maxPoints'.
@@ -231,65 +274,6 @@ implements java.io.Serializable
     {
         return this._name;
     } //-- java.lang.String getName() 
-
-    /**
-     * Method getPlayerId
-     * 
-     * 
-     * 
-     * @param index
-     * @return String
-     */
-    public java.lang.String getPlayerId(int index)
-        throws java.lang.IndexOutOfBoundsException
-    {
-        //-- check bounds for index
-        if ((index < 0) || (index >= _playerIdList.size())) {
-            throw new IndexOutOfBoundsException();
-        }
-        
-        return (String)_playerIdList.get(index);
-    } //-- java.lang.String getPlayerId(int) 
-
-    /**
-     * Method getPlayerId
-     * 
-     * 
-     * 
-     * @return String
-     */
-    public java.lang.String[] getPlayerId()
-    {
-        int size = _playerIdList.size();
-        java.lang.String[] mArray = new java.lang.String[size];
-        for (int index = 0; index < size; index++) {
-            mArray[index] = (String)_playerIdList.get(index);
-        }
-        return mArray;
-    } //-- java.lang.String[] getPlayerId() 
-
-    /**
-     * Method getPlayerIdCount
-     * 
-     * 
-     * 
-     * @return int
-     */
-    public int getPlayerIdCount()
-    {
-        return _playerIdList.size();
-    } //-- int getPlayerIdCount() 
-
-    /**
-     * Returns the value of field 'typeId'.
-     * 
-     * @return String
-     * @return the value of field 'typeId'.
-     */
-    public java.lang.String getTypeId()
-    {
-        return this._typeId;
-    } //-- java.lang.String getTypeId() 
 
     /**
      * Method hasActive
@@ -378,19 +362,19 @@ implements java.io.Serializable
     } //-- void notifyPropertyChangeListeners(java.lang.String, java.lang.Object, java.lang.Object) 
 
     /**
-     * Method removePlayerId
+     * Method removeCategory
      * 
      * 
      * 
-     * @param vPlayerId
+     * @param vCategory
      * @return boolean
      */
-    public boolean removePlayerId(java.lang.String vPlayerId)
+    public boolean removeCategory(ch.form105.shuttle.base.generated.tournament.Category vCategory)
     {
-        boolean removed = _playerIdList.remove(vPlayerId);
-        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
+        boolean removed = _categoryList.remove(vCategory);
+        notifyPropertyChangeListeners("_categoryList", null, _categoryList);
         return removed;
-    } //-- boolean removePlayerId(java.lang.String) 
+    } //-- boolean removeCategory(ch.form105.shuttle.base.generated.tournament.Category) 
 
     /**
      * Method removePropertyChangeListener
@@ -422,16 +406,52 @@ implements java.io.Serializable
     } //-- void setActive(boolean) 
 
     /**
-     * Sets the value of field 'category'.
+     * Method setCategory
      * 
-     * @param category the value of field 'category'.
+     * 
+     * 
+     * @param index
+     * @param vCategory
      */
-    public void setCategory(ch.form105.shuttle.base.generated.tournament.types.CategoryType category)
+    public void setCategory(int index, ch.form105.shuttle.base.generated.tournament.Category vCategory)
+        throws java.lang.IndexOutOfBoundsException
     {
-        java.lang.Object oldCategory = this._category;
-        this._category = category;
-        notifyPropertyChangeListeners("_category", oldCategory, this._category);
-    } //-- void setCategory(ch.form105.shuttle.base.generated.tournament.types.CategoryType) 
+        //-- check bounds for index
+        if ((index < 0) || (index >= _categoryList.size())) {
+            throw new IndexOutOfBoundsException();
+        }
+        _categoryList.set(index, vCategory);
+        notifyPropertyChangeListeners("_categoryList", null, _categoryList);
+    } //-- void setCategory(int, ch.form105.shuttle.base.generated.tournament.Category) 
+
+    /**
+     * Method setCategory
+     * 
+     * 
+     * 
+     * @param categoryArray
+     */
+    public void setCategory(ch.form105.shuttle.base.generated.tournament.Category[] categoryArray)
+    {
+        //-- copy array
+        _categoryList.clear();
+        for (int i = 0; i < categoryArray.length; i++) {
+            _categoryList.add(categoryArray[i]);
+        }
+        notifyPropertyChangeListeners("_categoryList", null, _categoryList);
+    } //-- void setCategory(ch.form105.shuttle.base.generated.tournament.Category) 
+
+    /**
+     * Sets the value of field 'gameId'.
+     * 
+     * @param gameId the value of field 'gameId'.
+     */
+    public void setGameId(ch.form105.shuttle.base.generated.tournament.types.GameGameIdType gameId)
+    {
+        java.lang.Object oldGameId = this._gameId;
+        this._gameId = gameId;
+        notifyPropertyChangeListeners("_gameId", oldGameId, this._gameId);
+    } //-- void setGameId(ch.form105.shuttle.base.generated.tournament.types.GameGameIdType) 
 
     /**
      * Sets the value of field 'maxPoints'.
@@ -457,54 +477,6 @@ implements java.io.Serializable
         this._name = name;
         notifyPropertyChangeListeners("_name", oldName, this._name);
     } //-- void setName(java.lang.String) 
-
-    /**
-     * Method setPlayerId
-     * 
-     * 
-     * 
-     * @param index
-     * @param vPlayerId
-     */
-    public void setPlayerId(int index, java.lang.String vPlayerId)
-        throws java.lang.IndexOutOfBoundsException
-    {
-        //-- check bounds for index
-        if ((index < 0) || (index >= _playerIdList.size())) {
-            throw new IndexOutOfBoundsException();
-        }
-        _playerIdList.set(index, vPlayerId);
-        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
-    } //-- void setPlayerId(int, java.lang.String) 
-
-    /**
-     * Method setPlayerId
-     * 
-     * 
-     * 
-     * @param playerIdArray
-     */
-    public void setPlayerId(java.lang.String[] playerIdArray)
-    {
-        //-- copy array
-        _playerIdList.clear();
-        for (int i = 0; i < playerIdArray.length; i++) {
-            _playerIdList.add(playerIdArray[i]);
-        }
-        notifyPropertyChangeListeners("_playerIdList", null, _playerIdList);
-    } //-- void setPlayerId(java.lang.String) 
-
-    /**
-     * Sets the value of field 'typeId'.
-     * 
-     * @param typeId the value of field 'typeId'.
-     */
-    public void setTypeId(java.lang.String typeId)
-    {
-        java.lang.Object oldTypeId = this._typeId;
-        this._typeId = typeId;
-        notifyPropertyChangeListeners("_typeId", oldTypeId, this._typeId);
-    } //-- void setTypeId(java.lang.String) 
 
     /**
      * Method unmarshal

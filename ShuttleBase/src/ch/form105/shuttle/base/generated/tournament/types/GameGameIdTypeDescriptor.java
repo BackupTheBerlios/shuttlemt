@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: CategoryTypeDescriptor.java,v 1.2 2006/06/10 18:17:56 luschtiger Exp $
+ * $Id: GameGameIdTypeDescriptor.java,v 1.1 2006/06/16 19:36:35 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament.types;
@@ -17,11 +17,11 @@ import org.exolab.castor.xml.XMLFieldDescriptor;
 import org.exolab.castor.xml.validators.*;
 
 /**
- * Class CategoryTypeDescriptor.
+ * Class GameGameIdTypeDescriptor.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/06/10 18:17:56 $
+ * @version $Revision: 1.1 $ $Date: 2006/06/16 19:36:35 $
  */
-public class CategoryTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
+public class GameGameIdTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
 
       //--------------------------/
@@ -58,12 +58,12 @@ public class CategoryTypeDescriptor extends org.exolab.castor.xml.util.XMLClassD
      //- Constructors -/
     //----------------/
 
-    public CategoryTypeDescriptor() 
+    public GameGameIdTypeDescriptor() 
      {
         super();
-        xmlName = "categoryType";
+        xmlName = "GameGameIdType";
         elementDefinition = false;
-    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryTypeDescriptor()
+    } //-- ch.form105.shuttle.base.generated.tournament.types.GameGameIdTypeDescriptor()
 
 
       //-----------/
@@ -115,7 +115,7 @@ public class CategoryTypeDescriptor extends org.exolab.castor.xml.util.XMLClassD
      */
     public java.lang.Class getJavaClass()
     {
-        return ch.form105.shuttle.base.generated.tournament.types.CategoryType.class;
+        return ch.form105.shuttle.base.generated.tournament.types.GameGameIdType.class;
     } //-- java.lang.Class getJavaClass() 
 
     /**

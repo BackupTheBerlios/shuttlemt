@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: CategoryType.java,v 1.2 2006/06/10 18:17:56 luschtiger Exp $
+ * $Id: CategoryCatIdType.java,v 1.1 2006/06/16 19:36:35 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.tournament.types;
@@ -21,11 +21,11 @@ import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
 
 /**
- * Class CategoryType.
+ * Class CategoryCatIdType.
  * 
- * @version $Revision: 1.2 $ $Date: 2006/06/10 18:17:56 $
+ * @version $Revision: 1.1 $ $Date: 2006/06/16 19:36:35 $
  */
-public class CategoryType implements java.io.Serializable {
+public class CategoryCatIdType implements java.io.Serializable {
 
 
       //--------------------------/
@@ -40,7 +40,7 @@ public class CategoryType implements java.io.Serializable {
     /**
      * The instance of the A type
      */
-    public static final CategoryType A = new CategoryType(A_TYPE, "A");
+    public static final CategoryCatIdType A = new CategoryCatIdType(A_TYPE, "A");
 
     /**
      * The B type
@@ -50,7 +50,7 @@ public class CategoryType implements java.io.Serializable {
     /**
      * The instance of the B type
      */
-    public static final CategoryType B = new CategoryType(B_TYPE, "B");
+    public static final CategoryCatIdType B = new CategoryCatIdType(B_TYPE, "B");
 
     /**
      * The C type
@@ -60,7 +60,7 @@ public class CategoryType implements java.io.Serializable {
     /**
      * The instance of the C type
      */
-    public static final CategoryType C = new CategoryType(C_TYPE, "C");
+    public static final CategoryCatIdType C = new CategoryCatIdType(C_TYPE, "C");
 
     /**
      * The D type
@@ -70,7 +70,7 @@ public class CategoryType implements java.io.Serializable {
     /**
      * The instance of the D type
      */
-    public static final CategoryType D = new CategoryType(D_TYPE, "D");
+    public static final CategoryCatIdType D = new CategoryCatIdType(D_TYPE, "D");
 
     /**
      * Field _memberTable
@@ -97,12 +97,12 @@ public class CategoryType implements java.io.Serializable {
      //- Constructors -/
     //----------------/
 
-    private CategoryType(int type, java.lang.String value) 
+    private CategoryCatIdType(int type, java.lang.String value) 
      {
         super();
         this.type = type;
         this.stringValue = value;
-    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryType(int, java.lang.String)
+    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType(int, java.lang.String)
 
 
       //-----------/
@@ -128,7 +128,7 @@ public class CategoryType implements java.io.Serializable {
      * Method enumerate
      * 
      * Returns an enumeration of all possible instances of
-     * CategoryType
+     * CategoryCatIdType
      * 
      * @return Enumeration
      */
@@ -140,7 +140,7 @@ public class CategoryType implements java.io.Serializable {
     /**
      * Method getType
      * 
-     * Returns the type of this CategoryType
+     * Returns the type of this CategoryCatIdType
      * 
      * @return int
      */
@@ -215,7 +215,7 @@ public class CategoryType implements java.io.Serializable {
     /**
      * Method toString
      * 
-     * Returns the String representation of this CategoryType
+     * Returns the String representation of this CategoryCatIdType
      * 
      * @return String
      */
@@ -227,20 +227,21 @@ public class CategoryType implements java.io.Serializable {
     /**
      * Method valueOf
      * 
-     * Returns a new CategoryType based on the given String value.
+     * Returns a new CategoryCatIdType based on the given String
+     * value.
      * 
      * @param string
-     * @return CategoryType
+     * @return CategoryCatIdType
      */
-    public static ch.form105.shuttle.base.generated.tournament.types.CategoryType valueOf(java.lang.String string)
+    public static ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType valueOf(java.lang.String string)
     {
         java.lang.Object obj = null;
         if (string != null) obj = _memberTable.get(string);
         if (obj == null) {
-            String err = "'" + string + "' is not a valid CategoryType";
+            String err = "'" + string + "' is not a valid CategoryCatIdType";
             throw new IllegalArgumentException(err);
         }
-        return (CategoryType) obj;
-    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryType valueOf(java.lang.String) 
+        return (CategoryCatIdType) obj;
+    } //-- ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType valueOf(java.lang.String) 
 
 }

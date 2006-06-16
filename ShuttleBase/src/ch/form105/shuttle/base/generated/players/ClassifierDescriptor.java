@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: ClassifierDescriptor.java,v 1.5 2006/06/10 18:17:56 luschtiger Exp $
+ * $Id: ClassifierDescriptor.java,v 1.6 2006/06/16 19:33:49 luschtiger Exp $
  */
 
 package ch.form105.shuttle.base.generated.players;
@@ -19,7 +19,7 @@ import org.exolab.castor.xml.validators.*;
 /**
  * Class ClassifierDescriptor.
  * 
- * @version $Revision: 1.5 $ $Date: 2006/06/10 18:17:56 $
+ * @version $Revision: 1.6 $ $Date: 2006/06/16 19:33:49 $
  */
 public class ClassifierDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 

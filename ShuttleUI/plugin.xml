@@ -76,5 +76,16 @@
             id="ShuttleUI.newProjectWizard"
             name="MyWizard"/>
    </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="ch.form105.shuttle.ui.preference.DatabasePreferencePage"
+            id="ShuttleUI.DatabasePreference"
+            name="Database Preferences"/>
+      <page
+            class="ch.form105.shuttle.ui.preference.ImportPreferencePage"
+            id="ShuttleUI.ImportPreference"
+            name="Import Preferences"/>
+   </extension>
 
 </plugin>

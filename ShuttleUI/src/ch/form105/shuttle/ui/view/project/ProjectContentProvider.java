@@ -2,6 +2,7 @@ package ch.form105.shuttle.ui.view.project;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFile;
@@ -89,7 +90,7 @@ public class ProjectContentProvider implements ITreeContentProvider {
 				Game[] games = tour.getGame();
 				ArrayList gameList = new ArrayList();
 				for (int i = 0; i < games.length; i++) {
-					if (! gameList.contains(games[i].getTypeId())) {
+					if (! gameList.contains(games[i].getGameId())) {
 						gameList.add(games[i]);
 						
 					}
@@ -97,6 +98,11 @@ public class ProjectContentProvider implements ITreeContentProvider {
 				log.info("gamelist: "+gameList.size());
 				return tour.getGame();
 			}
+		}
+		
+		if (parentElement instanceof Game) {
+			Game game = (Game) parentElement;
+			return game.getCategory();
 		}
 
 		return null;
@@ -108,7 +114,7 @@ public class ProjectContentProvider implements ITreeContentProvider {
 	}
 
 	public boolean hasChildren(Object element) {
-		log.info("hasChildren: "+element);
+		log.debug("hasChildren: "+element);
 		
 		if (element instanceof IProject) {
 			IProject project = (IProject)element;
@@ -122,7 +128,13 @@ public class ProjectContentProvider implements ITreeContentProvider {
 			if (file.getName().equals(databaseFileName)) {
 				return true;
 			}
-			
+		}
+		
+		if (element instanceof Game) {
+			Game game = (Game) element;
+			if (game.getCategoryCount() > 0) {
+				return true;
+			}
 		}
 		return false;
 		
@@ -139,8 +151,15 @@ public class ProjectContentProvider implements ITreeContentProvider {
 			IFile file = ((IFile) inputElement);
 			String databaseFileName = store.getDefaultString(DefaultPreferences.DATABASE_FILE.name());
 			if (file.getName().equals(databaseFileName)) {
-				return tour.getGame();
+				TreeSet gameSet = new TreeSet();
+				Game[] games = tour.getGame();
+				return games;
 			}
+		}
+		
+		if (inputElement instanceof Game) {
+			Game game = (Game) inputElement;
+			return game.getCategory();
 		}
 		
 		return null;

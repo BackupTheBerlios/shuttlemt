@@ -2,10 +2,10 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 1.0</a>, using an XML
  * Schema.
- * $Id: SexType.java,v 1.6 2006/06/16 19:34:21 luschtiger Exp $
+ * $Id: GameGameIdType.java,v 1.1 2006/06/16 19:36:35 luschtiger Exp $
  */
 
-package ch.form105.shuttle.base.generated.players.types;
+package ch.form105.shuttle.base.generated.tournament.types;
 
   //---------------------------------/
  //- Imported classes and packages -/
@@ -21,11 +21,11 @@ import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
 
 /**
- * Class SexType.
+ * Class GameGameIdType.
  * 
- * @version $Revision: 1.6 $ $Date: 2006/06/16 19:34:21 $
+ * @version $Revision: 1.1 $ $Date: 2006/06/16 19:36:35 $
  */
-public class SexType implements java.io.Serializable {
+public class GameGameIdType implements java.io.Serializable {
 
 
       //--------------------------/
@@ -33,24 +33,54 @@ public class SexType implements java.io.Serializable {
     //--------------------------/
 
     /**
-     * The W type
+     * The menSingle type
      */
-    public static final int W_TYPE = 0;
+    public static final int MENSINGLE_TYPE = 0;
 
     /**
-     * The instance of the W type
+     * The instance of the menSingle type
      */
-    public static final SexType W = new SexType(W_TYPE, "W");
+    public static final GameGameIdType MENSINGLE = new GameGameIdType(MENSINGLE_TYPE, "menSingle");
 
     /**
-     * The M type
+     * The menDouble type
      */
-    public static final int M_TYPE = 1;
+    public static final int MENDOUBLE_TYPE = 1;
 
     /**
-     * The instance of the M type
+     * The instance of the menDouble type
      */
-    public static final SexType M = new SexType(M_TYPE, "M");
+    public static final GameGameIdType MENDOUBLE = new GameGameIdType(MENDOUBLE_TYPE, "menDouble");
+
+    /**
+     * The womenSingle type
+     */
+    public static final int WOMENSINGLE_TYPE = 2;
+
+    /**
+     * The instance of the womenSingle type
+     */
+    public static final GameGameIdType WOMENSINGLE = new GameGameIdType(WOMENSINGLE_TYPE, "womenSingle");
+
+    /**
+     * The womenDouble type
+     */
+    public static final int WOMENDOUBLE_TYPE = 3;
+
+    /**
+     * The instance of the womenDouble type
+     */
+    public static final GameGameIdType WOMENDOUBLE = new GameGameIdType(WOMENDOUBLE_TYPE, "womenDouble");
+
+    /**
+     * The mixed type
+     */
+    public static final int MIXED_TYPE = 4;
+
+    /**
+     * The instance of the mixed type
+     */
+    public static final GameGameIdType MIXED = new GameGameIdType(MIXED_TYPE, "mixed");
 
     /**
      * Field _memberTable
@@ -77,12 +107,12 @@ public class SexType implements java.io.Serializable {
      //- Constructors -/
     //----------------/
 
-    private SexType(int type, java.lang.String value) 
+    private GameGameIdType(int type, java.lang.String value) 
      {
         super();
         this.type = type;
         this.stringValue = value;
-    } //-- ch.form105.shuttle.base.generated.players.types.SexType(int, java.lang.String)
+    } //-- ch.form105.shuttle.base.generated.tournament.types.GameGameIdType(int, java.lang.String)
 
 
       //-----------/
@@ -107,7 +137,8 @@ public class SexType implements java.io.Serializable {
     /**
      * Method enumerate
      * 
-     * Returns an enumeration of all possible instances of SexType
+     * Returns an enumeration of all possible instances of
+     * GameGameIdType
      * 
      * @return Enumeration
      */
@@ -119,7 +150,7 @@ public class SexType implements java.io.Serializable {
     /**
      * Method getType
      * 
-     * Returns the type of this SexType
+     * Returns the type of this GameGameIdType
      * 
      * @return int
      */
@@ -170,8 +201,11 @@ public class SexType implements java.io.Serializable {
     private static java.util.Hashtable init()
     {
         Hashtable members = new Hashtable();
-        members.put("W", W);
-        members.put("M", M);
+        members.put("menSingle", MENSINGLE);
+        members.put("menDouble", MENDOUBLE);
+        members.put("womenSingle", WOMENSINGLE);
+        members.put("womenDouble", WOMENDOUBLE);
+        members.put("mixed", MIXED);
         return members;
     } //-- java.util.Hashtable init() 
 
@@ -192,7 +226,7 @@ public class SexType implements java.io.Serializable {
     /**
      * Method toString
      * 
-     * Returns the String representation of this SexType
+     * Returns the String representation of this GameGameIdType
      * 
      * @return String
      */
@@ -204,20 +238,21 @@ public class SexType implements java.io.Serializable {
     /**
      * Method valueOf
      * 
-     * Returns a new SexType based on the given String value.
+     * Returns a new GameGameIdType based on the given String
+     * value.
      * 
      * @param string
-     * @return SexType
+     * @return GameGameIdType
      */
-    public static ch.form105.shuttle.base.generated.players.types.SexType valueOf(java.lang.String string)
+    public static ch.form105.shuttle.base.generated.tournament.types.GameGameIdType valueOf(java.lang.String string)
     {
         java.lang.Object obj = null;
         if (string != null) obj = _memberTable.get(string);
         if (obj == null) {
-            String err = "'" + string + "' is not a valid SexType";
+            String err = "'" + string + "' is not a valid GameGameIdType";
             throw new IllegalArgumentException(err);
         }
-        return (SexType) obj;
-    } //-- ch.form105.shuttle.base.generated.players.types.SexType valueOf(java.lang.String) 
+        return (GameGameIdType) obj;
+    } //-- ch.form105.shuttle.base.generated.tournament.types.GameGameIdType valueOf(java.lang.String) 
 
 }

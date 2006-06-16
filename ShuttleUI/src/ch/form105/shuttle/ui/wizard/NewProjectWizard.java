@@ -21,9 +21,10 @@ import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.IWorkbench;
 
+import ch.form105.shuttle.base.generated.tournament.Category;
 import ch.form105.shuttle.base.generated.tournament.Game;
 import ch.form105.shuttle.base.generated.tournament.Tournament;
-import ch.form105.shuttle.base.generated.tournament.types.CategoryType;
+import ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType;
 import ch.form105.shuttle.base.helper.XMLSaver;
 import ch.form105.shuttle.ui.ImageFactory;
 import ch.form105.shuttle.ui.ShuttleUIPlugin;
@@ -86,14 +87,19 @@ public class NewProjectWizard extends Wizard implements INewWizard {
 		tournament.setTournamentName(projectDesc.getName());
 
 		for (Game aGame : gameList) {
+			Game tempGame = new Game();
 			for (int i = 0; i < types.length; i++) {
-				Game tempGame = new Game();
 				tempGame.setName(aGame.getName());
 				tempGame.setActive(true);
-				tempGame.setTypeId(aGame.getTypeId());
-				tempGame.setCategory((CategoryType) types[i]);
-				tournament.addGame(tempGame);
+				//tempGame.setTypeId(aGame.getTypeId());
+				tempGame.setGameId(aGame.getGameId());
+				//tempGame.addGameCategory((GameCategoryTypeType) types[i]);
+				Category cat = new Category();
+				cat.setCatId((CategoryCatIdType)types[i]);
+				tempGame.addCategory(cat);
+				
 			}
+			tournament.addGame(tempGame);
 		}
 
 		// create the xml file

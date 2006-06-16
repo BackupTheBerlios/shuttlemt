@@ -2,7 +2,6 @@ package ch.form105.shuttle.ui.wizard.page;
 
 import java.text.ParseException;
 import java.text.RuleBasedCollator;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.TreeSet;
@@ -19,12 +18,11 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 
-import ch.form105.shuttle.base.generated.tournament.types.CategoryType;
+import ch.form105.shuttle.base.generated.tournament.types.CategoryCatIdType;
 
 public class SetCategoryPage extends WizardPage {
 	
@@ -51,8 +49,8 @@ public class SetCategoryPage extends WizardPage {
 		TreeSet list = null;
 		try {
 			list = new TreeSet(new StringComparator("< a,A< b,B< c,C< d,D< e,E< f,F< g,G< h,H< i,I< j,J < k,K< l,L< m,M< n,N< o,O< p,P< q,Q< r,R< s,S< t,T < u,U< v,V< w,W< x,X< y,Y< z,Z"));
-
-			for (Enumeration e = CategoryType.enumerate(); e.hasMoreElements();) {
+			
+			for (Enumeration e = CategoryCatIdType.enumerate(); e.hasMoreElements();) {
 				list.add(e.nextElement());
 			}
 			
@@ -170,8 +168,8 @@ public class SetCategoryPage extends WizardPage {
 		}
 		
 		public int compare(Object o1, Object o2) {
-			o1 = ((CategoryType) o1).toString();
-			o2 = ((CategoryType) o2).toString();
+			o1 = ((CategoryCatIdType) o1).toString();
+			o2 = ((CategoryCatIdType) o2).toString();
 			return super.compare(o1, o2);			
 		}	
 	}
